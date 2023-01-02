@@ -1,0 +1,255 @@
+:root{
+    --aqua : #E9EDEF;
+    --white : #FFFFFF;
+    --light-dark :#5F5F5F;
+    --sky-blue : #7DD0ED;
+    --grey :  #9A9A9A;
+}
+
+/* main container styling */
+.main__container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "Inter";
+    background-color: var(--aqua);
+}
+
+.main__container--structure{
+    margin: auto;
+    width: 1440px;    
+    padding: 30px 30px;
+}
+
+/* Each Card continer styling */
+.card__container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+}
+
+
+/* Card design */
+
+.card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card--structure{
+    width: 252px;
+    background: var(--white);
+    border-radius: 8px;
+    margin-left: 20px;
+    transition-duration: 0.5s;  
+}
+
+/* card title styling */
+
+.card__heading{
+    display: flex;
+    justify-content: center;
+    font-weight: 700;
+    background-color: var(--sky-blue);
+}
+
+.card__heading--structure{
+    width: 252px;
+    border-top-left-radius:8px ;
+    border-top-right-radius: 8px;
+}
+
+.heading{
+    color: var(--white);
+    font-weight: 800;
+    font-size: 32px;
+    line-height: 39px;
+}
+
+.card__price__detail{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card__price__heading{
+    padding-top: 25px;
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 10px;
+    margin-bottom: 10px;
+    color: var(--light-dark);
+}
+
+.card__price_package{
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 30px;
+    color: var(--light-dark);
+
+}
+
+.card__feature{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--grey);
+}
+
+.card__feature--structure{
+    padding: 10px 10px ;
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 14px;
+}
+
+/* Hover effect */
+.card--hover:hover {
+    transform: scale(1.09);
+}
+
+.card--hover:hover #hover__heading--effect{
+    background: #27A6D2;   
+}
+
+.card--hover:hover #hover__price--detail--effect h1{
+    color:#28A7D2; 
+}
+
+
+.card--hover:hover h2{
+    color:#28A7D2; 
+}
+
+
+/* progress bar styling */
+
+.progress__bar__container{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--white);
+}
+
+.progress__bar__container--structure{
+    margin-top: 40px;
+    margin-left: 20px ;
+    padding: 20px;
+    width: 866px;
+}
+
+.progress__bar__section{
+    margin-bottom: 30px;
+}
+
+.progess__bar__detail{
+    display: flex;
+    justify-content: space-between;
+    font-weight: 100;
+    font-size: 18px;
+    line-height: 38px;
+
+    color: #4f4e4e;
+}
+
+.progress__container--structure{
+    height: 18px ;
+    overflow: hidden;
+    border-radius: 30px;
+    background-color: var(--grey);
+
+}
+
+
+.progress__bar{
+    background-color: #27A6D2;
+    height: 18px;
+    border-radius: 28px;
+    width: 0%;
+    transition: width 1s;
+    transition-timing-function: linear;
+}
+
+/* hover effect onm progress bar */
+
+
+/* Basic */
+
+.hover__progress__bar__basic--effect:hover ~ .progress__bar__container .after__effect__hover__first{
+    background-color: #27A6D2;
+    height: 18px;
+    border-radius: 28px;
+    width: 10%;
+}
+
+
+.hover__progress__bar__basic--effect:hover ~ .progress__bar__container .after__effect__hover__second{
+    background-color: #27A6D2;
+    height: 18px;
+    border-radius: 28px;
+    width: 20%;
+}
+
+
+.hover__progress__bar__basic--effect:hover ~ .progress__bar__container .after__effect__hover__third{
+    background-color: #27A6D2;
+    height: 18px;
+    border-radius: 28px;
+    width: 10%;
+}
+
+
+/* Pro */
+
+.hover__progress__bar__pro--effect:hover ~ .progress__bar__container .after__effect__hover__first{
+    background-color: #27A6D2;
+    height: 18px;
+    border-radius: 28px;
+    width: 40%;
+}
+
+
+.hover__progress__bar__pro--effect:hover ~ .progress__bar__container .after__effect__hover__second{
+    background-color: #27A6D2;
+    height: 18px;
+    border-radius: 28px;
+    width: 30%;
+}
+
+
+.hover__progress__bar__pro--effect:hover ~ .progress__bar__container .after__effect__hover__third{
+    background-color: #27A6D2;
+    height: 18px;
+    border-radius: 28px;
+    width: 20%;
+}
+
+
+/* Premium */
+
+.hover__progress__bar__premium--effect:hover ~ .progress__bar__container .after__effect__hover__first{
+    background-color: #27A6D2;
+    height: 18px;
+    border-radius: 28px;
+    width: 50%;
+}
+
+
+.hover__progress__bar__premium--effect:hover ~ .progress__bar__container .after__effect__hover__second{
+    background-color: #27A6D2;
+    height: 18px;
+    border-radius: 28px;
+    width: 30%;
+}
+
+
+.hover__progress__bar__premium--effect:hover ~ .progress__bar__container .after__effect__hover__third{
+    background-color: #27A6D2;
+    height: 18px;
+    border-radius: 28px;
+    width: 50%;
+}

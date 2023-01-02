@@ -1,0 +1,23 @@
+.container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.fa{
+    padding-right: 10px;
+}
+
+li{
+    list-style: none;
+    padding-top: 10px;
+    padding-bottom :15px;
+}
+
+li:hover{
+    text-decoration: underline;
+}
+
+
+

@@ -1,0 +1,29 @@
+
+.B{
+    float:left;
+    clear:both;
+    width:10%;
+    height:30px;
+    border:1px solid blue;
+    
+}
+
+.clr::after
+{
+ content: "";
+ clear: both;
+ display: block;
+ height: 0;
+ visibility: hidden;
+}
+
+.A,.C,.D{
+    float:left;
+    width:10%;
+    height:30px;
+    border:1px solid blue;
+}
+
+.CB{
+    clear:both;
+}/*

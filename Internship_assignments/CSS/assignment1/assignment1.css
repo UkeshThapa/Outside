@@ -1,0 +1,106 @@
+.main__container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.heading{
+    text-align: center;
+}
+
+
+.selector__types{
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+
+}
+
+.selector--type--structure{
+    width: 800px;
+    padding-bottom: 30px;
+    border-style: solid;
+    border-color: black;
+    margin-top: 30px;
+}
+
+/* .login__form{
+    padding-top: 30px;
+} */
+
+input[type=email]{
+    border: 2px solid red;
+    border-radius: 4px;
+}
+
+input[type=password]{
+    border: 2px solid blue;
+    border-radius: 4px;
+}
+
+/* Pseudo-class selector */
+/* unvisited link */
+a:link {
+    color: red;
+  }
+  
+  /* visited link */
+  a:visited {
+    color: green;
+  }
+  
+  /* mouse over link */
+  a:hover {
+    color: hotpink;
+  }
+  
+  /* selected link */
+  a:active {
+    color: blue;
+  }
+
+
+.word--selector--selection{
+    width : 250px
+}
+
+.word--selector--selection p::first-line {
+    background-color: yellow;
+  }
+
+.button--selector{
+    width: 190px;
+    height: 50px;
+    border-style: solid ;
+    background-color: gray;
+    border-radius: 30px;
+
+}
+
+.button--selector:focus{
+    background-color: yellow;
+}
+
+
+img{
+    width: 150 px;
+    height: 150px ;
+}
+
+.detail--container{
+    width: 250px;
+    height: 250px
+}
+
+.section{
+    display: flex;
+
+
+}  
+.section >div{
+    padding: 10px;
+}
+.section:nth-child(even) {
+    /* justify-content: center; */
+    flex-direction: row-reverse;  }

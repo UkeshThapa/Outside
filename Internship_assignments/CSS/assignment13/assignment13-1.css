@@ -1,0 +1,152 @@
+:root{
+    --white : #FFFFFF;
+    --light-drak : #575757;
+    --red : #E70606;
+    --black :  #212121;
+    --light-orange :  #F9DBDB;
+}
+
+/* Main div or container */
+.main__container{
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Roboto Slab';
+    background-color: var(--white);
+
+}
+
+
+/* Heading Styling */
+
+.title__container{
+    width: 870px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.title__header--structure{
+    padding-top: 80px;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 15px;
+    margin-bottom: 15px;
+    color: var(--red);
+}
+
+.title__detail--structure{
+    font-weight: 400;
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 50px;
+    color: var(--light-drak);
+}
+
+
+/*  Body container structure */
+
+
+.body__container{
+    display: flex;
+    flex-direction: column;
+}
+
+.body__container--structure{
+    width: 971px;
+    padding: 10px 10px;
+}
+
+
+.body__section{ 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.body__section:nth-child(odd){
+    flex-direction: row-reverse;
+}
+
+
+.body__section--structure{
+    width : 930px;
+    padding-bottom: 5rem;
+    padding: 3rem 3rem;
+}
+
+
+
+.body__img__section--structure{
+    width: 460px;
+    height: 460px;
+    border-radius: 50%;
+}
+
+
+.img--design{
+    padding-left: 6px;
+    padding-right: 10px;
+    width: 440px;
+    height: 440px;
+    object-fit: cover;
+    border-radius: 50%;
+
+}
+
+.body__img__section{
+    display: flex;
+    align-items: center;
+    background-color: var(--light-orange);
+}
+
+
+.body__detail__section{
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+.section__header{
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 5px;
+    margin-bottom: 15px;  
+    color: var(--black);
+}
+
+
+.section__detail{
+    width: 371px;
+    height: 96px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--light-drak);
+    margin-bottom: 40px;
+}
+
+/* Button class */
+
+.sec__button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button--structure{
+    width: 150px;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+    background: var(--red);   
+    color: var(--white);
+    padding: 10px 10px;
+    border: none;
+}
+
+

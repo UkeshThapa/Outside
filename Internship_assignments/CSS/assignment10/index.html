@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="main__container">
+        <header>
+            <h1 class="heading">CSS Padding</h1>
+        </header>
+
+        <div class="selector__types selector--type--structure">
+            <h1>1. max()</h1>
+            <p>The <strong>max</strong> function accepts a list of comma separated values and returns the biggest one. Each value can also be an expression (whatever you can use as an argument for the calc() function can be one of the arguments in this function, too).The max function can be seen as a way to determine a minimum value for a certain thing.
+                A use case for this function is making a text responsive, while giving a minimum value to the dimension.</p>
+            <h2>Example:</h2>
+            <div class="image_container">
+                <img src="../images/max().png" alt="">
+            </div>
+            <p>In this way, the text will be a tenth of the viewport height, unless the viewport height becomes too small. The text will always have a font-size of at least 1rem to ensure legibility.</p> 
+        </div>
+        <div class="selector__types selector--type--structure">
+            <h1>2. min()</h1>
+            <p>In the same way as the max function, the <strong>min</strong> function  can take any number of arguments, including other max, min, or clamp functions, and give back the smallest value between them.
+                The min function can be seen as determining a maximum value.
+                For example, let's say that you are creating a form and you want it to be responsive while the screen width changes. You'll want to give it a maximum width to avoid that horizontally stretched look that can happen on the largest screens.</p>
+            <h2>Example:</h2>
+            <div class="image_container">
+                <img src="../images/min().png" alt="">
+            </div>
+            <p>Your page will have a width equal to 90% of the viewport width, or 600px wide, whatever is smallest. So if the viewport width is larger than ~670px, the form will not stretch horizontally.</p> 
+        </div>
+        <div class="selector__types selector--type--structure">
+            <h1>2. clamp()</h1>
+            <p>The clamp() method is used to clamp the value between an upper and lower bound. It takes three parameters which are listed below:</p>
+            <ul>
+                <li>Minimum value</li>
+                <li>Preferred value</li>
+                <li>Maximum value</li>
+            </ul>
+                <h2>Example:</h2>
+            <div >
+                <img src="../images/clamp().png" alt="">
+            <p>The minimum value comes in handy when the preferred value is smaller than the minimum value similarly maximum value comes in handy when the preferred value is more than the maximum value. The preferred value becomes useful when it is between the minimum and maximum value.
+                The clamp() function can be used with the various elements such as font-size, width etc.</p>   
+    
+        </div>
+
+    </div>
+    
+</body>
+</html>

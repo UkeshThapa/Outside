@@ -1,0 +1,21 @@
+.center {
+    margin: auto;
+    width: 60%;
+    padding-top: 80px;
+  }
+
+
+.section{
+    display: flex;
+
+}  
+.section:nth-child(even) {
+    /* justify-content: center; */
+    flex-direction: row-reverse;  }
+
+
+
+div{
+    padding: 10px;
+}
+

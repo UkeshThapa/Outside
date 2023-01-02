@@ -1,0 +1,136 @@
+:root {
+    --white :  #FFFFFF;
+    --gray  :  #F7F7F7;
+    --black :  #575757;
+    --blue  :  #E4F2FF; 
+    --green :  #D1DFBF;
+    --orange:  #F9DBDB ;
+  }
+
+
+
+.main__container{
+    display: flex;
+    flex-direction: column;
+    font-family: 'Roboto Slab';
+    background: var(--gray);
+    padding-bottom: 30px;
+}
+
+
+h1, h3{
+    
+    text-align: center;
+    font-style: normal;
+    margin: 26px;
+}
+
+p{
+    font-style: normal;
+    font-weight: 400;
+    text-align: center;
+    color: var(--black);
+}
+
+
+
+.card{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+.card__design{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 268px;
+    height: 327px;
+    margin-left: 20px;
+    padding-bottom: 10px;
+}
+
+
+
+
+
+
+.card__design > p{
+    font-size: 14px;
+    line-height: 23px;
+    width: 200px;
+    padding-bottom: 40px;
+}
+
+
+
+.card__color--first{
+    background-color: var(--white) ;
+}
+
+.card__color--second{
+    background-color: var(--blue) ;
+}
+
+.card__color--third{
+    background-color:  var(--green); ;
+}
+
+.card__color--fourth{
+    background-color: var(--orange);
+}
+
+.title__container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+.title__container > h1{
+font-size: 48px;
+line-height: 20px;  
+padding-top: 120px;
+}
+
+.title__container > p{
+font-size: 20px;
+width: 780px;
+padding-bottom: 50px;
+}
+
+
+.card__button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+
+.button--structure{
+    font-size: 15px;
+    line-height: 22px;
+    color: var(--white);
+    border: none;
+    padding: 10px 10px;
+}
+
+.button--color--first{
+    background-color:  #515151;
+}
+
+
+.button--color--second{
+    background-color:  #0047FF;
+}
+
+
+.button--color--third{
+    background-color:  #db8888;
+}
