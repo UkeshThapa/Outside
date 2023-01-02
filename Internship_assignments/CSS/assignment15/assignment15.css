@@ -103,25 +103,59 @@
     width: 208px;
     height: 208px;  
     border-radius: 50%;
+
 }
 
-.prof--rotate::before{
-    animation: rotate 3s linear infinite;
-}
 
-.prof--rotate:hover::after{
-    animation: rotate 3s linear infinite;
+.prof--rotate:hover{
+    animation: rotate 4s ease infinite;
+}
+.prof--rotate:hover .img--design{
+    
+    animation: arotate 4s ease infinite ;
+
 }
 
 @keyframes rotate{
     0%{
         transform: rotate(0deg);
     }
+
+    25%{
+        transform: rotate(90deg);
+    }
+    50%{
+        transform: rotate(180deg);
+    }
+
+    75%{
+        transform: rotate(270deg);
+    }
+
     100%{
         transform: rotate(360deg);
     }
 }
+@keyframes arotate{
+    0%{
+        transform: rotate(0deg);
+    }
 
+    25%{
+        transform: rotate(-90deg);
+    }
+    50%{
+        transform: rotate(-180deg);
+    }
+
+    75%{
+        transform: rotate(-270deg);
+    }
+
+    100%{
+        transform: rotate(-360deg);
+    }
+}
 
 /* profile name of user */
 
