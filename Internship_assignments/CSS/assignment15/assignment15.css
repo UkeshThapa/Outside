@@ -294,8 +294,8 @@
         height: 800px;
         border-radius: 12px;
         box-shadow:24px 14px 5px 2px rgba(0,0,0,0.23);
-        grid-column-gap: 5px;
-        grid-row-gap: 5px ;
+
+        grid-row-gap: 2px ;
     }
 
     .profile__sec{
@@ -398,7 +398,7 @@
     }
     
     .button--struct{
-        border: 4px solid var(--text-color);
+        border: 3px solid var(--text-color);
         width: 120px;
         height: 45px;
         padding: 10px;
