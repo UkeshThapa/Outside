@@ -1,0 +1,189 @@
+
+
+
+.main__container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30rem;
+}
+
+
+
+.tool_tip_container{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    border-style: solid;
+}
+
+
+.tool_tip_container--structure{
+    width: 40rem;
+    height: 6rem;
+}
+
+.tool__tip{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+}
+
+
+.tool_tip_content{
+    border-style: solid;
+}
+
+.txt--denger{
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    width: 14rem;
+    height: 3rem;
+    position: absolute;
+    margin-top: 8.7rem;
+    left: 25px;
+    font-size: 25px;
+    border-radius: 8px;
+    background-color: white;
+    visibility: hidden;
+    transition-duration: 200ms ;
+    filter: drop-shadow(0px 0px 2px rgb(219, 11, 11));;
+
+}
+
+.tool__tip:hover .txt--denger{
+    visibility: visible;
+}
+
+.denger__img:hover{
+    background-color: brown;
+}
+
+.txt--denger::before{
+    position: absolute;
+    border-style:solid ;
+    content: "";
+    border-color: transparent transparent white transparent;
+    top: -19px;
+    border-width: 10px;
+}
+
+.fa-sharp{
+    font-size: 60px;
+}
+
+
+
+.txt--cow{
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    width: 13rem;
+    height: 3rem;
+    position: absolute;
+    margin-top: 9rem;
+    left: 25rem;
+    font-size: 25px;
+    border-radius: 8px;
+    background-color: white;
+    visibility: hidden;
+    transition-duration: 200ms ;
+    filter: drop-shadow(0px 0px 2px rgb(194, 197, 11));;
+
+}
+
+.cow_img{
+    width: 100px;
+    height: 90px;
+
+}
+
+.background_img_cow{
+    background-image: url(../images/black_cow.svg);
+    width: 80px;
+    height: 70px;
+    background-size: cover;
+    background-repeat: no-repeat ;
+    background-position: center;
+    transition-duration: 200ms;
+}
+.tool__tip:hover .background_img_cow{
+    background-image: url(../images/cow_hover.svg);
+    
+}
+
+.txt--cow::before{
+    position: absolute;
+    border-style:solid ;
+    content: "";
+    border-color: transparent transparent white transparent;
+    top: -19px;
+    border-width: 10px;
+}
+
+
+
+.tool__tip:hover .txt--cow{
+    visibility: visible;
+}
+
+
+
+.txt--dang{
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    width: 18rem;
+    height: 3rem;    
+    position: absolute;
+    padding-inline: 10px 10px;
+    top: -48px;
+    left: 10rem;
+    border-radius: 8px;
+    font-size: 20px;
+    background-color: white;    
+    visibility: hidden;
+    transition-duration: 200ms ;
+    filter: drop-shadow(0px 0px 2px rgb(35, 19, 216));;
+
+}
+
+
+.dang_img{
+    width: 90px;
+    height: 75px;
+}
+
+
+.tool__tip:hover .txt--dang{
+    visibility: visible;
+}
+
+.txt--dang::before{
+    position: absolute;
+    border-style:solid ;
+    content: "";
+    border-color: white transparent transparent transparent;
+    top: 46px;
+    left: 9.2rem;
+    border-width: 10px;
+}
+
+
+.tool__tip:nth-child(2){
+    width: 80px;
+    height: 90px;
+}
+
+.tool__tip:hover svg{
+    fill: blue;
+}
+
+
+.tool__tip:nth-child(1):hover .fa-sharp{
+    color: red;
+}
+

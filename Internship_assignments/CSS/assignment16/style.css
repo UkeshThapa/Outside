@@ -155,10 +155,6 @@
         grid-column-gap:25px ;
     }
 
-    .grid__container--structure{
-        height: 800px;
-        width: 1110px;
-    }
 
 
         
@@ -255,7 +251,7 @@
         color: var(--para-color);
         font-size: 15px;
         line-height: 24px;
-        width: 350px;
+        /* width: 350px; */
     }
 
 
