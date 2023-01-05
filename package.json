@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "watch:sass":"sass --watch Internship_assignments/Bootstrap5/scss/main.scss  Internship_assignments/Bootstrap5/scss/main.scss"
+  },
+  "dependencies": {
+    "sass": "^1.57.1"
+  }
+}

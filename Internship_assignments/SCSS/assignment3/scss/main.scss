@@ -1,0 +1,10 @@
+@import './common-imports.scss';
+
+.main__container{
+    @include flex;
+}
+
+.style__guide{
+    @include flex;
+    flex-wrap: wrap;
+}

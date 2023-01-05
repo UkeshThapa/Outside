@@ -1,0 +1,6 @@
+@import './common_imports.scss';
+
+.main__container{
+    @include flexprob;
+    font-family: "poppins";
+}

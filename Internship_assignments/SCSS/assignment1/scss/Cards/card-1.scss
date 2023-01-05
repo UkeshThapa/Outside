@@ -1,0 +1,62 @@
+@import '../Mixins/mixins.scss';
+@import "../Base/global_vars.scss";
+.card_container{
+    @include flexprob;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card{
+
+    padding: 30px 30px;
+    width: 25%;
+    margin: 25px;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 8px;
+    box-shadow: -1px 1px 29px 6px rgba(55,59,64,0.75);
+    transition-duration: 500ms;
+    .profile_img-design{
+        width: 100%;
+        img{
+            width: 100%;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+    }
+    
+    &:hover{
+        background-color: $hover-color;
+    }
+
+    h3{
+        margin: 0;
+        font-size: 30px;
+    }
+    h5{
+        margin: 0;
+        padding-block: 10px 10px;
+        font-size: 20px;
+        font-weight: 500px;
+        color: $primary-color;
+    }
+}
+
+
+@media screen and (max-width: 800px) {
+
+    .horizontal_scroll{
+        display: block;
+        width: 100%;
+        overflow-x: scroll;
+    }
+    .card_container{
+        display: block;
+        white-space: nowrap;
+
+    }
+    .card{
+        display: inline-block;
+        width:  80%;
+    }
+}

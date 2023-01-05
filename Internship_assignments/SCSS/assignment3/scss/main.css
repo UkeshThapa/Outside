@@ -1,0 +1,56 @@
+.section-stylegiude {
+  border-style: solid;
+  width: 30rem;
+  height: 20rem;
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.section-stylegiude .color_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+.section-stylegiude .color_container .colors-boxStyle {
+  margin: 20px;
+}
+.section-stylegiude .color_container .colors-boxStyle img {
+  width: 8rem;
+  border-radius: 10px;
+}
+
+.icon_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  border-style: solid;
+  width: 300px;
+  height: 200px;
+}
+.icon_container .icon-boxStyle {
+  margin: 20px;
+  width: 20%;
+}
+.icon_container .icon-boxStyle img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.main__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.style__guide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,30 @@
+@import './common-imports.scss';
+
+.main__container{
+    @include flexprob;
+    flex-direction: column;
+    justify-content: center;
+    background-color: $card-container-color;
+    padding: 3rem 3rem;
+    font-family: "poppins";
+
+
+    h1{ 
+
+        margin: 0;
+        font-size: 25px;
+        font-weight: 5rem;
+        color: $hover-color;
+    }
+
+    h2{
+        font-size: 30px;
+        line-height: 10px;
+    }
+}
+
+
+
+
+
+

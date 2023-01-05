@@ -1,0 +1,288 @@
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+// variable color
+$bg-color : #D7D2CA;
+
+
+
+// nav variable
+$nav-top-size : 1.2rem;
+$nav-bottom-size : 1.2rem;
+$nav-left-size : 1.5rem;
+$nav-right-size : 1.2rem;
+
+$nav-font-size : 1.1rem;
+$nav-font-weight : 620;
+
+
+// Body
+body{
+    background-color: $bg-color;
+}
+
+// navbar
+
+.navbar{
+    padding: 1rem ;
+}
+
+.nav-item{
+    padding-left: $nav-left-size;
+    font-size: $nav-font-size;
+    font-weight: $nav-font-weight;
+}
+
+// carousel slide
+
+.carousel-item{
+    min-height: 600px;
+    img{
+        filter: brightness(40%);
+    }
+}
+
+
+.carousel-indicators{
+    button{
+        height: 50px;
+    }
+}
+
+
+.carousel-caption{
+  position: absolute;
+  right: 15%;
+  top: 25%;
+
+  left: 15%;
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+  color: #fff;
+  text-align: center;
+  h5{
+    font-size: 51px;
+    margin-bottom: 30px;
+  }
+  p{
+    font-size: 30px;
+  }
+}
+
+
+
+// card section
+
+.card_section{
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    margin-top: 2rem;
+    .card_section_header{
+        font-size: 62px ;
+        margin-left: 1rem;
+        line-height: 7rem;
+    }
+}
+.card_container{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.card{
+    width: 21rem;
+    height: 22rem;
+    border:none;
+    background: $bg-color;
+    .card-body{
+        padding:0;
+        padding-block:8px ;
+    }
+    .card-title{
+        font-size: 17px;
+    }
+    .card-text{
+        font-size: 13px;
+    }
+}
+
+.carousel-indicators [data-bs-target] {
+    width:30px;
+    height:30px;
+    border-radius: 50%;
+    background-color: #DD7777;
+}
+
+
+
+// FAQs container
+
+
+.FAQs-section{
+
+    margin-top: 18rem;
+    .FAQs_header{
+        font-size: 64px;
+        margin-left: 2.7rem;
+    }
+}
+
+
+
+.accordion_section{
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    .accordion{
+
+        width: 700px;
+
+    }
+    
+}
+
+
+
+
+
+
+.accordion-button{
+    padding: 2rem 1rem;
+    background-color: $bg-color;
+    transition-duration: 4s;
+}
+
+.accordion-button {
+    &.collapsed {
+      &::after {
+        background: url("../images/plus.svg");
+        background-size: cover;
+      }
+    }
+    &:not(.collapsed) {
+      &::after {
+        background: url("../images/minus.svg");
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+    }
+  }
+
+
+
+
+// overlay card
+.image-overlay{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .card{
+        width: 100%;
+        height: 662px;
+        .card-img{
+            padding-left: 25px;
+            padding-right: 25px;
+            object-fit: cover;
+            margin-top: 4.5rem;
+        }
+    
+    }
+
+}
+
+.card-img-overlay{
+    display: flex;
+    align-items: center;;
+    justify-content: center;
+    flex-direction: column;
+    .card-title{
+        width: 1000px;
+        text-align: center;
+        font-size: 80px;
+        line-height: 5rem;
+    }
+    .card-text{
+        margin-top: 20px;
+        text-align: center;
+        width: 425px;
+        line-height: 30px;
+        font-size: 17px;
+    }
+    .card-button{
+        padding: 10px;
+        font-weight: 600;
+        border-radius: 10px;
+    }
+}
+
+
+.outside-footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    background-color: #393939;
+    .container{
+        margin-top: 56px;
+        max-width: 100%;
+        max-height: 100%;
+        // border-style: solid;
+        .card-detail{
+            margin-top: 11.7rem;
+            color: #EAE7DE;
+
+        }
+
+        .card-logos{
+            margin-left: 20px;
+            .title{
+                margin-bottom: 16px;
+            }
+            .card-img-logo{
+                width: 40%;
+            }
+        }
+    }
+}
+
+
+.card-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    .card{
+        // margin-right: 26px;
+        color: #ffffff;
+        .card-title{
+            font-size: 24px;
+            margin-top: 8px;
+            margin-bottom: 8px;
+        }
+        .card-txt{
+            // text-decoration: none;
+            font-size: 16px;
+            color: #ffffff;
+
+        }
+
+    }
+}
+
+.pagevamp-txt{
+    color: #605f5f;
+    font-size: 15px;
+    margin-top:  8rem;
+    margin-left: 26px;
+}
+
+
+.social-logo{
+
+    position: absolute;
+    margin-top:  8rem;
+    right:28px;  
+    
+}

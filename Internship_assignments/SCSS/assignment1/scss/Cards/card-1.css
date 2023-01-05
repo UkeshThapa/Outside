@@ -1,0 +1,6 @@
+.card .profile_img-design {
+  width: 90px;
+  height: 40px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}/*# sourceMappingURL=card-1.css.map */
