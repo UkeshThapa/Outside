@@ -1,10 +1,15 @@
 @import './common-imports.scss';
 
-.main__container{
-    @include flex;
+
+.main-container{
+    margin: 80px;
+    font-family: 'Poppins', sans-serif;;
+    &--heading{
+        font-size: 27.6px;
+    }
 }
 
-.style__guide{
-    @include flex;
-    flex-wrap: wrap;
+hr{
+    height: 0.5px;
+    background-color: $Black;
 }

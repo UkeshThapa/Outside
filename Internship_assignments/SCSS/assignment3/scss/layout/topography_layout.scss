@@ -1,0 +1,112 @@
+.topography{
+    margin-bottom: 100px;
+    &--heading{
+        font-size: 25px;
+    }
+    &-h1{
+        @include flex;
+        justify-content: space-between;        
+        margin-bottom: 40px;
+        &--title{
+            margin: 0;
+            font-size: 20px;
+            margin-block:4px ;
+        }
+        &--font{
+            font-size: 14px;
+            margin-block:4px ;
+            color: $color-sub-heading ;
+        }
+        &--demo p{
+            margin-block: 0;
+            width:804px;
+            font-size: 27.65px;
+            font-weight: 800;
+        }
+    }
+
+}
+
+.topography{
+    &--heading{
+        font-size: 25px;
+    }
+    &-h2{
+        @include flex;
+        justify-content: space-between;
+        margin-bottom: 40px;
+
+        &--title{
+            margin: 0;
+            font-size: 20px;
+            margin-block:4px ;
+        }
+        &--font{
+            font-size: 14px;
+            margin-block:4px ;
+            color: $color-sub-heading ;
+        }
+        &--demo p{
+            margin-block: 0;
+            width:804px;
+            font-size: 19.2px;
+            font-weight: 800;
+        }
+    }
+
+}
+
+.topography{
+    &--heading{
+        font-size: 25px;
+    }
+    &-body01{
+        @include flex;
+        justify-content: space-between;
+        margin-bottom: 40px;
+
+        &--title{
+            margin: 0;
+            font-size: 20px;
+            margin-block:4px ;
+        }
+        &--font{
+            font-size: 14px;
+            margin-block:4px ;
+            color: $color-sub-heading ;
+        }
+        &--demo p{
+            margin-block: 0;
+            width:804px;
+            font-size: 16px;
+        }
+    }
+
+}
+
+
+.topography{
+    &--heading{
+        font-size: 25px;
+    }
+    &-body02{
+        @include flex;
+        justify-content: space-between;
+        &--title{
+            margin: 0;
+            font-size: 20px;
+            margin-block:4px ;
+        }
+        &--font{
+            font-size: 14px;
+            margin-block:4px ;
+            color: $color-sub-heading ;
+        }
+        &--demo p{
+            margin-block: 0;
+            width:804px;
+            font-size: 14px;
+        }
+    }
+
+}

@@ -1,56 +1,202 @@
-.section-stylegiude {
-  border-style: solid;
-  width: 30rem;
-  height: 20rem;
-  margin: 10px;
+.topography {
+  margin-bottom: 100px;
+}
+.topography--heading {
+  font-size: 25px;
+}
+.topography-h1 {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 40px;
 }
-.section-stylegiude .color_container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 10px;
+.topography-h1--title {
+  margin: 0;
+  font-size: 20px;
+  margin-block: 4px;
 }
-.section-stylegiude .color_container .colors-boxStyle {
-  margin: 20px;
+.topography-h1--font {
+  font-size: 14px;
+  margin-block: 4px;
+  color: #7E7E7E;
 }
-.section-stylegiude .color_container .colors-boxStyle img {
-  width: 8rem;
-  border-radius: 10px;
+.topography-h1--demo p {
+  margin-block: 0;
+  width: 804px;
+  font-size: 27.65px;
+  font-weight: 800;
 }
 
-.icon_container {
+.topography--heading {
+  font-size: 25px;
+}
+.topography-h2 {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  border-style: solid;
-  width: 300px;
-  height: 200px;
+  justify-content: space-between;
+  margin-bottom: 40px;
 }
-.icon_container .icon-boxStyle {
-  margin: 20px;
-  width: 20%;
+.topography-h2--title {
+  margin: 0;
+  font-size: 20px;
+  margin-block: 4px;
 }
-.icon_container .icon-boxStyle img {
-  width: 100%;
-  object-fit: cover;
+.topography-h2--font {
+  font-size: 14px;
+  margin-block: 4px;
+  color: #7E7E7E;
+}
+.topography-h2--demo p {
+  margin-block: 0;
+  width: 804px;
+  font-size: 19.2px;
+  font-weight: 800;
 }
 
-.main__container {
+.topography--heading {
+  font-size: 25px;
+}
+.topography-body01 {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+.topography-body01--title {
+  margin: 0;
+  font-size: 20px;
+  margin-block: 4px;
+}
+.topography-body01--font {
+  font-size: 14px;
+  margin-block: 4px;
+  color: #7E7E7E;
+}
+.topography-body01--demo p {
+  margin-block: 0;
+  width: 804px;
+  font-size: 16px;
 }
 
-.style__guide {
+.topography--heading {
+  font-size: 25px;
+}
+.topography-body02 {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.topography-body02--title {
+  margin: 0;
+  font-size: 20px;
+  margin-block: 4px;
+}
+.topography-body02--font {
+  font-size: 14px;
+  margin-block: 4px;
+  color: #7E7E7E;
+}
+.topography-body02--demo p {
+  margin-block: 0;
+  width: 804px;
+  font-size: 14px;
+}
+
+.color--container {
+  margin-top: 100px;
+}
+
+.color--heading {
+  font-size: 50px;
+  margin-bottom: 60px;
+}
+
+.color {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 100px;
+}
+.color--white {
+  width: 150px;
+  height: 80px;
+  border: 2px solid;
+  border-radius: 80px;
+}
+.color--name {
+  font-size: 22px;
+  margin: 8px;
+}
+.color--code {
+  font-size: 14px;
+  margin: 8px;
+  color: #7E7E7E;
+}
+
+.color--Black {
+  width: 150px;
+  height: 80px;
+  border: none;
+  border-radius: 80px;
+  background-color: #3D3E48;
+}
+
+.color--Army-green {
+  width: 150px;
+  height: 80px;
+  border: none;
+  border-radius: 80px;
+  background-color: #295943;
+}
+
+.color--Light-green {
+  width: 150px;
+  height: 80px;
+  border: none;
+  border-radius: 80px;
+  background-color: #43B97F;
+}
+
+.icon-heading {
+  margin-top: 100px;
+  font-size: 50px;
+}
+
+.icon-item {
+  margin-right: 40px;
+  margin-bottom: 100px;
+}
+
+.effect-container {
+  margin-top: 100px;
+}
+
+.effect--heading {
+  font-size: 50px;
+}
+
+.effect--box {
+  width: 150px;
+  height: 80px;
+  border-radius: 80px;
+  box-shadow: 1px 2px 12px 1px rgba(0, 0, 0, 0.25);
+}
+.effect--title {
+  font-size: 20px;
+  margin: 8px;
+}
+.effect--feature {
+  font-size: 14px;
+  margin: 8px;
+  color: #7E7E7E;
+}
+
+.main-container {
+  margin: 80px;
+  font-family: "Poppins", sans-serif;
+}
+.main-container--heading {
+  font-size: 27.6px;
+}
+
+hr {
+  height: 0.5px;
+  background-color: #3D3E48;
 }
 
 /*# sourceMappingURL=main.css.map */

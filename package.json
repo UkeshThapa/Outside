@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "watch:sass":"sass --watch Internship_assignments/Bootstrap5/scss/main.scss  Internship_assignments/Bootstrap5/scss/main.scss"
+    "watch":"sass --watch Internship_assignments/SCSS/assignment3/scss/main.scss Internship_assignments/SCSS/assignment3/scss/main.css"
   },
   "dependencies": {
     "sass": "^1.57.1"

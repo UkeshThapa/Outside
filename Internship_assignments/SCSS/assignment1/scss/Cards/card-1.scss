@@ -1,22 +1,22 @@
 @import '../Mixins/mixins.scss';
 @import "../Base/global_vars.scss";
+
 .card_container{
     @include flexprob;
-    flex-wrap: wrap;
     justify-content: center;
+    flex-wrap: wrap;
 }
-
 .card{
-
-    padding: 30px 30px;
-    width: 25%;
+    padding: 10px;
+    width: 26%;
     margin: 25px;
     border-style: solid;
     border-width: 2px;
     border-radius: 8px;
-    box-shadow: -1px 1px 29px 6px rgba(55,59,64,0.75);
+    box-shadow: 0px 1px 10px 0px rgba(0,0,0,0.75);
     transition-duration: 500ms;
-    .profile_img-design{
+
+    &_img--design{
         width: 100%;
         img{
             width: 100%;
@@ -25,21 +25,38 @@
         }
     }
     
-    &:hover{
-        background-color: $hover-color;
+    &--title{
+        margin: 0;
+        line-height: 180%;
+        font-size: 20px;
+        color: #3D3E48;
+    }
+    
+    &-price--style{
+        @include flexprob;
+        margin: 0;
+        line-height: 180%;
+        justify-content: space-between;
+
     }
 
-    h3{
-        margin: 0;
-        font-size: 30px;
+    &-price--span{
+        color: #295943;
+        font-weight: 800;
+        font-size: 18px;
+      }
+    &-duration--span{
+        font-size: 14px;
+
     }
-    h5{
-        margin: 0;
-        padding-block: 10px 10px;
-        font-size: 20px;
-        font-weight: 500px;
-        color: $primary-color;
+    &--detail{
+        @include flexprob;
+        justify-content: space-around;
     }
+    &-near--img{
+        width: 9%;
+    }
+
 }
 
 
@@ -50,11 +67,13 @@
         width: 100%;
         overflow-x: scroll;
     }
+    
     .card_container{
         display: block;
         white-space: nowrap;
 
     }
+
     .card{
         display: inline-block;
         width:  80%;

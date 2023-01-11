@@ -1,0 +1,70 @@
+.color--container{
+    margin-top: 100px;
+}
+
+
+
+.color--heading{
+    font-size: 50px;
+    margin-bottom: 60px; 
+}
+
+
+.color{
+
+    @include flex;
+    justify-content: space-between;
+    margin-bottom: 100px;
+
+    &--white{
+        width: 150px;
+        height: 80px;
+        border: 2px solid;
+        border-radius: 80px;
+    }
+    &--name{
+        font-size: 22px;
+        margin: 8px;
+    }
+    &--code{
+        font-size: 14px;
+        margin:8px ;
+        color: $color-sub-heading;
+    }
+}
+
+
+
+.color{
+    &--Black{
+        width: 150px;
+        height: 80px;        
+        border: none;
+        border-radius: 80px;
+        background-color: $Black;
+    }
+}
+
+
+
+.color{
+    &--Army-green{
+        width: 150px;
+        height: 80px;
+        border: none;
+        border-radius: 80px;
+        background-color: $Army-green;
+    }
+}
+
+
+
+.color{
+    &--Light-green{
+        width: 150px;
+        height: 80px;
+        border: none;
+        border-radius: 80px;
+        background-color: $light-green;
+    }
+}

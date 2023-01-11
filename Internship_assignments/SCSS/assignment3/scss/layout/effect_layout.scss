@@ -1,0 +1,32 @@
+.effect-container{
+    margin-top: 100px;
+}
+
+.effect--heading{
+    font-size: 50px;
+}
+
+.effect{
+    &--box{
+        width: 150px;
+        height: 80px;
+        border-radius: 80px;
+        box-shadow: 1px 2px 12px 1px rgba(0, 0, 0, 0.25);
+    }
+    &--title{
+        font-size: 20px;
+        margin: 8px;
+    }
+    &--feature{
+        font-size: 14px;
+        margin: 8px;
+        color: $color-sub-heading;
+
+    }
+
+}
+
+
+
+
+
