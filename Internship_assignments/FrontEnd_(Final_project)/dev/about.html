@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        @@include('includes/head.html',{'pageTitle':'Final Project'})
+    </head>
+    <body>
+        <div class="theme-app d-flex flex-column">
+            @@include('includes/navbar.html')
+            <div class="theme-wrap position-relative">
+                <main class="theme-main">                    
+
+                                @@include('includes/modules/section/hero_section.html',{
+                                    'hero_container_color'     : 'bg-mint',
+                                    'hero_image1'              : 'about_img-2.jpg',
+                                    'hero_image2'              : 'about_img-1.jpg',
+                                    'row-reverse'              : 'flex-row-reverse',                        
+                                    'container_color'          : 'bg-sky',
+                                    'border_color'             : 'border-black',
+                                    'text-color'               : 'text-white',
+                                    'hero_section_sub_heading' : 'Look deep into nature, and then you will understand everything better.',
+                                    'hero_section_para'        : 'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.',
+                                    'btn_detail'               : 'Contact US',
+                                    'btn_icon'                 : 'icon-arrow-e ps-2',
+                                    'btn_border_color'         : 'border-white',
+                                    'hero_image3'              : 'about_img-3.jpg', 
+                                    'display1'                 : 'd-none'
+                                })
+
+                                @@include('includes/modules/section/section_a21.html',{
+                                    'eyebrow'     : 'About our services',
+                                    'title'       : "Aliquam egestas sapien turpis, eu iaculis velit pulvinar vel. Cras at diam quis turpis."
+                                })
+
+                                @@include('includes/modules/section/section_a22.html',{
+                                    'title'       :  'Service Point One',
+                                    'description' :  "Ut posuere ullamcorper euismod. Donec a justo pulvinar diam dictum lobortis vulputate non nisi. Vestibulum pellentesque eget lorem ultrices lobortis. Sed tempor vehicula ipsum, non pharetra velit dapibus id. Suspendisse sit amet commodo lectus, in sodales mi. Nunc blandit molestie metus, et finibus augue cursus at. Curabitur fringilla ullamcorper sem nec dictum. Maecenas urna risus, cursus vel tincidunt ac, egestas vitae ante.",
+                                    'imgurl'      :  'section_a22_img1.jpg',
+                                    'eyebrow'     :  'case study',
+                                    'img_content' :  'Integer at neque ac metus fringilla dapibus et eu eros.',
+                                    'icon_name'   :  'icon-arrow-e',
+                                    'icon-color'  :  'text-black',
+                                    'icon_container_color' : 'bg-blush'
+
+                                })
+                                <hr class="section_a21--hr mt-0 mb-0 bg-blush @@visibility">
+        
+                                @@include('includes/modules/section/section_a22.html',{
+                                    'title'       :  'Service Point Two',
+                                    'description' :  "Ut posuere ullamcorper euismod. Donec a justo pulvinar diam dictum lobortis vulputate non nisi. Vestibulum pellentesque eget lorem ultrices lobortis. Sed tempor vehicula ipsum, non pharetra velit dapibus id. Suspendisse sit amet commodo lectus, in sodales mi. Nunc blandit molestie metus, et finibus augue cursus at. Curabitur fringilla ullamcorper sem nec dictum. Maecenas urna risus, cursus vel tincidunt ac, egestas vitae ante.",
+                                    'imgurl'      :  'section_a22_img2.jpg',
+                                    'eyebrow'     :  'case study',
+                                    'img_content' :  'Integer at neque ac metus fringilla dapibus et eu eros.',
+                                    'icon_name'   :  'icon-arrow-e',
+                                    'icon-color'  :  'text-white',
+                                    'icon_container_color' : 'bg-sky'
+
+                                })
+
+
+                </main>
+            </div>
+            @@include('includes/footer.html')
+            @@include('includes/scripts.html')
+        </div>
+    </body>
+</html>

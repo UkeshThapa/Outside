@@ -1,0 +1,48 @@
+.section_a12{
+    &--details{
+        margin-top: 4rem;
+        margin-bottom: 4rem;
+        @include media-breakpoint-up(md){
+            margin-top: 8rem;
+            margin-bottom: 8rem;
+            padding-top: 3.8rem;
+            padding-bottom: 3.8rem;
+        }
+        @include media-breakpoint-up(xl){
+            margin-top: 12rem;
+            margin-bottom: 12rem;
+            padding-top: 0.8rem;
+            padding-bottom: 0.8rem;
+        }
+        &-eyebrow{
+            margin-bottom: 4rem;
+        } 
+        &-title{
+            margin-bottom: 4rem;
+        }    
+    }
+    &--btn{
+        border: none;
+        color : white;
+    }
+    &--img{
+        object-fit: cover;
+    }
+    &--video_container{
+        margin-top: 4rem;
+        margin-bottom: 4rem;
+        padding: 2.4rem;
+        background-color: #EAEFED;
+        @include media-breakpoint-up(md){
+            margin-top: 8rem;
+            margin-bottom: 8rem;
+    
+        }
+        @include media-breakpoint-up(xl){
+            margin-top: 12rem;
+            margin-bottom: 12rem;
+    
+        }
+    }
+
+}

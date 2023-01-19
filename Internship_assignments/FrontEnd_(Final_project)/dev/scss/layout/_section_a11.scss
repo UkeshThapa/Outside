@@ -1,0 +1,48 @@
+.section_a11{
+    &--img_container{
+        margin-top: 4rem;
+        margin-bottom: 4rem;
+        filter: drop-shadow(8px 8px 0px $peach);
+        @include media-breakpoint-up(md){
+            margin-top: 8rem;
+            margin-bottom: 8rem;
+    
+        }
+        @include media-breakpoint-up(xl){
+            margin-top: 12rem;
+            margin-bottom: 12rem;
+    
+        }
+    }
+
+
+    &--img{
+        object-fit: cover;
+    }
+
+    &--details{
+        margin-top: 4rem;
+        margin-bottom: 4rem;
+
+        @include media-breakpoint-up(md){
+            margin-top: 8rem;
+            margin-bottom: 8rem;
+                }
+        @include media-breakpoint-up(xl){
+            margin-top: 12rem;
+            margin-bottom: 12rem;
+            padding-top: 5.6rem;
+            padding-bottom: 5.6rem;
+        }
+        &-eyebrow{
+            margin-bottom: 2.4rem;
+        }
+        &-description,&-title{
+            margin-bottom: 2.4rem;
+        }
+        &-time{
+            color: $sky;
+        }
+    }
+
+}

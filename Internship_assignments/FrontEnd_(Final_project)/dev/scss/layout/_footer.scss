@@ -1,0 +1,31 @@
+.footer{
+    &-lists{
+        padding-inline-start: 0px;
+        text-decoration: underline;
+
+    }
+
+    & ul:last-child{
+        margin-bottom: 0px;
+    }
+
+    &-email_input{
+        border: 2px solid white;
+        &::placeholder{
+            color: #ffffff;
+            font-style: italic;
+        }
+        &:focus{
+            outline: none;
+        }
+        @include media-breakpoint-up(xl){
+            width:48.7rem;
+        }
+    }
+    
+    &-btn{
+        border: 2px solid white;
+        max-width: 14.8rem;
+    }
+
+}

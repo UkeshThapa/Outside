@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        @@include('includes/head.html',{'pageTitle':'Final Project'})
+    </head>
+    <body>
+        <div class="theme-app d-flex flex-column">
+            @@include('includes/navbar.html')
+            <div class="theme-wrap position-relative">
+                <main class="theme-main">                    
+                    @@include('includes/modules/section/section_a31.html',{
+                        'contain-color'  : 'bg-mint',
+                        'imgurl'         : 'card_img1.jpg',
+                        'title'          : 'Vivamus vitae finibus dolor. Suspendisse finibus ante in sapien fermentum.' ,
+                        'time'           : 'November 11, 2021',
+                        'description'    : 'Morbi pellentesque justo non magna iaculis efficitur in quis magna. Vivamus consectetur placerat iaculis. Aenean in orci et libero auctor elementum non in diam. Suspendisse vel urna luctus, tristique purus a, commodo metus. Nam commodo turpis eget magna placerat, quis molestie mauris volutpat',
+                        'btn_content'    : 'Read more',
+                        'icon_name'      : 'icon-arrow-e ps-2',
+                        'visibility'     : 'd-none'
+                    })
+                    @@include('includes/modules/section/section_a33.html',{
+                        'description1'   : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut blandit gravida eleifend. Mauris fringilla urna at lectus dapibus laoreet. Proin id sem consequat arcu ultrices porta ac a leo. Quisque quis blandit magna, ut bibendum nibh. Donec pulvinar risus nulla, vel fermentum quam tempus ac. Vivamus nunc massa, egestas at auctor nec, vehicula sed ipsum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.",
+                        'description2'   : "Aenean placerat pulvinar quam, et convallis arcu feugiat et. Duis aliquet iaculis dapibus. Aenean blandit massa vel lacus luctus cursus. Sed aliquam ipsum non nibh commodo, non efficitur magna tempus. Curabitur eget mi magna. Maecenas mollis lectus nulla, nec laoreet justo efficitur et. Maecenas ac justo eget sapien hendrerit sollicitudin in et ipsum.",
+                        'description3'   : "Aenean placerat pulvinar quam, et convallis arcu feugiat et. Duis aliquet iaculis dapibus. Aenean blandit massa vel lacus luctus cursus. Sed aliquam ipsum non nibh commodo, non efficitur magna tempus. Curabitur eget mi magna. Maecenas mollis lectus nulla, nec laoreet justo efficitur et. Maecenas ac justo eget sapien hendrerit sollicitudin in et ipsum.",
+                        'imgurl'         : 'blogsinlge.jpg',
+                        'caption'        : "Vestibulum ornare dapibus elit vitae commodo. Donec nec tellus velit. Duis sem leo, tempus quis arcu ac, suscipit consectetur odio. Maecenas mattis lacinia arcu, sed tempor ligula blandit a.",
+                        'subtitle'       : "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit"
+                    })
+                    @@include('includes/modules/section/section_a34.html',{
+                        'blogs'          : 'related blogs'
+                    })
+
+                </main>
+            </div>
+            @@include('includes/footer.html')
+            @@include('includes/scripts.html')
+        </div>
+    </body>
+</html>
