@@ -1,0 +1,12 @@
+.hero_section{
+    &--details{
+        border-top: 8px solid;
+    }
+    &--btn{
+        border: 2px solid;
+    }
+    &--font-border_color{
+        color: white;
+        border-color: black;
+    }
+}
