@@ -38,7 +38,7 @@ function createAnchor(nameClass,link,targetId){
 // Index frontpage
 
 //creating H1 tag 
-createHeading('h1','title','HTML INTERNSHIP ASSIGNMENTS','.main')
+createHeading('h1','title','FIGMA INTERNSHIP ASSIGNMENTS','.main')
 
 const design = 'https://www.figma.com/file/tDLFpLq1FlTox4VG3dG0Yo/figma__assignment?node-id=1%3A48&t=5m1dg6BoOBYE7Hed-1'
 const pages = ['https://www.figma.com/proto/tDLFpLq1FlTox4VG3dG0Yo/figma__assignment?node-id=1%3A48&scaling=min-zoom&page-id=1%3A5',

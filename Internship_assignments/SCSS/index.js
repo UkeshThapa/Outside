@@ -38,7 +38,7 @@ function createAnchor(nameClass,link,targetId){
 // Index frontpage
 
 //creating H1 tag 
-createHeading('h1','title','HTML INTERNSHIP ASSIGNMENTS','.main')
+createHeading('h1','title','SCSS INTERNSHIP ASSIGNMENTS','.main')
 
 const link = 'https://github.com/UkeshThapa/Outside/tree/master/Internship_assignments/SCSS/'
 const pages = ['FirstPage','SecondPage','ThirdPage']
