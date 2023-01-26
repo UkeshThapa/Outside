@@ -40,13 +40,13 @@ function createAnchor(nameClass,link,targetId){
 //creating H1 tag 
 createHeading('h1','title','Java Script INTERNSHIP ASSIGNMENTS','.main')
 
-const link = 'https://github.com/UkeshThapa/Outside/tree/master/Internship_assignments/CSS/'
+const link = 'https://github.com/UkeshThapa/Outside/tree/master/Internship_assignments/JavaScript/'
 
 for (let i = 0; i < 3; i++) {
     createEmptyDiv('div',`assign${i} assignment_wrapper`,'.main')
     createHeading('h2','sub_title',`Assignment-${i+1}`,`.assign${i}`)
     createEmptyDiv('div',`btn_wrapper wrapper${i}`,`.assign${i}`)
-    createAnchor(`link_assignment_demo${i}`,`assignment${i+1}/assignment${i+1}.html`, `.wrapper${i}`)
+    createAnchor(`link_assignment_demo${i}`,`assignment${i+1}/index.html`, `.wrapper${i}`)
     createButton('btn', 'Demo',`.link_assignment_demo${i}`)
     createAnchor(`link_assignment_code${i}`,`${link}assignment${i+1}`,`.wrapper${i}`)
     createButton('btn', 'Code',`.link_assignment_code${i}`)

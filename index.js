@@ -47,11 +47,11 @@ createAnchor('link_prof','profile.html','.prof_img_container')
 createImg('./image/prof.jpg','profile','.link_prof')
 
 
-const Assignments = ["CSS ASSIGNMENTS", "HTML ASSIGNMENTS", "FIGMA ASSIGNMENTS","SCSS ASSIGNMENTS","BOOTSTRAP ASSIGNMENT","FINAL FRONTEND ASSIGNMENT"];
-const links = ['CSS','HTML','figma','SCSS','Bootstrap5','Final_project(Front_end)']
+const Assignments = ["CSS ASSIGNMENTS", "HTML ASSIGNMENTS", "FIGMA ASSIGNMENTS","SCSS ASSIGNMENTS","BOOTSTRAP ASSIGNMENT","JavaScript ASSIGNMENT","FINAL FRONTEND ASSIGNMENT"];
+const links = ['CSS','HTML','figma','SCSS','Bootstrap5','JavaScript','Final_project(Front_end)']
 
 
-for (let i = 0; i < 6; i++) {
+for (let i = 0; i < 7; i++) {
     createEmptyDiv('div',`assign${i} assignment_wrapper`,'.main')
     createHeading('h3','sub_title',Assignments[i],`.assign${i}`)
     createAnchor(`link_assignment${i}`,`Internship_assignments/${links[i]}/index.html`,`.assign${i}`)
