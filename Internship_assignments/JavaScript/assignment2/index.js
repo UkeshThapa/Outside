@@ -49,7 +49,7 @@ for (let i = 0; i < 2; i++) {
     createEmptyDiv('div',`btn_wrapper wrapper${i}`,`.assign${i}`)
     createAnchor(`link_assignment_demo${i}`,`${folderName[i]}/${folderName[i]}.html`, `.wrapper${i}`)
     createButton('btn', 'Demo',`.link_assignment_demo${i}`)
-    createAnchor(`link_assignment_code${i}`,`${link}${folderName[i]}`,`.wrapper${i}`)
+    createAnchor(`link_assignment_code${i}`,`${link}/assignment${i+1}/${folderName[i]}`,`.wrapper${i}`)
     createButton('btn', 'Code',`.link_assignment_code${i}`)
 
     
