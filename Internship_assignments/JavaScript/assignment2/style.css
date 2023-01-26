@@ -1,0 +1,131 @@
+:root{
+    --border-color : #0FA41E;
+}
+.main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+    margin: 0rem 15rem ;
+    padding: 10px;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+.container_div{
+    border: 2px solid black;
+    margin-top: 2rem;
+    padding: 2rem;
+}
+
+
+.btn_generator{
+    margin-top: 20px;
+    background-color: rgb(59, 149, 205);
+    border: none;
+    color: white;
+}
+
+
+.btn_generator:active{
+    background-color: #076ad4;
+}
+
+
+.error_message{
+    color: rgb(241, 37, 37);
+    font-size: 14px;
+    padding: 8px;
+    border-radius: 10px;
+}
+
+.generated_password{
+    color: #0FA41E;
+}
+
+#number_length{
+    padding: 8px 8px;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.time_container{
+
+    background-color: rgb(143, 42, 237);
+    border: 2px solid;
+    height: 20rem;
+    margin: 4rem 0rem;
+    display: flex;
+    padding: 30px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;   
+}
+
+
+.switch_container{
+    display: flex;
+    gap: 5rem;
+}
+
+
+
+.stopwatch_container{
+    display: flex;
+    gap: 3rem;
+
+}
+
+.watch_stopwatch{
+    font-size: 60px;
+    font-weight: 800;
+    color: white;
+}
+
+.btn{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 8px 18px;
+    border: 2px solid ;
+    border-radius: 10px;
+}
+
+.btn_cock{
+    background-color: #0139f1;
+    color: white;
+}
+
+.btn_cock:disabled{
+    background-color: #ad74ee;
+
+}
+
+.start{
+    background-color: rgb(41, 117, 13);
+    color: white;
+}
+
+.stop{
+    background-color: rgb(250, 167, 2);
+    color: white;
+}
+
+.reset{
+    background-color: rgb(192, 2, 250);
+    color: white;
+}
+
+.reset:disabled{
+    background-color: rgb(206, 114, 234);
+    color: white;
+}
+
+.stop:disabled{
+    background-color: rgb(217, 169, 73);
+}
+.start:disabled{
+    background-color: #107b398b;
+}

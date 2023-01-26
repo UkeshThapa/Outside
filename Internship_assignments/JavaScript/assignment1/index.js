@@ -44,17 +44,17 @@ createHeading('h1','title','OUTSIDE INTERNSHIP ASSIGNMENTS','.main')
 // profile image wrapper
 createEmptyDiv('div','prof_img_container','.main')
 createAnchor('link_prof','profile.html','.prof_img_container')
-createImg('./image/prof.jpg','profile','.link_prof')
+createImg('../image/prof.jpg','profile','.link_prof')
 
 
-const Assignments = ["CSS ASSIGNMENTS", "HTML ASSIGNMENTS", "FIGMA ASSIGNMENTS","SCSS ASSIGNMENTS","BOOTSTRAP ASSIGNMENT","FINAL FRONTEND ASSIGNMENT"];
+const Assignments = ["CSS ASSIGNMENTS", "HTML ASSIGNMENTS", "FIGMA ASSIGNMENTS","SCSS ASSIGNMENTS","BOOTSTRAP ASSIGNMENTS","FINAL FRONTEND ASSIGNMENT"];
 const links = ['CSS','HTML','figma','SCSS','Bootstrap5','Final_project(Front_end)']
 
 
 for (let i = 0; i < 6; i++) {
     createEmptyDiv('div',`assign${i} assignment_wrapper`,'.main')
     createHeading('h3','sub_title',Assignments[i],`.assign${i}`)
-    createAnchor(`link_assignment${i}`,`Internship_assignments/${links[i]}/index.html`,`.assign${i}`)
+    createAnchor(`link_assignment${i}`,`../../${links[i]}/index.html`,`.assign${i}`)
     createButton('btn', 'see more..',`.link_assignment${i}`)
 }
 

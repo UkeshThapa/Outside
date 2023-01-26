@@ -1,0 +1,42 @@
+.main__container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;    
+    font-family: sans-serif;
+}
+
+.card{
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(235, 230, 215);
+    border-radius: 30px;
+    border-style: solid;
+    width: 400px;
+    height: 200px;
+    box-shadow: -1px 2px 5px 12px rgba(0,0,0,0.25);
+}
+
+.Code{
+    color: #b33a3a;
+    font-weight: bold;
+
+    font-size: 30px;
+    text-decoration: none;
+}
+
+.Demo{
+    color: #3a4ab3;
+    font-weight: bold;
+    font-size: 30px;
+    text-decoration: none;
+}
+
+.demo--effect:hover{
+    color: rgb(145, 110, 216);
+}
+
+.code--effect:hover{
+    color: rgb(41, 163, 17);
+}

@@ -35,26 +35,23 @@ function createAnchor(nameClass,link,targetId){
     document.querySelector(targetId).appendChild(element);
 }
 
-
-// Index frontpage
-
-//creating H1 tag 
-createHeading('h1','title','OUTSIDE INTERNSHIP ASSIGNMENTS','.main')
-
 // profile image wrapper
-createEmptyDiv('div','prof_img_container','.main')
-createAnchor('link_prof','profile.html','.prof_img_container')
-createImg('./image/prof.jpg','profile','.link_prof')
+createEmptyDiv('div','profile_img_container','.main-profile')
+createAnchor('link_prof','profile.html','.profile_img_container')
+createImg('../image/prof.jpg','profile_page_img','.link_prof')
 
 
-const Assignments = ["CSS ASSIGNMENTS", "HTML ASSIGNMENTS", "FIGMA ASSIGNMENTS","SCSS ASSIGNMENTS","BOOTSTRAP ASSIGNMENT","FINAL FRONTEND ASSIGNMENT"];
-const links = ['CSS','HTML','figma','SCSS','Bootstrap5','Final_project(Front_end)']
+createEmptyDiv('div','detail_container','.main-profile')
+createHeading('h1','title_detail','Profile:','.detail_container')
+createHeading('h2','detail','Name : Ukesh Thapa','.detail_container')
+createHeading('h2','detail','Location : Bagdol, Lalitpur','.detail_container')
+createHeading('h2','detail','Faculty : Computer Engineering','.detail_container')
+createAnchor('github_link','https://github.com/UkeshThapa','.detail_container')
+createButton('btn-profile','GitHub','.github_link')
 
 
-for (let i = 0; i < 6; i++) {
-    createEmptyDiv('div',`assign${i} assignment_wrapper`,'.main')
-    createHeading('h3','sub_title',Assignments[i],`.assign${i}`)
-    createAnchor(`link_assignment${i}`,`Internship_assignments/${links[i]}/index.html`,`.assign${i}`)
-    createButton('btn', 'see more..',`.link_assignment${i}`)
-}
+
+
+
+
 

@@ -1,4 +1,3 @@
-
 function createHeading(element,nameClass,text,targetId){
     var element = document.createElement(element);
     element.className= nameClass
@@ -39,22 +38,17 @@ function createAnchor(nameClass,link,targetId){
 // Index frontpage
 
 //creating H1 tag 
-createHeading('h1','title','OUTSIDE INTERNSHIP ASSIGNMENTS','.main')
+createHeading('h1','title','Final Project (Frontend)','.main')
 
-// profile image wrapper
-createEmptyDiv('div','prof_img_container','.main')
-createAnchor('link_prof','profile.html','.prof_img_container')
-createImg('./image/prof.jpg','profile','.link_prof')
-
-
-const Assignments = ["CSS ASSIGNMENTS", "HTML ASSIGNMENTS", "FIGMA ASSIGNMENTS","SCSS ASSIGNMENTS","BOOTSTRAP ASSIGNMENT","FINAL FRONTEND ASSIGNMENT"];
-const links = ['CSS','HTML','figma','SCSS','Bootstrap5','Final_project(Front_end)']
-
-
-for (let i = 0; i < 6; i++) {
+const link = 'https://github.com/UkeshThapa/Outside/tree/master/Internship_assignments/Final_project(Front_end)'
+const demo  = 'https://ukeshthapa.github.io/Outside/Internship_assignments/Final_project(Front_end)/dist/index.html'
+for (let i = 0; i < 1; i++) {
     createEmptyDiv('div',`assign${i} assignment_wrapper`,'.main')
-    createHeading('h3','sub_title',Assignments[i],`.assign${i}`)
-    createAnchor(`link_assignment${i}`,`Internship_assignments/${links[i]}/index.html`,`.assign${i}`)
-    createButton('btn', 'see more..',`.link_assignment${i}`)
+    createHeading('h2','sub_title',`Final Project`,`.assign${i}`)
+    createEmptyDiv('div',`btn_wrapper wrapper${i}`,`.assign${i}`)
+    createAnchor(`link_assignment_demo${i}`,`${demo}`, `.wrapper${i}`)
+    createButton('btn', 'Demo',`.link_assignment_demo${i}`)
+    createAnchor(`link_assignment_code${i}`,`${link}`,`.wrapper${i}`)
+    createButton('btn', 'Code',`.link_assignment_code${i}`)
+    
 }
-
