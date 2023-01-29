@@ -1,3 +1,15 @@
+
+*{
+    margin: 0px;
+}
+
+
 .main{
-    background-color: rgb(249, 244, 238);
+    margin-top: 30rem;
+    margin-left: 30rem;
+}
+
+.container{
+    position: relative;
+    background-color: rgb(227, 179, 19);
 }
