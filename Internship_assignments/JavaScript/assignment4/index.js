@@ -1,5 +1,5 @@
-const widthBox = 100;
-const heightBox = 100;
+const widthBox = 50;
+const heightBox = 50;
 const numBox = 3 ;
 const widthCointainer =  500;
 const heightCointainer =  500;
@@ -103,9 +103,9 @@ function checkBoxesCollide(boxes,boxElement,num){
 
 function animateBoxes(boxes){
     for(let i=0;i<boxes.length;i++){
-        let speedValue = (Math.floor(Math.random()*20))
+        let speedValue = (Math.floor(Math.random()*10))
         while(speedValue<=0){
-            speedValue = (Math.floor(Math.random()*20))
+            speedValue = (Math.floor(Math.random()*10))
         }
         boxes[i].speed = speedValue
         boxes[i].directionTop = 1;
@@ -120,7 +120,7 @@ function animateBoxes(boxes){
             checkBoxesCollide(boxes,boxElement,i);
 
         }        
-    },100)
+    },20)
 }
 
 

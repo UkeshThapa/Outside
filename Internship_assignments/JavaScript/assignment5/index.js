@@ -13,23 +13,37 @@ function createElement(element, className, targetName){
 }
 
 function createAnts(canvas,x,y,speed,dirLeft,dirTop){
+    if (((x+widthOfImg+speed-2) >= widthOfCanvas)){
+        dirLeft = -1;
+    }
+    else if(((y+widthOfImg+speed) >= widthOfCanvas)){
+        dirTop= -1;
+    }
+    else if((x <= 0)){
+        dirLeft = 1;
+        
+    }
+    else if((y <= 0)){
+        dirTop = 1;
+        
+    }
     let ctx = canvas.getContext('2d')
     let img = new Image();
     img.src = './assest/ant.svg';
     img.onload = function() {
+
         ctx.drawImage(img, x+(speed)*dirLeft, y+(speed)*dirTop, widthOfImg, heightOfImg);/*left,top,width,height*/
         };
-    let values = []
-    values = [x+(speed)*dirLeft, y+(speed)*dirTop]
+    let values = [] 
+    values = [x+(speed)*dirLeft, y+(speed)*dirTop,dirLeft,dirTop]
     return values;
 }
 
 function moveAnts(canvas,antsValues){
     let ctx = canvas.getContext('2d')
     setInterval(function(){
+        
         for(let i=0; i<antsNumber;i++){
-    
-    
             let positionx= antsValues[i].PositionX
             let positiony= antsValues[i].PositionY
             let speed= antsValues[i].speed
@@ -39,10 +53,10 @@ function moveAnts(canvas,antsValues){
             let values = createAnts(canvas,positionx,positiony,speed,dirLeft,dirTop)
             antsValues[i].PositionX = values[0]
             antsValues[i].PositionY = values[1]
-
-            
+            antsValues[i].directionLeft = values[2]
+            antsValues[i].directionTop= values[3]
         }
-    
+
 
 
     },300)
