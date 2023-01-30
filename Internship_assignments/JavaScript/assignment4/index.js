@@ -1,5 +1,5 @@
-const widthBox = 50;
-const heightBox = 50;
+const widthBox = 100;
+const heightBox = 100;
 const numBox = 3 ;
 const widthCointainer =  500;
 const heightCointainer =  500;
@@ -81,12 +81,31 @@ function moveBoxes(boxes,element){
 }
 
 
+function checkBoxesCollide(boxes,boxElement,num){
+    for(let j=0;j<boxes.length;j++){
+        if(num!=j){
+            let nextBoxTopValue = boxElement[j].offsetTop;
+            let nextBoxLeftValue = boxElement[j].offsetLeft; 
+            if((Math.abs((boxElement[num].offsetTop)-nextBoxTopValue))<50){
+                if((Math.abs((boxElement[num].offsetLeft)-nextBoxLeftValue))<50){
+                    boxes[num]['directionTop'] = -1;
+                    boxes[j]['directionTop'] = 1;
+
+                    boxes[num]['directionLeft'] = -1;   
+                    boxes[j]['directionLeft'] = 1;
+                }
+            }      
+        }
+    }
+}
+
+
 
 function animateBoxes(boxes){
     for(let i=0;i<boxes.length;i++){
-        let speedValue = (Math.floor(Math.random()*10))
+        let speedValue = (Math.floor(Math.random()*20))
         while(speedValue<=0){
-            speedValue = (Math.floor(Math.random()*10))
+            speedValue = (Math.floor(Math.random()*20))
         }
         boxes[i].speed = speedValue
         boxes[i].directionTop = 1;
@@ -96,37 +115,12 @@ function animateBoxes(boxes){
     console.log(boxes) 
     setInterval(function (){
         for(let i=0; i<boxes.length;i++){
-            moveBoxes(boxes[i],boxElement[i])
-            for(let j=0;j<boxes.length;j++){
+            
+            moveBoxes(boxes[i],boxElement[i]);
+            checkBoxesCollide(boxes,boxElement,i);
 
-                let k = i;
-                if(i!=j){
-                    let nextBoxTopValue = boxElement[j].offsetTop;
-                    let nextBoxLeftValue = boxElement[j].offsetLeft;
-                    if((Math.abs((boxElement[i].offsetTop)-nextBoxTopValue))<50){
-                        if((Math.abs((boxElement[i].offsetLeft)-nextBoxLeftValue))<50){
-                            
-                            if(Math.abs((boxElement[i].offsetLeft))>nextBoxTopValue){
-
-                                boxes[i]['directionLeft'] = -1;
-                                boxes[i]['directionTop'] = -1;
-    
-                                boxes[j]['directionLeft'] = 1;
-                                boxes[j]['directionTop'] = 1;
-                            }
-
-
-                            
-                            }                        
-
-                    }
-
-
-
-                }
-            }
         }        
-    },20)
+    },100)
 }
 
 
