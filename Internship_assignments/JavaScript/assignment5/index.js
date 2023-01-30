@@ -1,3 +1,4 @@
+// global variable
 const widthOfCanvas = 500;
 const heightOfCanvas = 500;
 const widthOfImg = 80;
@@ -5,13 +6,16 @@ const heightOfImg = 80;
 const antsNumber = 4;
 
 
+// function to create elements
 function createElement(element, className, targetName){
     var element = document.createElement(element);
     element.className= className;
     document.querySelector(targetName).appendChild(element);
-    return element
+    return element;
 }
 
+
+// function to create the n-th number of ants
 function createAnts(canvas,x,y,speed,dirLeft,dirTop){
     if (((x+widthOfImg+speed-2) >= widthOfCanvas)){
         dirLeft = -1;
@@ -20,26 +24,24 @@ function createAnts(canvas,x,y,speed,dirLeft,dirTop){
         dirTop= -1;
     }
     else if((x <= 0)){
-        dirLeft = 1;
-        
+        dirLeft = 1;       
     }
     else if((y <= 0)){
-        dirTop = 1;
-        
+        dirTop = 1;    
     }
     let ctx = canvas.getContext('2d')
     let img = new Image();
     img.src = './assest/ant.svg';
     img.onload = function() {
-
         ctx.drawImage(img, x+(speed)*dirLeft, y+(speed)*dirTop, widthOfImg, heightOfImg);/*left,top,width,height*/
         };
-    let values = [] 
-    values = [x+(speed)*dirLeft, y+(speed)*dirTop,dirLeft,dirTop]
+    let values = []; 
+    values = [x+(speed)*dirLeft, y+(speed)*dirTop,dirLeft,dirTop];
     return values;
 }
 
 
+// function to check the ant collision with other ants
 function checkAntCollide(antsValues,num){
     for(let j=0;j<antsValues.length;j++){
         if(num!=j){
@@ -49,7 +51,6 @@ function checkAntCollide(antsValues,num){
                 if((Math.abs((antsValues[num].PositionX)-nextBoxLeftValue))<50){
                     antsValues[num].directionTop= -1;
                     antsValues[j].directionTop = 1;
-
                     antsValues[num].directionLeft = -1;   
                     antsValues[j].directionLeft = 1;
                 }
@@ -59,57 +60,41 @@ function checkAntCollide(antsValues,num){
 }
 
 
+// function to move the ants
 function moveAnts(canvas,antsValues){
     let ctx = canvas.getContext('2d')
-
     setInterval(function(){
-
         for(let i=0; i<antsNumber;i++){
-            let positionx= antsValues[i].PositionX
-            let positiony= antsValues[i].PositionY
-            let speed= antsValues[i].speed
-            let dirLeft= antsValues[i].directionLeft
-            let dirTop= antsValues[i].directionTop
-            ctx.clearRect(0,0,canvas.width,canvas.height)
-            let values = createAnts(canvas,positionx,positiony,speed,dirLeft,dirTop)
-            antsValues[i].PositionX = values[0]
-            antsValues[i].PositionY = values[1]
-            antsValues[i].directionLeft = values[2]
-            antsValues[i].directionTop= values[3]
-            checkAntCollide(antsValues,i) 
-        
-            
+            let positionx= antsValues[i].PositionX;
+            let positiony= antsValues[i].PositionY;
+            let speed= antsValues[i].speed;
+            let dirLeft= antsValues[i].directionLeft;
+            let dirTop= antsValues[i].directionTop;
+            ctx.clearRect(0,0,canvas.width,canvas.height);
+            let values = createAnts(canvas,positionx,positiony,speed,dirLeft,dirTop);
+            antsValues[i].PositionX = values[0];
+            antsValues[i].PositionY = values[1];
+            antsValues[i].directionLeft = values[2];
+            antsValues[i].directionTop= values[3];
+            checkAntCollide(antsValues,i);        
         }
-
-
-
-    },300)
+    },300);
 }
 
 
+// function for animating the ants
 function animateAnts(antsValues,canvas){
     for(let i=0;i<antsValues.length;i++){
-        let speedValue = (Math.floor(Math.random()*20))
+        let speedValue = (Math.floor(Math.random()*20));
         while(speedValue<=5){
-            speedValue = (Math.floor(Math.random()*20))
+            speedValue = (Math.floor(Math.random()*20));
         }
         antsValues[i].directionTop = 1;
         antsValues[i].directionLeft = 1;
-        antsValues[i].speed = speedValue
+        antsValues[i].speed = speedValue;
     } 
-    moveAnts(canvas,antsValues)
+    moveAnts(canvas,antsValues);
 
-}
-
-
-function checkAntOverlap(firstantX,firstantY,nextantX,nextantY){
-    if(Math.abs(firstantY-nextantY)<widthOfImg){
-        if(Math.abs(firstantX-nextantX)<heightOfImg)
-        return true;
-    }
-    else{
-        return false;
-    }
 }
 
 
@@ -117,23 +102,23 @@ function numOfAnt(canvas){
     let antsValues = [];
     var ctx = canvas.getContext('2d')
     for(let i=0;i<antsNumber;i++){
-        let values = {}
-        let randomTopValue = Math.floor(Math.random()*1000)
-        let randomLeftValue = Math.floor(Math.random()*1000)
+        let values = {};
+        let randomTopValue = Math.floor(Math.random()*1000);
+        let randomLeftValue = Math.floor(Math.random()*1000);
         while(randomTopValue > (widthOfCanvas-widthOfImg)){
-            randomTopValue =  Math.floor(Math.random()*1000)
+            randomTopValue =  Math.floor(Math.random()*1000);
         }
         while(randomLeftValue >(widthOfCanvas-widthOfImg)){
-            randomLeftValue = Math.floor(Math.random()*1000)
+            randomLeftValue = Math.floor(Math.random()*1000);
         }
      
         values.PositionX = randomLeftValue;
         values.PositionY = randomTopValue;
-        antsValues.push(values)
+        antsValues.push(values);
         let img = new Image();
         img.src = './assest/ant.svg';
         img.onload = function() {
-            ctx.drawImage(img, randomLeftValue, randomTopValue, widthOfImg, heightOfImg);/*left,top,width,height*/
+            ctx.drawImage(img, randomLeftValue, randomTopValue, widthOfImg, heightOfImg); /*(left,top,width,height)*/
             };
 
     }
@@ -153,5 +138,7 @@ function main(){
 
 }
 
+
+// initializing the main function
 main();
 
