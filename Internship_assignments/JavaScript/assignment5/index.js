@@ -12,8 +12,56 @@ function createElement(element, className, targetName){
     return element
 }
 
+function createAnts(canvas,x,y,speed,dirLeft,dirTop){
+    let ctx = canvas.getContext('2d')
+    let img = new Image();
+    img.src = './assest/ant.svg';
+    img.onload = function() {
+        ctx.drawImage(img, x+(speed)*dirLeft, y+(speed)*dirTop, widthOfImg, heightOfImg);/*left,top,width,height*/
+        };
+    let values = []
+    values = [x+(speed)*dirLeft, y+(speed)*dirTop]
+    return values;
+}
+
+function moveAnts(canvas,antsValues){
+    let ctx = canvas.getContext('2d')
+    setInterval(function(){
+        for(let i=0; i<antsNumber;i++){
+    
+    
+            let positionx= antsValues[i].PositionX
+            let positiony= antsValues[i].PositionY
+            let speed= antsValues[i].speed
+            let dirLeft= antsValues[i].directionLeft
+            let dirTop= antsValues[i].directionTop
+            ctx.clearRect(0,0,canvas.width,canvas.height)
+            let values = createAnts(canvas,positionx,positiony,speed,dirLeft,dirTop)
+            antsValues[i].PositionX = values[0]
+            antsValues[i].PositionY = values[1]
+
+            
+        }
+    
+
+
+    },300)
+}
+
+
 function animateAnts(antsValues,canvas){
-    moveBoxes()
+    for(let i=0;i<antsValues.length;i++){
+        let speedValue = (Math.floor(Math.random()*20))
+        while(speedValue<=5){
+            speedValue = (Math.floor(Math.random()*20))
+        }
+        antsValues[i].directionTop = 1;
+        antsValues[i].directionLeft = 1;
+        antsValues[i].speed = speedValue
+    } 
+    console.log(antsValues)
+    moveAnts(canvas,antsValues)
+
 }
 
 
