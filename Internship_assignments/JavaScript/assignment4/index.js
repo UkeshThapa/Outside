@@ -15,7 +15,7 @@ function createElement(element, className, targetName){
 
 
 
-
+// create nth boxes
 
 function createBoxes(){
 
@@ -56,7 +56,7 @@ function createBoxes(){
 
 
 
-
+// animate the boxes
 function moveBoxes(boxes,element){
     if (((element.offsetLeft+(widthBox)+boxes['speed']) >= widthCointainer)){
         boxes['directionLeft'] = -1;
@@ -80,7 +80,7 @@ function moveBoxes(boxes,element){
 
 }
 
-
+// check the box collision with each others 
 function checkBoxesCollide(boxes,boxElement,num){
     for(let j=0;j<boxes.length;j++){
         if(num!=j){
@@ -90,7 +90,6 @@ function checkBoxesCollide(boxes,boxElement,num){
                 if((Math.abs((boxElement[num].offsetLeft)-nextBoxLeftValue))<50){
                     boxes[num]['directionTop'] = -1;
                     boxes[j]['directionTop'] = 1;
-
                     boxes[num]['directionLeft'] = -1;   
                     boxes[j]['directionLeft'] = 1;
                 }
@@ -100,7 +99,7 @@ function checkBoxesCollide(boxes,boxElement,num){
 }
 
 
-
+// function to animate the boxes
 function animateBoxes(boxes){
     for(let i=0;i<boxes.length;i++){
         let speedValue = (Math.floor(Math.random()*10))
