@@ -39,10 +39,31 @@ function createAnts(canvas,x,y,speed,dirLeft,dirTop){
     return values;
 }
 
+
+function checkAntCollide(antsValues,num){
+    for(let j=0;j<antsValues.length;j++){
+        if(num!=j){
+            let nextBoxTopValue = antsValues[j].PositionY;
+            let nextBoxLeftValue =antsValues[j].PositionX; 
+            if((Math.abs((antsValues[num].PositionY)-nextBoxTopValue))<50){
+                if((Math.abs((antsValues[num].PositionX)-nextBoxLeftValue))<50){
+                    antsValues[num].directionTop= -1;
+                    antsValues[j].directionTop = 1;
+
+                    antsValues[num].directionLeft = -1;   
+                    antsValues[j].directionLeft = 1;
+                }
+            }      
+        }
+    }
+}
+
+
 function moveAnts(canvas,antsValues){
     let ctx = canvas.getContext('2d')
+
     setInterval(function(){
-        
+
         for(let i=0; i<antsNumber;i++){
             let positionx= antsValues[i].PositionX
             let positiony= antsValues[i].PositionY
@@ -55,6 +76,9 @@ function moveAnts(canvas,antsValues){
             antsValues[i].PositionY = values[1]
             antsValues[i].directionLeft = values[2]
             antsValues[i].directionTop= values[3]
+            checkAntCollide(antsValues,i) 
+        
+            
         }
 
 
@@ -73,7 +97,6 @@ function animateAnts(antsValues,canvas){
         antsValues[i].directionLeft = 1;
         antsValues[i].speed = speedValue
     } 
-    console.log(antsValues)
     moveAnts(canvas,antsValues)
 
 }
@@ -94,7 +117,6 @@ function numOfAnt(canvas){
     let antsValues = [];
     var ctx = canvas.getContext('2d')
     for(let i=0;i<antsNumber;i++){
-        // debugger
         let values = {}
         let randomTopValue = Math.floor(Math.random()*1000)
         let randomLeftValue = Math.floor(Math.random()*1000)
@@ -128,7 +150,6 @@ function main(){
     canvas.style.border = '2px solid red';
     let antsValues = numOfAnt(canvas);
     animateAnts(antsValues,canvas);
-    // console.log(antsValues)
 
 }
 
