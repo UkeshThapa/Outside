@@ -5,7 +5,7 @@ const widthCointainer =  500;
 const heightCointainer =  500;
 
 
-
+// function to create Html tags/elements
 function createElement(element, className, targetName){
     var element = document.createElement(element);
     element.className= className
