@@ -3,7 +3,7 @@ const heightBox = 50;
 const numBox = 3 ;
 const widthCointainer =  500;
 const heightCointainer =  500;
-
+const speedOfbox = 10;
 
 // function to create Html tags/elements
 function createElement(element, className, targetName){
@@ -92,6 +92,13 @@ function checkBoxesCollide(boxes,boxElement,num){
                     boxes[j]['directionTop'] = 1;
                     boxes[num]['directionLeft'] = -1;   
                     boxes[j]['directionLeft'] = 1;
+
+                    boxElement[num].style.top =  boxElement[num].offsetTop + boxes[num]['directionTop'] * (heightBox-(Math.abs((boxElement[num].offsetTop)-nextBoxTopValue))) 
+                    boxElement[num].style.left =  boxElement[num].offsetLeft + boxes[num]['directionLeft'] * (widthBox-(Math.abs((boxElement[num].offsetLeft)-nextBoxLeftValue))) 
+
+                    boxElement[j].style.top =  boxElement[j].offsetTop + boxes[j]['directionTop'] * (heightBox-(Math.abs((boxElement[num].offsetTop)-nextBoxTopValue))) 
+                    boxElement[j].style.left =  boxElement[j].offsetLeft + boxes[j]['directionLeft'] * (widthBox-(Math.abs((boxElement[num].offsetLeft)-nextBoxLeftValue))) 
+
                 }
             }      
         }
@@ -102,9 +109,9 @@ function checkBoxesCollide(boxes,boxElement,num){
 // function to animate the boxes
 function animateBoxes(boxes){
     for(let i=0;i<boxes.length;i++){
-        let speedValue = (Math.floor(Math.random()*10))
+        let speedValue = (Math.floor(Math.random()*5))
         while(speedValue<=0){
-            speedValue = (Math.floor(Math.random()*10))
+            speedValue = (Math.floor(Math.random()*5))
         }
         boxes[i].speed = speedValue
         boxes[i].directionTop = 1;
@@ -119,7 +126,7 @@ function animateBoxes(boxes){
             checkBoxesCollide(boxes,boxElement,i);
 
         }        
-    },20)
+    },speedOfbox);
 }
 
 

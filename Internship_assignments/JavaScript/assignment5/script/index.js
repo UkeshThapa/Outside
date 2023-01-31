@@ -49,10 +49,12 @@ function checkAntCollide(antsValues,num){
             let nextBoxLeftValue =antsValues[j].PositionX; 
             if((Math.abs((antsValues[num].PositionY)-nextBoxTopValue))<50){
                 if((Math.abs((antsValues[num].PositionX)-nextBoxLeftValue))<50){
+
                     antsValues[num].directionTop= -1;
                     antsValues[j].directionTop = 1;
                     antsValues[num].directionLeft = -1;   
                     antsValues[j].directionLeft = 1;
+
                 }
             }      
         }
@@ -62,9 +64,31 @@ function checkAntCollide(antsValues,num){
 
 // function to move the ants
 function moveAnts(canvas,antsValues){
-    let ctx = canvas.getContext('2d')
-    setInterval(function(){
+
+    let ctx = canvas.getContext('2d');
+    canvas.addEventListener('click', (e) => {
+        let x = e.clientX - canvas.offsetLeft;
+        let y = e.clientY - canvas.offsetTop;
+
+        for (let i = 0; i < antsValues.length; i++) {
+        //   ant_on_smash.pause();
+          let ant = antsValues[i];
+          if (x >=ant.PositionX && x <=ant.PositionX + widthOfImg && y >= ant.PositionY && y <=ant.PositionY + heightOfImg) {
+            antsValues.splice(i, 1);
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            // ant_on_smash.play();
+          }
+        }
+    })
+    let score = createElement("div","score","body")
+    score.textContent = antsValues.length;
+   setInterval(function(){
+    if(antsValues.length==0){
+        alert("All Ants are smashed ")
+    }else{
+
         for(let i=0; i<antsNumber;i++){
+            
             let positionx= antsValues[i].PositionX;
             let positiony= antsValues[i].PositionY;
             let speed= antsValues[i].speed;
@@ -78,16 +102,19 @@ function moveAnts(canvas,antsValues){
             antsValues[i].directionTop= values[3];
             checkAntCollide(antsValues,i);        
         }
-    },300);
+    }
+
+    },40);
+
 }
 
 
 // function for animating the ants
 function animateAnts(antsValues,canvas){
     for(let i=0;i<antsValues.length;i++){
-        let speedValue = (Math.floor(Math.random()*20));
-        while(speedValue<=5){
-            speedValue = (Math.floor(Math.random()*20));
+        let speedValue = (Math.floor(Math.random()*5));
+        while(speedValue<=0){
+            speedValue = (Math.floor(Math.random()*5));
         }
         antsValues[i].directionTop = 1;
         antsValues[i].directionLeft = 1;
@@ -98,6 +125,7 @@ function animateAnts(antsValues,canvas){
 }
 
 
+// function to  create nth of ants
 function numOfAnt(canvas){
     let antsValues = [];
     var ctx = canvas.getContext('2d')
@@ -127,9 +155,8 @@ function numOfAnt(canvas){
 }
 
 
-function main(){
-    
-    let canvas = document.querySelector(".canvas")
+function main(){    
+    let canvas = document.querySelector(".canvas");
     canvas.width = widthOfCanvas ;
     canvas.height = heightOfCanvas;
     canvas.style.border = '2px solid red';
@@ -137,7 +164,6 @@ function main(){
     animateAnts(antsValues,canvas);
 
 }
-
 
 // initializing the main function
 main();
