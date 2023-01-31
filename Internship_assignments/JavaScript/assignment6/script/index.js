@@ -89,7 +89,6 @@ function generateCar(canvas){
         drawImage(canvas,widthPosition, carPosition,widthOfImg, heightOfImg,`./assest/car${index}.png`);
         // user car
         drawImage(canvas,leftPositionValue, heightCointainer-heightOfImg,widthOfImg, heightOfImg,"./assest/user1.png");
-        console.log(score)
         id = requestAnimationFrame(animateCar)
     }    
     requestAnimationFrame(animateCar)
@@ -170,10 +169,6 @@ function setUpEnvironment(canvas){
             score = 0
             gameStatus = generateCar(canvas);
         }
-        // else if(gameStatus == "restart"){
-            
-        //     generateCar(canvas)
-        // }
         else if (gameStatus == "end"){
             gameOver(canvas);
         }
