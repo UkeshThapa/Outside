@@ -42,7 +42,7 @@ createHeading('h1','title','Java Script INTERNSHIP ASSIGNMENTS','.main')
 
 const link = 'https://github.com/UkeshThapa/Outside/tree/master/Internship_assignments/JavaScript/'
 
-for (let i = 0; i < 5; i++) {
+for (let i = 0; i < 6; i++) {
     createEmptyDiv('div',`assign${i} assignment_wrapper`,'.main')
     createHeading('h2','sub_title',`Assignment-${i+1}`,`.assign${i}`)
     createEmptyDiv('div',`btn_wrapper wrapper${i}`,`.assign${i}`)
