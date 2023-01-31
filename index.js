@@ -47,7 +47,7 @@ createAnchor('link_prof','profile.html','.prof_img_container')
 createImg('./image/prof.jpg','profile','.link_prof')
 
 
-const Assignments = ["CSS ASSIGNMENTS", "HTML ASSIGNMENTS", "FIGMA ASSIGNMENTS","SCSS ASSIGNMENTS","BOOTSTRAP ASSIGNMENT","JavaScript ASSIGNMENT","FINAL FRONTEND ASSIGNMENT"];
+const Assignments = ["CSS ASSIGNMENTS", "HTML ASSIGNMENTS", "FIGMA ASSIGNMENTS","SCSS ASSIGNMENTS","BOOTSTRAP ASSIGNMENT","JAVASCRIPT ASSIGNMENT","FINAL FRONTEND ASSIGNMENT"];
 const links = ['CSS','HTML','figma','SCSS','Bootstrap5','JavaScript','Final_project(Front_end)']
 
 

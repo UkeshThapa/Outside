@@ -145,16 +145,16 @@ function gameOver(canvas){
         ctx.fillText(`Your Score : ${score}`,95,300)
         ctx.fillText(`Highest Score : ${Math.max(...highscore)}`,55,460)
         ctx.fillStyle = "blue"   
-        ctx.fillRect(205,530,150,80)
-        ctx.font = "40px Arial";   
+        ctx.fillRect(205,530,160,80)
+        ctx.font = "30px Arial";   
         ctx.fillStyle = "white"   
-        ctx.fillText(`START`,216,580)
+        ctx.fillText(`RESTART`,216,580)
 
     }; 
     canvas.addEventListener("click",function(e){
         let x = e.layerX - canvas.offsetLeft;
         let y = e.layerY  - canvas.offsetTop;
-        if (x>=205 && x<=355 && y>=530 && y<=610){
+        if (x>=205 && x<=365 && y>=530 && y<=610){
             gameStatus = "start"
         }  
     })
@@ -164,7 +164,6 @@ function gameOver(canvas){
 
 function setUpEnvironment(canvas){
     function gameInitialization(){
-
         if(gameStatus=="start"){
             score = 0
             gameStatus = generateCar(canvas);
@@ -173,7 +172,6 @@ function setUpEnvironment(canvas){
             gameOver(canvas);
         }
         requestAnimationFrame(gameInitialization)
-
     }
     requestAnimationFrame(gameInitialization)
 
