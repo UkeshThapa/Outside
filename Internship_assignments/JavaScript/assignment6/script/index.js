@@ -9,6 +9,9 @@ let score = 0;
 let highscore = [];
 let gameStatus = null;
 let id = null
+
+
+
 // function to create elements
 function createElement(element, className, targetName){
     var element = document.createElement(element);
@@ -41,7 +44,7 @@ function calculateScore(canvas){
 function generateCar(canvas){
     var ctx = canvas.getContext("2d");
     let position = [75,250,410];
-    let index = Math.floor(Math.random()*position.length)
+    let index = Math.floor(Math.random()*position.length);
     let widthPosition = position[index];
     let carPosition  = -20;
     // generate speed randomly
@@ -49,32 +52,34 @@ function generateCar(canvas){
     while(carSpeed==0){
         carSpeed = Math.floor(Math.random()*3);
     }
-    moveUserCar()
+    moveUserCar();
 
     function animateCar(){
         calculateScore(canvas);
-        carCollision(canvas,widthPosition,carPosition,leftPositionValue)
+        carCollision(canvas,widthPosition,carPosition,leftPositionValue);
         let heightOfCar = carPosition + carSpeed;
+        
         if(heightOfCar>=heightCointainer){
             heightOfCar  = 0;
             carPosition = -20;
-            index = Math.floor(Math.random()*position.length)
+            index = Math.floor(Math.random()*position.length);
             widthPosition = position[index];           
-            carSpeed = Math.floor(Math.random()*3)
+            carSpeed = Math.floor(Math.random()*3);
             while(carSpeed==0){
-                carSpeed = Math.floor(Math.random()*3)
+                carSpeed = Math.floor(Math.random()*3);
             }   
             score +=1;        
         }
+
         // background
-        drawImage(canvas,0,0,widthCointainer,heightCointainer,"./assest/design_track.svg")        
+        drawImage(canvas,0,0,widthCointainer,heightCointainer,"./assest/design_track.svg");        
         carPosition = heightOfCar + carSpeed;     
         drawImage(canvas,widthPosition, carPosition,widthOfImg, heightOfImg,`./assest/car${index}.png`);
         // user car
         drawImage(canvas,leftPositionValue, heightCointainer-heightOfImg,widthOfImg, heightOfImg,"./assest/user1.png");
-        id = requestAnimationFrame(animateCar)
+        id = requestAnimationFrame(animateCar);
     }    
-    requestAnimationFrame(animateCar)
+    requestAnimationFrame(animateCar);
 
 }
 
@@ -99,7 +104,7 @@ function moveUserCar(){
                 leftPositionValue = 40;
             }
             else{
-                leftPositionValue = leftPositionValue-Speed
+                leftPositionValue = leftPositionValue-Speed;
             }
         }
         else if (name=="ArrowRight"){
@@ -125,20 +130,20 @@ function gameOver(canvas){
         ctx.drawImage(img, 0,0,widthCointainer,heightCointainer); /*(left,top,width,height)*/
         ctx.font = "60px Arial";   
         ctx.fillStyle = "white"   
-        ctx.fillText(`Your Score : ${score}`,95,300)
-        ctx.fillText(`Highest Score : ${Math.max(...highscore)}`,55,460)
-        ctx.fillStyle = "blue"   
-        ctx.fillRect(205,530,160,80)
+        ctx.fillText(`Your Score : ${score}`,95,300);
+        ctx.fillText(`Highest Score : ${Math.max(...highscore)}`,55,460);
+        ctx.fillStyle = "blue";   
+        ctx.fillRect(205,530,160,80);
         ctx.font = "30px Arial";   
         ctx.fillStyle = "white"   
-        ctx.fillText(`RESTART`,216,580)
+        ctx.fillText(`RESTART`,216,580);
 
     }; 
     canvas.addEventListener("click",function(e){
         let x = e.layerX - canvas.offsetLeft;
         let y = e.layerY  - canvas.offsetTop;
         if (x>=205 && x<=365 && y>=530 && y<=610){
-            gameStatus = "start"
+            gameStatus = "start";
         }  
     })
     
@@ -148,23 +153,22 @@ function gameOver(canvas){
 function initializeGame(canvas){
     let ctx = canvas.getContext("2d");
     let img = new Image();
-    img.src = "./assest/design_track.svg"
+    img.src = "./assest/design_track.svg";
     img.onload = function() {
         ctx.drawImage(img, 0,0,widthCointainer,heightCointainer); /*(left,top,width,height)*/
         ctx.fillStyle = "red"   
         ctx.fillRect(180,330,200,100)
         ctx.font = "50px Arial";   
         ctx.fillStyle = "white"   
-        ctx.fillText(`START`,200,395)
+        ctx.fillText(`START`,200,395);
 
     }; 
     canvas.addEventListener("click",function(e){
         let x = e.layerX - canvas.offsetLeft;
         let y = e.layerY  - canvas.offsetTop;
         if (x>=180 && x<=380 && y>=330 && y<=430){
-            gameStatus = "start"
-            console.log(gameStatus)
-            setUpEnvironment(canvas)
+            gameStatus = "start";
+            setUpEnvironment(canvas);
         }  
     })
 
@@ -174,15 +178,15 @@ function initializeGame(canvas){
 function setUpEnvironment(canvas){
     function gameInitialization(){
         if(gameStatus=="start"){
-            score = 0
+            score = 0;
             gameStatus = generateCar(canvas);
         }
         else if (gameStatus == "end"){
             gameOver(canvas);
         }
-        requestAnimationFrame(gameInitialization)
+        requestAnimationFrame(gameInitialization);
     }
-    requestAnimationFrame(gameInitialization)
+    requestAnimationFrame(gameInitialization);
 
 }
 
