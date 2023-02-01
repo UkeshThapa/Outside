@@ -1,9 +1,9 @@
 // global variable 
-const widthCointainer = 600;
-const heightCointainer = 1000;
-const widthOfImg =80;
-const heightOfImg =200;
-const Speed = 40
+const widthCointainer = 400;
+const heightCointainer = 700;
+const widthOfImg =40;
+const heightOfImg =100;
+const Speed = 20
 let leftPositionValue = (widthCointainer/2)-widthOfImg;
 let score = 0;
 let highscore = [];
@@ -21,7 +21,7 @@ function createElement(element, className, targetName){
 }
 
 // function detect the collision
-function carCollision(canvas,obstacelWidth,obstacelHeight,userWidth){
+function carCollision(obstacelWidth,obstacelHeight,userWidth){
     if(Math.abs(userWidth-obstacelWidth)<=widthOfImg){
         if(Math.abs(obstacelHeight-(heightCointainer-heightOfImg))<=heightOfImg){
             gameStatus = "end";
@@ -34,7 +34,7 @@ function carCollision(canvas,obstacelWidth,obstacelHeight,userWidth){
 // function to calculate score 
 function calculateScore(canvas){
     var ctx = canvas.getContext("2d");
-    ctx.font = "50px Arial";
+    ctx.font = "40px Arial";
     ctx.fillStyle = "white"
     ctx.fillText(`Score : ${score}`, 10, 50);
 }
@@ -43,7 +43,7 @@ function calculateScore(canvas){
 // randomly generate the cars in the lane (level:easy)
 function generateCar(canvas){
     var ctx = canvas.getContext("2d");
-    let position = [75,250,410];
+    let position = [60,180,280];
     let index = Math.floor(Math.random()*position.length);
     let widthPosition = position[index];
     let carPosition  = -20;
@@ -56,7 +56,7 @@ function generateCar(canvas){
 
     function animateCar(){
         calculateScore(canvas);
-        carCollision(canvas,widthPosition,carPosition,leftPositionValue);
+        carCollision(widthPosition,carPosition,leftPositionValue);
         let heightOfCar = carPosition + carSpeed;
         
         if(heightOfCar>=heightCointainer){
@@ -100,16 +100,16 @@ function moveUserCar(){
     document.addEventListener("keydown",function(event){
         var name = event.key;
         if(name=="ArrowLeft"){
-            if(leftPositionValue<=40){                
-                leftPositionValue = 40;
+            if(leftPositionValue<=30){                
+                leftPositionValue = 30;
             }
             else{
                 leftPositionValue = leftPositionValue-Speed;
             }
         }
         else if (name=="ArrowRight"){
-            if(leftPositionValue>=widthCointainer-160){
-                leftPositionValue = widthCointainer-160;
+            if(leftPositionValue>=widthCointainer-100){
+                leftPositionValue = widthCointainer-100;
             }    
             else{
                 leftPositionValue = leftPositionValue+Speed;               
@@ -128,21 +128,21 @@ function gameOver(canvas){
     img.src = "./assest/design_track.svg"
     img.onload = function() {
         ctx.drawImage(img, 0,0,widthCointainer,heightCointainer); /*(left,top,width,height)*/
-        ctx.font = "60px Arial";   
+        ctx.font = "40px Arial";   
         ctx.fillStyle = "white"   
-        ctx.fillText(`Your Score : ${score}`,95,300);
-        ctx.fillText(`Highest Score : ${Math.max(...highscore)}`,55,460);
+        ctx.fillText(`Your Score : ${score}`,75,200);
+        ctx.fillText(`Highest Score : ${Math.max(...highscore)}`,40,290);
         ctx.fillStyle = "blue";   
-        ctx.fillRect(205,530,160,80);
+        ctx.fillRect(105,330,160,80);
         ctx.font = "30px Arial";   
         ctx.fillStyle = "white"   
-        ctx.fillText(`RESTART`,216,580);
+        ctx.fillText(`RESTART`,120,380);
 
     }; 
     canvas.addEventListener("click",function(e){
         let x = e.layerX - canvas.offsetLeft;
         let y = e.layerY  - canvas.offsetTop;
-        if (x>=205 && x<=365 && y>=530 && y<=610){
+        if (x>=105 && x<=265 && y>=330 && y<=410){
             gameStatus = "start";
         }  
     })
@@ -157,16 +157,16 @@ function initializeGame(canvas){
     img.onload = function() {
         ctx.drawImage(img, 0,0,widthCointainer,heightCointainer); /*(left,top,width,height)*/
         ctx.fillStyle = "red"   
-        ctx.fillRect(180,330,200,100)
-        ctx.font = "50px Arial";   
+        ctx.fillRect(105,330,160,80)
+        ctx.font = "40px Arial";   
         ctx.fillStyle = "white"   
-        ctx.fillText(`START`,200,395);
+        ctx.fillText(`START`,120,380);
 
     }; 
     canvas.addEventListener("click",function(e){
         let x = e.layerX - canvas.offsetLeft;
         let y = e.layerY  - canvas.offsetTop;
-        if (x>=180 && x<=380 && y>=330 && y<=430){
+        if (x>=105 && x<=265 && y>=330 && y<=410){
             gameStatus = "start";
             setUpEnvironment(canvas);
         }  
