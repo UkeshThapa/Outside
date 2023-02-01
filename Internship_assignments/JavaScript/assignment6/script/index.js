@@ -24,7 +24,7 @@ const Speed = 40
 let leftPositionValue = (widthCointainer/2)-widthOfImg;
 let score = 0;
 let highscore = [];
-let gameStatus = "start";
+let gameStatus = null;
 let id = null
 // function to create elements
 function createElement(element, className, targetName){
@@ -162,6 +162,32 @@ function gameOver(canvas){
 }
 
 
+function initializeGame(canvas){
+    let ctx = canvas.getContext("2d");
+    let img = new Image();
+    img.src = "./assest/design_track.svg"
+    img.onload = function() {
+        ctx.drawImage(img, 0,0,widthCointainer,heightCointainer); /*(left,top,width,height)*/
+        ctx.fillStyle = "red"   
+        ctx.fillRect(180,330,200,100)
+        ctx.font = "50px Arial";   
+        ctx.fillStyle = "white"   
+        ctx.fillText(`START`,200,395)
+
+    }; 
+    canvas.addEventListener("click",function(e){
+        let x = e.layerX - canvas.offsetLeft;
+        let y = e.layerY  - canvas.offsetTop;
+        if (x>=180 && x<=380 && y>=330 && y<=430){
+            gameStatus = "start"
+            console.log(gameStatus)
+            setUpEnvironment(canvas)
+        }  
+    })
+
+}
+
+
 function setUpEnvironment(canvas){
     function gameInitialization(){
         if(gameStatus=="start"){
@@ -182,7 +208,8 @@ function main(){
     let canvas = document.querySelector(".canvas");
     canvas.width = widthCointainer; 
     canvas.height = heightCointainer;
-    setUpEnvironment(canvas)
+    gameStatus = initializeGame(canvas)
+
 
 
 
