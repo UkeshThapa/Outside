@@ -1,20 +1,3 @@
-/*
-
-To-do list 
-
-// 1. create the box;
-// 2. move the car and check the wall collision;
-// 3. detect the wall collision with; 
-// 4. randomly car fall (level: easy) one car at a time in each coordinate;
-// 5. detect the collision with other car
-// 6. calculate the score; 
-// 7. track the score and set high score according to time;
-. 
-
-*/
-
-
-
 // global variable 
 const widthCointainer = 600;
 const heightCointainer = 1000;
