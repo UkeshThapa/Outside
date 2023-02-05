@@ -45,7 +45,7 @@ function indicator(){
 function plusDivs(n) {
   showDivs(slideIndex += n);
 }
-
+  
 function currentDiv(n) {
   showDivs(slideIndex = n);
 }

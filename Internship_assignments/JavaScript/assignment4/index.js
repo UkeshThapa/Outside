@@ -92,7 +92,7 @@ function checkBoxesCollide(boxes,boxElement,num){
                     boxes[j]['directionTop'] = 1;
                     boxes[num]['directionLeft'] = -1;   
                     boxes[j]['directionLeft'] = 1;
-
+                    console.log("collid")
                     boxElement[num].style.top =  boxElement[num].offsetTop + boxes[num]['directionTop'] * (heightBox-(Math.abs((boxElement[num].offsetTop)-nextBoxTopValue))) 
                     boxElement[num].style.left =  boxElement[num].offsetLeft + boxes[num]['directionLeft'] * (widthBox-(Math.abs((boxElement[num].offsetLeft)-nextBoxLeftValue))) 
 
@@ -109,10 +109,10 @@ function checkBoxesCollide(boxes,boxElement,num){
 // function to animate the boxes
 function animateBoxes(boxes){
     for(let i=0;i<boxes.length;i++){
-        let speedValue = (Math.floor(Math.random()*5))
-        while(speedValue<=0){
-            speedValue = (Math.floor(Math.random()*5))
-        }
+        let speedValue = 1;
+        // while(speedValue<=0){
+        //     speedValue = 1;
+        // }
         boxes[i].speed = speedValue
         boxes[i].directionTop = 1;
         boxes[i].directionLeft = 1;
