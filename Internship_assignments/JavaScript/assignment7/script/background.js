@@ -1,7 +1,7 @@
  class Environment{
     constructor(canvas){
         this.canvasHeight = 650;
-        this.canvasWidth = 400;
+        this.canvasWidth = 500;
         this.gap = 200;
         this.canvas = canvas;
         this.ctx  = canvas.getContext("2d");
@@ -36,7 +36,10 @@
         canvas.height  = this.canvasHeight;
         canvas.style.border = "2px solid red";
         this.drawImage("./assest/background-night.png");
+
     }
+
+
 
     
 }
