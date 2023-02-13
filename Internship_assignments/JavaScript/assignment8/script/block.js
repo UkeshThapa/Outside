@@ -10,6 +10,13 @@ class Block{
         this.score = 0;
     }
 
+    drawImage(source,blockWidth,blockHeight){
+        let img = new Image();
+        let ctx = this.ctx;
+        img.src = source;
+        ctx.drawImage(img,0,0,blockWidth,blockHeight)
+
+    }
     updateDrop(blockX,blockY,frame,blockAngle,blockWidth,blockHeight){
         this.blockX = blockX;
         this.blockY = blockY+frame*this.gravity;
@@ -17,7 +24,7 @@ class Block{
         ctx.save();
         ctx.translate(this.blockX,this.blockY);
         ctx.rotate(blockAngle)
-        ctx.rect(0,0,blockWidth,blockHeight)
+        this.drawImage("./assest/base.png",blockWidth,blockHeight)
         return this.blockY;
     }
 
@@ -34,17 +41,16 @@ class Block{
                 })
                 return "detectCollision";
             }
+            this.score = 10
         }
 
 
         else if(this.building.buildingStore.length > 0){
-
             for(let i =0;i<this.building.buildingStore.length;i++){
                 let build = this.building.buildingStore[this.building.buildingStore.length-1];
-               
-                if(blockY+blockHeight>=build.y)
+                
+                if(blockY+blockHeight>=build.y){
                     if((blockX+blockWidth >= build.x)&&(blockX<= build.x+blockWidth)){          
-                        
                         // check the condition for the block if the distance is greater than halfor equal to the blockwidth
                         if(Math.abs(blockX-(build.x))<=(blockWidth/2)){
                         
@@ -54,38 +60,59 @@ class Block{
                                     let build = this.building.buildingStore[j];
                                     build.y = build.y + blockHeight
                                 }
-                            }
-                            // update the new position of the X and Y co-ordinate in the array
-                            if(blockX<build.x){
-                                this.building.buildingStore.push({
-                                    x : blockX,
-                                    y : build.y-blockHeight,
-                                    direction : -1,
-                                    diff : build.x-blockX
-                                })
-                            }
-                            if(blockX>build.x){
-                                this.building.buildingStore.push({
-                                    x : blockX,
-                                    y : build.y-blockHeight,
-                                    direction : 1,
-                                    diff : blockX-build.x
-                                })
-                            }
+                            }                            
+                            
+                            // score
+                            if(Math.abs(build.x-blockX)==0){
+                                this.score = this.score + 20
+                            } 
+                            else if(Math.abs(build.x-blockX)<5){
+                                this.score = this.score + 15
+                            } 
+                            else if(Math.abs(build.x-blockX)>15){
+                                this.score = this.score + 5
+                            } 
 
-                            return "detectCollision";
+                            // update the new position of the X and Y co-ordinate in the array
+
+
+                        if(blockX<build.x){
+                            this.building.buildingStore.push({
+                                x : blockX,
+                                y : build.y-blockHeight,
+                                direction : -1,
+                                diff : build.x-blockX,
+                                update : "newstore"
+                            })
+                        }
+                        if(blockX>build.x){
+                            this.building.buildingStore.push({
+                                x : blockX,
+                                y : build.y-blockHeight,
+                                direction : 1,
+                                diff : blockX-build.x,
+                                update : "newstore"
+                            })
+                        }
+
+
+
+                        return "detectCollision";
                         }
 
                         else{
                             return "fallcondition"
                         }
+
                     }
                     else{
                         return "fallcondition"
                     }
+                    
                 }
             }
         }
     }
+}
 
 export {Block};

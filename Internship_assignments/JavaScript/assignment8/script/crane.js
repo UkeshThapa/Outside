@@ -16,6 +16,9 @@ class Crane{
         // fall of block tracker
         this.fall = 0;
         
+        this.gameStatus = 'start'
+
+
         // pendulum 
         this.gravity = 0.04;
         this.angle = (Math.PI)/8;
@@ -43,6 +46,15 @@ class Crane{
     }
     
 
+    drawImage(source,x,y,width,height){
+        let img = new Image();
+        let ctx = this.ctx;
+        img.src = source;
+        
+        ctx.drawImage(img,x,y,width,height)
+
+    }
+
     // update the force, angular velocity , angular acceleration
     update(){
         let force  = this.gravity * Math.sin(this.angle);
@@ -51,10 +63,38 @@ class Crane{
         this.angle = this.angle + this.angleVelocity
     }
 
+    createTowerStatus(){
+        let ctx = this.ctx;
 
+        this.drawImage("./assest/sky-building-design.png",0,40,40,60)
+        ctx.font = "30px Arial";
+        ctx.fillStyle = "red";
+        ctx.fillText(`${this.building.buildingStore.length}`, 50,90);
+
+    }
+
+    createLifeStatus(){
+        let ctx = this.ctx;
+
+        this.drawImage("./assest/heart.png",350,10,30,30)
+        ctx.font = "30px Arial";
+        ctx.fillStyle = "red";
+        ctx.fillText(`${3-this.fall}`, 390,36);
+        this.drawImage("./assest/pause.png",405,2,50,50)
+    }
+    createScore(){
+        let ctx = this.ctx;
+        ctx.font = "30px Arial";
+        ctx.fillStyle = "red";
+        ctx.fillText(`score:${this.block.score}`, 0,36); 
+    }
     // create the oscillation of the crane 
     create(){
         let ctx = this.ctx;
+
+        this.createTowerStatus()
+        this.createLifeStatus()
+        this.createScore()
         this.stringX = this.lengthOfWire* Math.sin(this.angle) + (this.canvasWidth/2);
         this.stringY = this.lengthOfWire* Math.cos(this.angle);
         ctx.beginPath();
@@ -75,7 +115,8 @@ class Crane{
             this.blockY = this.stringY+(this.blockWidth/2)*Math.tan(this.angle);
             ctx.translate(this.blockX,this.blockY);
             ctx.rotate(this.blockAngle);
-            ctx.rect(0,0,this.blockWidth,this.blockHeight);
+            this.drawImage("./assest/base.png",0,0,this.blockWidth,this.blockHeight)
+
         }
         else if(this.statusCheck == "deactivate"){
             this.frame += 1;
@@ -83,16 +124,27 @@ class Crane{
             let status = this.block.dropBlockStatus(this.blockX,blockPositionY,this.canvasHeight,this.baseHeight,this.blockWidth,this.blockHeight) 
          
             if(status == "detectCollision"){
+                
                 if(this.building.buildingStore.length > 3){
-                    this.baseY = this.baseY+this.blockHeight +this.baseHeight/8;                    
+                    this.baseY = this.baseY+this.blockHeight;                    
                 }
+
                 this.statusCheck = "activate";
                 this.frame = 0;
             }
          
             else if(status == "fallcondition"){
                 this.fall+=1;
-                console.log("fall vako condition")
+                if(this.fall===3){
+                    this.fall = 0 
+                    this.gameStatus = "end"
+                }
+                else if (this.fall <1){
+                    this.gameStatus = "start"
+                }
+                this.gameStatus 
+                console.log(this.fall)
+                console.log(this.gameStatus)
                 this.statusCheck = "activate";
                 this.frame = 0;
             }
@@ -114,7 +166,8 @@ class Crane{
     
     createbase(){
         let ctx = this.ctx;
-        ctx.rect(this.baseX,this.baseY,this.baseWidth,this.baseHeight)     
+        ctx.fillStyle = "#808080";
+        ctx.fillRect(this.baseX,this.baseY,this.baseWidth,this.baseHeight)     
         ctx.stroke()   
     }
 
