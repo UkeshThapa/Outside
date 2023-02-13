@@ -62,8 +62,8 @@ class Game{
     }
     
     gameOver(){
-        let sound = new Audio('./assest/gameover.mp3')
-        sound.play()
+        // let sound = new Audio('./assest/gameover.mp3')
+        // sound.play()
         let ctx = this.ctx
         let crane = this.crane
         let score = crane.block.score
@@ -78,10 +78,8 @@ class Game{
         ctx.font = "bold 40px Arial";   
         ctx.fillText(`Score : ${score}`,150,400);
         ctx.fillText(`Highest Score : ${Math.max(...highscore)}`,60,450);
-        
+        crane.building.buildingStore = []
 
-
-        // this.gamestatus = "start"
     }
     
     gamePause(){
@@ -115,7 +113,7 @@ class Game{
             if (x>=90 && x<=340 && y>=300 && y<=550){
                 this.gamestatus = "start"
                 crane.block.score = 0
-                crane.building.buildingStore = []
+
             } 
         })
     } 
