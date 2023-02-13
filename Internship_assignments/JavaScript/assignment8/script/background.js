@@ -14,6 +14,7 @@ class Environment{
         let img = new Image();
         let ctx = this.ctx;
         img.src = source;
+        
         ctx.drawImage(img,0,0,this.canvasWidth,this.canvasHeight)
 
     }
