@@ -126,7 +126,8 @@ class Crane{
             if(status == "detectCollision"){
                 
                 if(this.building.buildingStore.length > 3){
-                    this.baseY = this.baseY+this.blockHeight;                    
+                        this.baseY = this.baseY+this.blockHeight;                    
+
                 }
 
                 this.statusCheck = "activate";

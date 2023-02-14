@@ -46,10 +46,12 @@ class Block{
 
 
         else if(this.building.buildingStore.length > 0){
-            for(let i =0;i<this.building.buildingStore.length;i++){
-                let build = this.building.buildingStore[this.building.buildingStore.length-1];
-                
-                if(blockY+blockHeight>=build.y){
+        }
+        for(let i =0;i<this.building.buildingStore.length;i++){
+            let build = this.building.buildingStore[this.building.buildingStore.length-1];
+            
+            if(blockY+blockHeight>=build.y){
+
                     if((blockX+blockWidth >= build.x)&&(blockX<= build.x+blockWidth)){          
                         // check the condition for the block if the distance is greater than halfor equal to the blockwidth
                         if(Math.abs(blockX-(build.x))<=(blockWidth/2)){
@@ -113,6 +115,5 @@ class Block{
             }
         }
     }
-}
 
 export {Block};

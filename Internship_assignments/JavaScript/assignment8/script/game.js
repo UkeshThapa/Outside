@@ -28,6 +28,7 @@ class Game {
       this.gamePause();
     } else if (this.gamestatus == "end") {
       this.gameOver();
+      crane.block.score = 0;
     }
   }
 
@@ -96,10 +97,11 @@ class Game {
       let y = e.layerY - canvas.offsetTop;
       if (x >= 90 && x <= 340 && y >= 300 && y <= 550) {
         this.gamestatus = "start";
-        crane.block.score = 0;
+
       }
     });
   }
+  
   OnClickToPause() {
     let canvas = this.canvas;
     canvas.addEventListener("click", (e) => {
