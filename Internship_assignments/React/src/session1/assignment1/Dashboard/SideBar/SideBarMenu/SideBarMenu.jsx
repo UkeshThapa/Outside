@@ -1,6 +1,7 @@
 import React from "react";
 import "./SideBarMenu.scss";
 
+
 const SideBarMenu = ({ item, icon }) => {
   console.log(icon);
   return (

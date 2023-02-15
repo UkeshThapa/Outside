@@ -9,11 +9,17 @@
   padding-bottom: 18px;
   padding-left: 32px;
   padding-right: 24px;
+  cursor: pointer;
   .menu-icon {
     margin-right: 24px;
+
   }
 
-  &:focus {
+  &:active{
     background-color: #9fa2b4;
+    color: #DDE2FF;
+    border-color:#DDE2FF;
+    border-left: 3px solid;
+    opacity: 0.08;
   }
 }

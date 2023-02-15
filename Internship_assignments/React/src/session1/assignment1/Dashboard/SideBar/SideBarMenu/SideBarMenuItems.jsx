@@ -20,7 +20,7 @@ const menuItems = [
         icon : "i"
     },
     {
-        item : "Articels",
+        item : "Articles",
         icon : "i"
     },
     {
