@@ -21,7 +21,7 @@ class Building{
     constructBuild(){
         this.frame+=1
         for(let i=0; i<this.buildingStore.length;i++){
-                if(this.buildingStore.length>2){
+                if(this.buildingStore.length>1){
                     let build = this.buildingStore[i]
                     if(build.update == "newstore"){
                         this.stability = this.stability +(build.direction)* (this.blockAngle);
@@ -35,7 +35,9 @@ class Building{
                             build.angleOfDeflect = build.x + this.stability
                             console.log(build.angleOfDeflect)
                             if(build.reachStatus == "notreached"){
+                                
                                 // control the frame
+                                
                                 if(this.frame%10 ==0){
                                     build.DisplayX -=1;
                                 }
