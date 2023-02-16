@@ -4,11 +4,18 @@ import TicketHeader from './TicketHeader/TicketHeader';
 import TicketBody from './TicketBody/TicketBody';
 import ticketDetails from './TicketBody/TicketDetailsOfUser';
 
-const TicketTable = ({query}) => {
+const TicketTable = ({query,filter}) => {
+  {
+    if(filter === "All"){
+      filter = null;
+    }
+
+  }
   return (
     <table className='ticket-table'>
         <TicketHeader/>
-        { ticketDetails.filter(user=>query?user.detailsMessage.includes(query):true).map((users)=>{
+        { ticketDetails.filter(user=>query?user.detailsMessage.includes(query):true).filter(user=>filter?user.text.includes(filter):true).map((users)=>{
+          console.log(query)
           return <TicketBody  user={users}/>
         }
         )}

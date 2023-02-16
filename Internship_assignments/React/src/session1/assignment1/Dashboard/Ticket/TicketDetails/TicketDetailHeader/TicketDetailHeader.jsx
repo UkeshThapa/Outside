@@ -1,11 +1,18 @@
-import React from 'react'
+import React,{useState} from 'react'
 import './TicketDetailHeader.scss'
 
-const priority =["High","Normal","Low"]
+const priority =["All","High","Normal","Low"]
 
-const TicketDetailHeader = () => {
+const TicketDetailHeader = ({onFilterChange,filter}) => {
 
+  const [openDropDown,setOpenDropDown] = useState(false)
 
+  // show the drop down
+  const handleDropdown = ()=>{
+    setOpenDropDown(!openDropDown)
+  }
+
+  const checkedValue = "Normal"
 
 
   return (  
@@ -16,26 +23,28 @@ const TicketDetailHeader = () => {
                 <i className='icon-sort'/>
                 <h3>Sort</h3>
             </div>
-            <div className='filter'>
+            <div className='filter' onClick={handleDropdown}>
                 <i className='icon-filter'/>
-                <h3>Filter</h3>
+                <h3>{filter?filter:"Filter"}</h3>
             </div>
-            <div className='filter-dropdown'>
-                <ul>
-                    <li>
-                      <input type="radio" id="html" name="priority" value="High"/>
-                        <label for="High">High</label>
-                    </li>
-                    <li>
-                      <input type="radio" id="html" name="priority" value="Low"/>
-                        <label for="Low">Low</label>
-                    </li>
-                    <li>
-                      <input type="radio" id="html" name="priority" value="Normal"/>
-                        <label for="Normal">Normal</label>
-                    </li>
-                </ul>
-            </div>
+
+            {
+              openDropDown 
+              &&
+              <div className='filter-dropdown'>
+                  <ul>
+                    {priority.map((items)=>
+                      <li>
+                        <input type="radio" id="html" name="priority" value={items} onChange={onFilterChange} checked={filter === items? true:false}/>
+                          <label for={items}>{items}</label>
+                      </li>                    
+                    )}
+                  </ul>
+              </div>
+            }
+
+
+
         </div>
     </div>
   ) 

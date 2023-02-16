@@ -16,10 +16,10 @@
   }
 
   &:active{
-    background-color: #9fa2b4;
+    background-color: rgba(159, 162, 180, 0.08);
     color: #DDE2FF;
     border-color:#DDE2FF;
     border-left: 3px solid;
-    opacity: 0.08;
+    // opacity: 0.08;
   }
 }
