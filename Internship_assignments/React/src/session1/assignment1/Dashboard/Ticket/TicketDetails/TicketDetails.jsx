@@ -10,7 +10,7 @@ const TicketDetails = ({query}) => {
     setFilter(event.target.value)
   }
   return (
-    <div className='ticket-details'>
+    <div className='ticket-details-container'>
       <TicketDetailHeader onFilterChange={handleFilterChange} filter={filter}/>
       <TicketTable query={query} filter={filter}/>
     </div>
