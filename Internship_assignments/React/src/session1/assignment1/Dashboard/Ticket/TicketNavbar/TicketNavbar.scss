@@ -9,12 +9,20 @@
     .profile{
         display: flex;
         align-items: center;
-        padding-left: 750px;
+        #nav-search{
+            display: flex;
+        }
         #search{
             padding-right: 26px;
+            cursor: pointer;
+            border: none;
+            background-color: #ffff;
         }
         #notification{
             padding-right: 33px;
+            cursor: pointer;
+            border: none;
+            background-color: #ffff;
         }
         .profile-section{
             display: flex;
@@ -34,6 +42,7 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
+                cursor: pointer;
                 
                 .profile-image{
                     width: 40px;

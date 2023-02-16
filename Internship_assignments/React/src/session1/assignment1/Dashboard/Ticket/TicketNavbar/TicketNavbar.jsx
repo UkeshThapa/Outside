@@ -1,16 +1,38 @@
-import React from "react";
+import React, { useState } from "react";
 import "./TicketNavbar.scss";
 import profileImage from '../../../../../assets/profile_pic.png';
 
-const TicketNavbar = () => {
+
+const TicketNavbar = ({onQueryChange,query}) => {
+  const[showInput,setShowInput] = useState(false)
+
+  const handleClick = () => {
+    setShowInput(!showInput);
+  }
+
   return (
     <div className="ticket-navbar">
       <div className="ticket-navbar-header">
         <h1>Ticket</h1>
       </div>
       <div className="profile">
-        <i className="icon-search" id="search"></i>
-        <i className="icon-notification" id="notification"></i>
+
+        <div id="nav-search">
+          <div id="search-input">
+            {showInput &&
+              <input type="search" value={query} onChange={onQueryChange}/>
+            }
+          </div>
+          <button id="search">
+            <i className="icon-search" onClick={handleClick} ></i>
+          </button>
+        </div>
+          <button id="notification">
+          <i className="icon-notification"></i>
+          </button>
+      
+
+
         <div className="profile-section">
             <h3>Jones Ferdinand</h3>
             <div className="profile-image-wrapper">

@@ -9,27 +9,27 @@ const menuItems = [
     },
     {
         item : "ideas",
-        icon : "i"
+        icon : "icon-idea"
     },
     {
         item : "Contacts",
-        icon : "i"
+        icon : "icon-contact"
     },
     {
         item : "Agents",
-        icon : "i"
+        icon : "icon-agent"
     },
     {
         item : "Articles",
-        icon : "i"
+        icon : "icon-article"
     },
     {
         item : "Settings",
-        icon : "i"
+        icon : "icon-settings"
     },
     {
         item : "Subscription",
-        icon : "i"
+        icon : "icon-subscription"
     },
 
 ]
