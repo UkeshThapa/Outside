@@ -76,4 +76,8 @@
 
 tr{
     border-bottom: 2px solid #C5C7CD;
+    cursor: pointer;
+}
+tr:hover{
+    background-color:rgba(229, 229, 229,4);
 }

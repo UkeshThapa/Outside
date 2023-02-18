@@ -6,7 +6,6 @@ import TicketNavbar from './TicketNavbar/TicketNavbar'
 
 const TicketContainer = () => {
   const [searchKey,setSearchKey] = useState();
-  console.log(searchKey)
   const handleQueryChange = (event)=>{
     setSearchKey(event.target.value)
   }

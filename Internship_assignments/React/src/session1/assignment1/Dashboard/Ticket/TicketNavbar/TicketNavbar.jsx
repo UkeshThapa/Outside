@@ -1,14 +1,18 @@
 import React, { useState } from "react";
 import "./TicketNavbar.scss";
-import profileImage from '../../../../../assets/profile_pic.png';
+import profileImage from "../../../../../assets/profile_pic.png";
 
-
-const TicketNavbar = ({onQueryChange,query}) => {
-  const[showInput,setShowInput] = useState(false)
+const TicketNavbar = ({ onQueryChange, query }) => {
+  const [showInput, setShowInput] = useState(false);
+  const [showDropdown, setShowDropdown] = useState(false);
 
   const handleClick = () => {
     setShowInput(!showInput);
-  }
+  };
+
+  const handleNotificationDropDown = () => {
+    setShowDropdown(!showDropdown);
+  };
 
   return (
     <div className="ticket-navbar">
@@ -16,30 +20,42 @@ const TicketNavbar = ({onQueryChange,query}) => {
         <h1>Ticket</h1>
       </div>
       <div className="profile">
-
         <div id="nav-search">
-          <div id="search-input">
-            {showInput &&
-              <input type="search" value={query} onChange={onQueryChange}/>
-            }
-          </div>
+          {showInput && (
+            <input
+              type="search"
+              value={query}
+              onChange={onQueryChange}
+              placeholder="search"
+              id="search-input"
+            />
+          )}
           <button id="search">
-            <i className="icon-search" onClick={handleClick} ></i>
+            <i className="icon-search" onClick={handleClick}></i>
           </button>
         </div>
-          <button id="notification">
-          <i className="icon-notification"></i>
-          </button>
-      
 
+        <button id="notification" onClick={handleNotificationDropDown}>
+          <i className="icon-notification"></i>
+        </button>
+
+        {showDropdown && (
+          <div className="notification-dropdown">
+            <h3>Notification</h3>
+            <ul>
+              <li>notification1</li>
+              <li>notification2</li>
+            </ul>
+          </div>
+        )}
 
         <div className="profile-section">
-            <h3>Jones Ferdinand</h3>
-            <div className="profile-image-wrapper">
-                <div className="profile-image">
-                    <img src={profileImage} alt="profile image" />
-                </div>
+          <h3>Jones Ferdinand</h3>
+          <div className="profile-image-wrapper">
+            <div className="profile-image">
+              <img src={profileImage} alt="profile image" />
             </div>
+          </div>
         </div>
       </div>
     </div>

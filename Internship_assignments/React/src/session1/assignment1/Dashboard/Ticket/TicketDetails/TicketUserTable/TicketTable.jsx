@@ -14,11 +14,12 @@ const TicketTable = ({query,filter}) => {
   return (
     <table className='ticket-table'>
         <TicketHeader/>
-        { ticketDetails.filter(user=>query?user.detailsMessage.includes(query):true).filter(user=>filter?user.text.includes(filter):true).map((users)=>{
-          console.log(query)
-          return <TicketBody  user={users}/>
+        <tbody>
+        { ticketDetails.filter(user=>query?user.detailsMessage.includes(query):true).filter(user=>filter?user.text.includes(filter):true).map((users,index)=>{
+          return <TicketBody key={index}  user={users}/>
         }
         )}
+        </tbody>
     </table>
   )
 }

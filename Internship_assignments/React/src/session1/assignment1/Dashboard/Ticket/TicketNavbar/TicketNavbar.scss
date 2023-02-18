@@ -11,6 +11,16 @@
         align-items: center;
         #nav-search{
             display: flex;
+            gap: 8px;
+        }
+        #search-input{
+            padding: 8px;
+            width: 200px;
+            border: 2px solid #999;
+            border-radius: 10px;
+        }
+        #search-input:focus{
+            outline: none;
         }
         #search{
             padding-right: 26px;
@@ -23,6 +33,22 @@
             cursor: pointer;
             border: none;
             background-color: #ffff;
+        }
+        .notification-dropdown{
+            position: absolute;
+            text-align: center;
+            border-radius: 10px;
+            padding: 10px;
+            width: 200px;
+            background-color: #eae8e8f2;
+            top:12%;
+            left:75%;
+            ul{
+                list-style: none;
+                li{
+                    padding: 10px;
+                }
+            }
         }
         .profile-section{
             display: flex;

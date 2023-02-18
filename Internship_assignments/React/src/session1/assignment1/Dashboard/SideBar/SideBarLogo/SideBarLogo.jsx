@@ -4,7 +4,7 @@ import logo from '../../../../../assets/sidebar_logo.png'
 const SideBarLogo = () => {
   return (
     <div className='sidebar-logo'>
-      <figure className='logo'>
+      <figure className='logo-container'>
         <img src={logo} alt="img" />
       </figure>
         <h1>

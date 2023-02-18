@@ -6,13 +6,13 @@ import SideBarMenu from './SideBarMenu/SideBarMenu';
 
 
 
+
 const SideBarContainer = () => {
-    console.log(menuItems)
   return (
     <div className='sidebar-container'>
         <SideBarLogo/>
-        {menuItems.map((menu)=>{
-              return <SideBarMenu item ={menu.item} icon={menu.icon} />
+        {menuItems.map((menu, index)=>{
+              return <SideBarMenu key={index} item ={menu.item} icon={menu.icon} />
         })}
     </div>
   )

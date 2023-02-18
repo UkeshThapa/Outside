@@ -1,17 +1,14 @@
 .sidebar-logo{
     font-family: 'Mulish', sans-serif;
-    font-size: 10px;
     line-height: 30px;
     color: #A4A6B3;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-top: 41px;
-    padding-bottom:63px;
+    gap: 12px;
     padding-left: 32px;
-    padding-right: 43px;
-    .logo{
-        display: flex;
-        margin-right: 12px;
+    padding-top: 37px;
+    padding-bottom: 59px;
+    h1{
+        font-size: 19px;
+        padding-right: 50px;
     }
 }
