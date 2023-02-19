@@ -1,4 +1,8 @@
 import React,{useState} from "react";
+import logo from '../../../../../assets/sidebar_logo.png'
+import './signUp.scss'
+
+
 
 const SignUp = () => {
 
@@ -23,48 +27,53 @@ const SignUp = () => {
   }
 
   return (
-    <div className="sign-up" onSubmit={handleSubmitChange}>
-      <form action="">
-        <label htmlFor="fullName">FULLNAME:</label>
+    <div className="signUp-container" >
+      <div className="logo-container">
+        <figure>
+          <img src={logo} alt="logo" />
+        </figure>
+        <h2>Dashboard Kit</h2>
+        <h3>Sign Up to Dashboard Kit</h3>
+        <p>Enter your email and password below</p>
+      </div>
+      <form action="" onSubmit={handleSubmitChange} className="form-container">
+        <label htmlFor="fullName" id="fullname-label">FULLNAME</label>
         <input 
           type="text" 
           name="fullName" 
           id="fullName" 
-          autoComplete="off" 
+          autoComplete="off"
+          placeholder="Fullname" 
           value={signUpDetails.fullName}
           onChange ={handleInputChange}
         />
-        <br />
-        <br />
-        <br />
         <label htmlFor="email">Email:</label>
         <input 
           type="email" 
           name="email" 
           id="email" 
           autoComplete="off" 
+          placeholder="Email address"
           value={signUpDetails.email}
           onChange={handleInputChange}
         />
-        <br />
-        <br />
         <label htmlFor="password">Password:</label>
         <input
           type="password"
           name="password"
           id="password"
           autoComplete="off"
+          placeholder="Password"
           value={signUpDetails.password}
           onChange={handleInputChange}
         />
-        <br />
-        <br />
         <label htmlFor="password">CONFIRM PASSWORD:</label>
         <input
           type="password"
           name="conformPassword"
           id="conformPassword"
           autoComplete="off"
+          placeholder="Confirm Password"
           value={signUpDetails.conformPassword}
           onChange={handleInputChange}
         />

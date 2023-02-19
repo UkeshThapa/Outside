@@ -67,6 +67,9 @@ const LogIn = () => {
             <label htmlFor="rememberMe-label" id="rememberMe-label">Remember Me</label>
         </div>
         <button type="submit" id="login-button">Login</button>
+        <div className="signup-page-container">
+          <p>Don’t have an account? <span id="signup-page-redirect">Sign up</span></p>
+        </div>
       </form>
     </div>
   );

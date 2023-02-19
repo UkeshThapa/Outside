@@ -1,7 +1,7 @@
 import Dashboard from "./session1/assignment1/Dashboard/Dashboard"
 import'./App.scss';
 import LogIn from "./session1/assignment1/Dashboard/authentication/login/LogIn";
-
+import SignUp from "./session1/assignment1/Dashboard/authentication/signup/Signup";
 
 function App() {
   return (
@@ -9,8 +9,11 @@ function App() {
       {/* <div className="main">
           <Dashboard/>
       </div> */}
-      <div className="login-auth-container">
+      {/* <div className="login-auth-container">
           <LogIn/>
+      </div> */}
+      <div className="signUp-auth-container">
+        <SignUp/>
       </div>
     </>
   )

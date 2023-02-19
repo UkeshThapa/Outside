@@ -68,6 +68,7 @@
                 #forget-password{
                     font-style: 10px;
                     color: #9FA2B4;
+                    cursor: pointer;
                 }
             }
             #password-input{
@@ -92,6 +93,7 @@
             height: 16px;
             background: #FCFDFE;
             border: 1px solid #F0F1F7;
+            cursor: pointer;
         }
         #rememberMe-label{
             font-size: 14px;
@@ -109,6 +111,22 @@
         border: none;
         color: #FFFFFF;
         background: #3751FF;
+        cursor: pointer;
     }
+
+    .signup-page-container{
+        padding-top: 24px;
+        padding-bottom: 16px;
+        text-align: center;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 20px;
+        color: #9FA2B4;
+        #signup-page-redirect{
+            font-weight: 600; 
+            color: #3751FF;
+        }
+    }
+
 
 }
