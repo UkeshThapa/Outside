@@ -6,15 +6,15 @@ import SignUp from "./session1/assignment1/Dashboard/authentication/signup/Signu
 function App() {
   return (
     <>
-      {/* <div className="main">
-          <Dashboard/>
+      {/* <div className="signUp-auth-container">
+        <SignUp/>
       </div> */}
+      <div className="main">
+          <Dashboard/>
+      </div>
       {/* <div className="login-auth-container">
           <LogIn/>
       </div> */}
-      <div className="signUp-auth-container">
-        <SignUp/>
-      </div>
     </>
   )
 }

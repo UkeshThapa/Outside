@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./LogIn.scss";
 import logo from '../../../../../assets/sidebar_logo.png'
-
+import { FaEyeSlash,FaEye } from "react-icons/fa";
 
 const LogIn = () => {
   const [logInDetail,setLogInDetail] = useState({
@@ -9,6 +9,12 @@ const LogIn = () => {
     password : "",
     rememberMe : false
   })
+
+  const [passwordDisplay,setPasswordDisplay] = useState({
+    icon : <FaEyeSlash/>,
+    passwordType : 'password'
+  })
+
 
 
   const handleInputChange =(e)=>{
@@ -22,6 +28,15 @@ const LogIn = () => {
     event.preventDefault();
     console.log(logInDetail)
   }
+
+  const handlePasswordDisplayType = (event)=>{
+    setPasswordDisplay(prev=>({
+      ...prev,
+      icon : passwordDisplay.passwordType ==="password"?<FaEye/>:<FaEyeSlash/>,
+      passwordType:passwordDisplay.passwordType ==="password"?"text":"password"
+    }))
+  }
+
 
 
   return (
@@ -52,15 +67,18 @@ const LogIn = () => {
           <label htmlFor="password" id="password-label">Password</label>
           <span id="forget-password">Forget password?</span>
           </div>
-          <input
-            type="password"
-            name="password"
-            id="password-input"
-            autoComplete="off" 
-            placeholder="Password"   
-            value={logInDetail.password}
-            onChange = {handleInputChange}
-          />
+          <div className="password-input-container">
+            <input
+              type={passwordDisplay.passwordType}
+              name="password"
+              id="password-input"
+              autoComplete="off" 
+              placeholder="Password"   
+              value={logInDetail.password}
+              onChange = {handleInputChange}
+            />
+            <span id="display-password" onClick={handlePasswordDisplayType}>{passwordDisplay.icon}</span>
+          </div>
         </div>
         <div className="rememberMe-container">
             <input type="checkbox" name="rememberMe" id="rememberMe-input" onChange={handleInputChange}/>

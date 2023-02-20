@@ -71,15 +71,32 @@
                     cursor: pointer;
                 }
             }
-            #password-input{
+            .password-input-container{
+                display: flex;
+                align-items: center;
+                gap: 8px;
                 border-radius: 8px;
-                padding: 11px 8px;
-                background: #FCFDFE;
                 border: 1px solid #F0F1F7;
-                &:focus{
-                    outline: none;
+                overflow: hidden;
+                #password-input{
+                    width: 100%;
+                    background: #FCFDFE;
+                    padding-top: 11px;
+                    padding-bottom: 11px;
+                    padding-left: 16px;
+                    // padding-right: 44px;
+                    border: none;
+                    &:focus{
+                        outline: none;
+                    }
                 }
-            }            
+                #display-password{
+                    text-align: left;
+                   padding-right: 11px;
+                   color: #9FA2B4;
+                   cursor: pointer;
+                }            
+            }
         }
     }
 
