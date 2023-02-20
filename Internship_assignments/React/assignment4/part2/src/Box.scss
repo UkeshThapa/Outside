@@ -1,0 +1,35 @@
+.box{
+    width: 50vw;
+    height: 50vh;
+    // border: 2px solid red;
+}
+
+
+.arrow-up {
+    width: 0; 
+    height: 0; 
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    
+    border-bottom: 20px solid black;
+  }
+
+
+.circle {
+    width: 20px;
+    height: 20px;
+    background: red;
+    border-radius: 50%
+  }
+
+
+.rectangle {
+    width: 40px;
+    height: 20px;
+    background: rgb(9, 255, 0);
+  }
+.square{
+    width: 30px;
+    height: 30px;
+    background: red;
+  }
