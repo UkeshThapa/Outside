@@ -7,7 +7,7 @@ const Dashboard = () => {
   return (
     <div className='dashboard-container'>
       <SideBarContainer/>
-      {/* <TicketContainer/> */}
+      <TicketContainer/>
     </div>
   )
 }

@@ -4,6 +4,8 @@ import './App.scss'
 import LogIn from "./authentication/login/LogIn"
 import SignUp from './authentication/signup/SignUp';
 import Dashboard from './Dashboard/Dashboard';
+import Overview from './Dashboard/overview/Overview';
+import TicketContainer from './Dashboard/Ticket/TicketContainer';
 import useTickets from './hooks/useTickets';
 
 function App() {
@@ -44,8 +46,10 @@ function App() {
             </div>    
             }>  
           </Route>
-          <Route path='/dashboard' element={<Dashboard/>}></Route>
-          <Route path='/overview' element={<Dashboard/>}></Route>
+          <Route path='dashboard' element={<Dashboard/>}>
+            <Route path='ticket' element={<TicketContainer/>}></Route>
+            <Route path='overview' element={<Overview/>}></Route>
+          </Route>
         </Routes>
       </BrowserRouter>
       </div>

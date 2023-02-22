@@ -1,0 +1,108 @@
+@import "./variables";
+
+@font-face {
+  font-family: '#{$icomoon-font-family}';
+  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?ibx0sk');
+  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?ibx0sk#iefix') format('embedded-opentype'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?ibx0sk') format('truetype'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?ibx0sk') format('woff'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?ibx0sk##{$icomoon-font-family}') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: '#{$icomoon-font-family}' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-notification {
+  &:before {
+    content: $icon-notification;     
+    color: #c5c7cd;
+  }
+}
+.icon-search {
+  &:before {
+    content: $icon-search;     
+    color: #c5c7cd;
+  }
+}
+.icon-ticket {
+  &:before {
+    content: $icon-ticket;     
+    color: #9fa2b4;
+  }
+}
+.icon-agent {
+  &:before {
+    content: $icon-agent;     
+    color: #9fa2b4;
+  }
+}
+.icon-article {
+  &:before {
+    content: $icon-article;     
+    color: #9fa2b4;
+  }
+}
+.icon-contact {
+  &:before {
+    content: $icon-contact;     
+    color: #9fa2b4;
+  }
+}
+.icon-filter {
+  &:before {
+    content: $icon-filter;     
+    color: #c5c7cd;
+  }
+}
+.icon-idea {
+  &:before {
+    content: $icon-idea;     
+    color: #9fa2b4;
+  }
+}
+.icon-more {
+  &:before {
+    content: $icon-more;     
+    color: #c5c7cd;
+  }
+}
+.icon-overview {
+  &:before {
+    content: $icon-overview;     
+    color: #9fa2b4;
+  }
+}
+.icon-settings {
+  &:before {
+    content: $icon-settings;     
+    color: #9fa2b4;
+  }
+}
+.icon-sort {
+  &:before {
+    content: $icon-sort;     
+    color: #c5c7cd;
+  }
+}
+.icon-subscription {
+  &:before {
+    content: $icon-subscription;     
+    color: #9fa2b4;
+  }
+}
+
