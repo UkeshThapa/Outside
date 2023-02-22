@@ -95,12 +95,6 @@
       "time": "1:00 PM",
       "color": "green",
       "priority": "Normal"
-    },
-    {
-      "id": 9,
-      "customerName": "yukesh",
-      "detailsMessage": "hi",
-      "priority": "HIg"
     }
   ],
   "users": [
@@ -115,7 +109,30 @@
       "name": "yu",
       "email": "yuk@gmail.com",
       "password": "uk"
+    },
+    {
+      "name": "sk ",
+      "email": "sk@cd.com",
+      "password": "ass",
+      "id": 3
+    },
+    {
+      "name": "yu",
+      "email": "a@gmail.com",
+      "password": "a",
+      "id": 4
+    },
+    {
+      "name": "a",
+      "email": "a@gmail.com",
+      "password": "a",
+      "id": 5
+    },
+    {
+      "name": "sasa",
+      "email": "sail@gmnail.com",
+      "password": "sad",
+      "id": 6
     }
-
   ]
 }

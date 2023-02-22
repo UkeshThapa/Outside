@@ -13,7 +13,6 @@ const TicketContainer = () => {
 
   const searchValue = useRef("")
 
-  console.log(searchValue.current.value)
   return (
 
     <div className='ticketContainer'>

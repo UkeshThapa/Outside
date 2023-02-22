@@ -38,7 +38,9 @@ const SignUp = () => {
   const handleSubmitChange = (e)=>{
     e.preventDefault()
     console.log(signUpDetails)
-    addUser(signUpDetails)
+    if(signUpDetails.password===signUpDetails.confirmPassword){
+      addUser(signUpDetails)
+    }
     
   }
 
@@ -67,6 +69,7 @@ const SignUp = () => {
         </figure>
         <h2>Dashboard Kit</h2>
         <h3>Sign Up to Dashboard Kit</h3>
+
         <p>{userStatus?"sucessfully added":""}</p>
       </div>
       <form action="" onSubmit={handleSubmitChange} className="form-container">

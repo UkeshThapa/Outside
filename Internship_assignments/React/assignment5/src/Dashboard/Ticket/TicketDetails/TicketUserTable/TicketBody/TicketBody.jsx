@@ -3,7 +3,12 @@ import "./TicketBody.scss"
 import {FaTrash} from "react-icons/fa";
 
 
-const TicketBody = ({user}) => {
+const TicketBody = ({user,deleteTicket}) => {
+  
+  const handelIdOfTicket = (id) =>{
+    deleteTicket(id)
+  }
+  
   return (
     <tr className='ticket-containt'>
         <td className='ticket-details'>
@@ -37,7 +42,7 @@ const TicketBody = ({user}) => {
           </div>
         </td>
         <td>
-        <FaTrash/>
+            <FaTrash onClick={()=>handelIdOfTicket(user.id)}/>
         </td>
   </tr>
   )

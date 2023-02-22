@@ -45,59 +45,8 @@ function App() {
             }>  
           </Route>
           <Route path='/dashboard' element={<Dashboard/>}></Route>
+          <Route path='/overview' element={<Dashboard/>}></Route>
         </Routes>
-          
-
-          
-
-          {/* <div className='error-message'>
-            {
-              errorMessage
-            }
-          </div> */}
-            {/* <form action="" onSubmit={handleSubmitForm}>
-              <label htmlFor="name">Name</label><br />
-              
-              <input type="text" name="name" value={ticketDetail.name} onChange={handleInputChange}/><br /><br />
-              
-              <label htmlFor="message" >Message</label><br />
-              
-              <input type="text"name="message" value={ticketDetail.message} onChange={handleInputChange}/><br /><br />
-              
-              <label htmlFor="priority">Priority</label><br />
-              
-              <input type="text" name='priority' value={ticketDetail.priority} onChange={handleInputChange} /><br /><br />
-              
-              <button  style={{padding:"16px",margin:"14px"}}>Add tickets</button>
-            </form> */}
-          {/* <table>
-            <thead>
-              <tr>
-                <th>name</th>          
-                <th>message</th>
-                <th>Priority</th>
-              </tr>
-            </thead>
-            <tbody>
-              {
-                tickets.map((ticket,index)=> {
-                  return(
-                    <tr>
-                      <td>
-                        {ticket.customerName}
-                      </td>
-                      <td>
-                        {ticket.detailsMessage}
-                      </td>
-                      <td>
-                        {ticket.priority}
-                      </td>
-                    </tr>
-                  );
-                })
-              }
-            </tbody>
-          </table> */}
       </BrowserRouter>
       </div>
   )

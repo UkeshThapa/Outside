@@ -49,17 +49,46 @@
 
     .ticket-form{
         position: fixed;
-        background-color: #c5c7cd;
-        top: 0px;
-        left: 30rem;
-        height: 50vh;
-        padding: 40px;
-        .fullname{
+        background-color: #363740;
+        top: 80px;
+        left: 0px;
+
+        padding: 30px;
+        h1{
+            color: #dadcec;
+            padding-bottom: 18px;
+        }
+        #button-ticket{
+            width: 100%;
+            padding: 12px;
+            font-size: 15px;
+            background-color: #3751FF;
+            color: #fff;
+            border: none;
+            margin-bottom: 10px;
+        }
+        #button-cancel{
+            width: 100%;
+            padding: 12px;
+            font-size: 15px;
+            background-color: #3751FF;
+            color: #fff;
+            border: none;
+        }
+        .form-container{
 
             display: flex;
             flex-direction: column;
-            #fullname-label{
+            color: #dadcec;
+            padding-bottom: 24px;
+            #label{
                 padding-bottom: 8px;
+            }
+            #ticket-input{
+                padding: 12px;
+                &:focus{
+                    outline: none;
+                }
             }
         }
     }

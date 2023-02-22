@@ -16,25 +16,55 @@ const useTickets = () =>{
         }
     }
 
+    const checkPriorityForColor = (data) =>{
+        if(data.priority.toLowerCase() =="high"){
+            return '#F12B2C'
+        }
+        else if(data.priority.toLowerCase() =="low"){
+            return 'orange'
+        }
+        else if(data.priority.toLowerCase() =="normal"){
+            return 'green'
+        }
+
+    }
 
     const addTickets = async(data)=>{
+
+        let color = checkPriorityForColor(data);
+
+
         const request = {
-            id:Number(tickets.length)+1,
-            'customerName' : data.name,
-            "detailsMessage" : data.message,
-            "priority" : data.priority
+            "logo": "customer2",
+            "detailsMessage": data.ticketdetails,
+            "updateMessageTime": "update 1 day ago",
+            "customerName": data.fullname,
+            "updateTime": "on 24.05.2019",
+            "date": data.date,
+            "time": data.time,
+            "color": color,
+            "priority": data.priority
 
         }
         const res = await axios.post("http://localhost:3006/tickets",request)
         setTickets([request,...tickets])
     }
 
+    const deleteTicket = async (id) => {
+        try {
+          await axios.delete(`http://localhost:3006/tickets/${id}`);
+          setTickets(tickets.filter((ticket) => ticket.id !== id));
+        } catch (error) {
+          console.log(error.message);
+        }
+      };
+
     useEffect(()=>{
         getTickets();
     },[])
 
 
-    return {tickets,errorMessage,addTickets}
+    return {tickets,errorMessage,addTickets,deleteTicket}
 
 }
 
