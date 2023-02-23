@@ -74,10 +74,10 @@
     }
 }
 
-tr{
+.ticker-detail-container{
     border-bottom: 2px solid #C5C7CD;
     cursor: pointer;
 }
-tr:hover{
-    background-color:rgba(229, 229, 229,4);
+.ticker-detail-container:hover{
+    background-color:rgba(229, 229, 229,0.3);
 }

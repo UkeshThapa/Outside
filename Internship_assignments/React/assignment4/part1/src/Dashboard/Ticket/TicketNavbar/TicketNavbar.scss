@@ -7,6 +7,9 @@
         font-size: 24px;
     }
     .profile{
+
+        position: relative;
+
         display: flex;
         align-items: center;
         #nav-search{
@@ -41,8 +44,9 @@
             padding: 10px;
             width: 200px;
             background-color: #eae8e8f2;
-            top:12%;
-            left:75%;
+            top: 90%;
+            height: 50vh;
+
             ul{
                 list-style: none;
                 li{
@@ -83,5 +87,65 @@
                 }
             }
         }
+
+        .profile-dropdown{
+            position: absolute;
+            background-color: #ffffff;
+            border: 2px solid #cccaca;
+            // box-shadow: 1px 1px 8px 3px rgb(203, 195, 195);
+            top:60px;
+            left: 30%;
+            border-radius: 4px;
+            width: 200px;
+            .profile-logo{
+                display: flex;
+                padding: 20px;
+                gap: 20px;
+                align-items: center;
+                cursor: pointer;
+                border-bottom: 1px solid  #cccaca;
+                color: #a6a6a6;
+                font-size: 20px;
+                h3{
+                    font-size: 18px;
+                    color: #0d0c22
+                }
+            }
+            .help-section{
+                display: flex;
+                padding: 20px;
+                gap: 20px;
+                align-items: center;
+                cursor: pointer;
+                border-bottom: 1px solid  #cccaca;
+                color: #a6a6a6;
+                font-size: 20px;
+                ;
+                h3{
+                    font-size: 18px;
+                    color: #0d0c22
+                }
+            }
+            .logout-section{
+                display: flex;
+                padding: 20px;
+                gap: 20px;
+                align-items: center;
+                cursor: pointer;
+                color: #a6a6a6;
+                font-size: 20px;
+                text-decoration: none;
+                h3{
+                    font-size: 18px;
+                    color: #0d0c22
+                    ;
+                }
+            }
+        }
+
+
+
     }
 }
+
+

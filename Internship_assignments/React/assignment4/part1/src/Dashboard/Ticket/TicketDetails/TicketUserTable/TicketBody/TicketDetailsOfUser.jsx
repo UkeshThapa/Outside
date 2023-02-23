@@ -9,7 +9,8 @@ import customer8 from '../../../../../assets/customer-7.png'
 
 
 const ticketDetails = [
-    {
+    {   
+        id : 1,
         logo : customer1,
         detailsMessage : 'Contact Email not Linked',
         updateMessageTime : 'update 1 day ago',
@@ -21,6 +22,7 @@ const ticketDetails = [
         text : 'High'
     },
     {
+        id : 2,
         logo : customer2,
         detailsMessage : 'Adding Images to Featured Posts',
         updateMessageTime : 'update 1 day ago',
@@ -32,6 +34,7 @@ const ticketDetails = [
         text : 'Low'
     },
     {
+        id : 3,
         logo : customer3,
         detailsMessage : 'When will I be charged this month?',
         updateMessageTime : 'update 1 day ago',
@@ -43,6 +46,7 @@ const ticketDetails = [
         text : 'High'
     },
     {
+        id : 4,
         logo : customer4,
         detailsMessage : 'Payment not going through',
         updateMessageTime : 'update 2 day ago',
@@ -54,6 +58,7 @@ const ticketDetails = [
         text : 'Normal'
     },
     {
+        id : 5,
         logo : customer5,
         detailsMessage : 'Unable to add replies',
         updateMessageTime : 'update 2 day ago',
@@ -65,6 +70,7 @@ const ticketDetails = [
         text : 'High'
     },
     {
+        id : 6,
         logo : customer6,
         detailsMessage : 'Downtime since last week',
         updateMessageTime : 'update 3 day ago',
@@ -76,6 +82,7 @@ const ticketDetails = [
         text : 'Normal'
     },
     {
+        id : 7,
         logo : customer7,
         detailsMessage : 'Referral Bonus',
         updateMessageTime : 'update 4 day ago',
@@ -87,6 +94,7 @@ const ticketDetails = [
         text : 'Low'
     },
     {
+        id : 8,
         logo : customer8,
         detailsMessage : 'How do I change my password?',
         updateMessageTime : 'update 6 day ago',

@@ -1,10 +1,13 @@
-import React from 'react'
+import React,{useState} from 'react'
 import './TicketTable.scss';
 import TicketHeader from './TicketHeader/TicketHeader';
 import TicketBody from './TicketBody/TicketBody';
 import ticketDetails from './TicketBody/TicketDetailsOfUser';
 
 const TicketTable = ({query,filter}) => {
+  const [ticketDetail,setTicketDetail] = useState(ticketDetails)
+
+
   {
     if(filter === "All"){
       filter = null;
@@ -15,8 +18,8 @@ const TicketTable = ({query,filter}) => {
     <table className='ticket-table'>
         <TicketHeader/>
         <tbody>
-        { ticketDetails.filter(user=>query?user.detailsMessage.includes(query):true).filter(user=>filter?user.text.includes(filter):true).map((users,index)=>{
-          return <TicketBody key={index}  user={users}/>
+        { ticketDetail.filter(ticket=>query?ticket.detailsMessage.includes(query):true).filter(ticket=>filter?ticket.text.includes(filter):true).map((ticket,index)=>{
+          return <TicketBody key={index} ticketDetail={ticketDetail} setTicketDetail={setTicketDetail} ticket={ticket}/>
         }
         )}
         </tbody>
