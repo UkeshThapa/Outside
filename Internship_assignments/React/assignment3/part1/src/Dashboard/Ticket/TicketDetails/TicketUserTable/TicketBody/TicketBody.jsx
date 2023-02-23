@@ -2,15 +2,17 @@ import React from 'react'
 import "./TicketBody.scss"
 import { FaTrash } from 'react-icons/fa'
 
+
 const TicketBody = ({setTicketDetail,ticket}) => {
   const handleIdOfTicket= (id)=>{
     setTicketDetail(oldValues => {
       return oldValues.filter((ticket) => ticket.id !== id)
-    })    
-    console.log(id)
+    })  
+    console.log(id)  
   }
+
   return (
-    <tr className='ticker-detail-container'>
+    <tr>
         <td className='ticket-details'>
           <div className='ticket-wrapper'>
             <div className='user-image'>
@@ -42,7 +44,7 @@ const TicketBody = ({setTicketDetail,ticket}) => {
           </div>
         </td>
         <td>
-          <FaTrash onClick={handleIdOfTicket(ticket.id)}/>
+          <FaTrash onClick={()=>handleIdOfTicket(ticket.id)}/>
         </td>
   </tr>
   )
