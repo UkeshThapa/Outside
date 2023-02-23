@@ -6,29 +6,9 @@ import SignUp from './authentication/signup/SignUp';
 import Dashboard from './Dashboard/Dashboard';
 import Overview from './Dashboard/overview/Overview';
 import TicketContainer from './Dashboard/Ticket/TicketContainer';
-import useTickets from './hooks/useTickets';
 
 function App() {
-  const {tickets,errorMessage,addTickets} = useTickets()
 
-  const [ticketDetail,setTicketDetail] = useState({
-    name : "",
-    message : "",
-    priority : ""
-  })
-
-  const handleInputChange =(e)=>{
-    setTicketDetail(prev=>({
-      ...prev,
-      [e.target.name] : e.target.value
-    }))
-  }
-
-  const handleSubmitForm =(event)=>{ 
-    event.preventDefault();
-    console.log(ticketDetail)
-    addTickets(ticketDetail)
-  }
 
   return (
       <div className="App">

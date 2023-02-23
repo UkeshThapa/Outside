@@ -7,7 +7,6 @@ const TicketBody = ({setTicketDetail,ticket}) => {
     setTicketDetail(oldValues => {
       return oldValues.filter((ticket) => ticket.id !== id)
     })    
-    console.log(id)
   }
   return (
     <tr className='ticker-detail-container'>
@@ -42,7 +41,7 @@ const TicketBody = ({setTicketDetail,ticket}) => {
           </div>
         </td>
         <td>
-          <FaTrash onClick={handleIdOfTicket(ticket.id)}/>
+          <FaTrash onClick={()=>handleIdOfTicket(ticket.id)}/>
         </td>
   </tr>
   )

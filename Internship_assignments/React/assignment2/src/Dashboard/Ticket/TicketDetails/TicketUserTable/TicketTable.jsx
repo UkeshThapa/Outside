@@ -6,7 +6,6 @@ import ticketDetails from './TicketBody/TicketDetailsOfUser';
 
 const TicketTable = () => {
   const [ticketDetail,setTicketDetail] = useState(ticketDetails)
-
   return (
     <table className='ticket-table'>
         <thead>
