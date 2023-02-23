@@ -12,7 +12,7 @@ const TicketBody = ({setTicketDetail,ticket}) => {
   }
 
   return (
-    <tr>
+    <tr className='ticker-detail-container'>
         <td className='ticket-details'>
           <div className='ticket-wrapper'>
             <div className='user-image'>
