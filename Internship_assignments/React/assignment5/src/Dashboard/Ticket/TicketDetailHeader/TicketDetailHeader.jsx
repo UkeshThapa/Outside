@@ -6,7 +6,6 @@ import useTickets from "../../../hooks/useTickets";
 const priority = ["All", "High", "Normal", "Low"];
 
 const TicketDetailHeader = ({ onFilterChange, filter, addTickets }) => {
-  // const {tickets,errorMessage,addTickets} = useTickets()
 
   const [openDropDown, setOpenDropDown] = useState(false);
   const [showTicketForm, setShowTicketForm] = useState(false);
@@ -18,6 +17,8 @@ const TicketDetailHeader = ({ onFilterChange, filter, addTickets }) => {
     ticketdetails: "",
   });
 
+
+
   const handleInputChange = (e) => {
     setTicketDetail((prev) => ({
       ...prev,
@@ -27,7 +28,7 @@ const TicketDetailHeader = ({ onFilterChange, filter, addTickets }) => {
 
   const handleSubmitForm = (event) => {
     event.preventDefault();
-    console.log(ticketDetail);
+    handleEmptyForm()
     addTickets(ticketDetail);
   };
 
@@ -65,6 +66,7 @@ const TicketDetailHeader = ({ onFilterChange, filter, addTickets }) => {
                 </label>
                 <input
                   type="text"
+                  required = {true}
                   name="fullname"
                   placeholder="Fullname"
                   value={ticketDetail.fullname}
@@ -79,6 +81,7 @@ const TicketDetailHeader = ({ onFilterChange, filter, addTickets }) => {
                 </label>
                 <input
                   type="date"
+                  required = {true}
                   name="date"
                   autoComplete="off"
                   value={ticketDetail.date}
@@ -93,6 +96,7 @@ const TicketDetailHeader = ({ onFilterChange, filter, addTickets }) => {
                 <input
                   type="time"
                   name="time"
+                  required = {true}
                   value={ticketDetail.time}
                   onChange={handleInputChange}
                   autoComplete="off"
@@ -106,6 +110,7 @@ const TicketDetailHeader = ({ onFilterChange, filter, addTickets }) => {
                 <input
                   type="text"
                   name="priority"
+                  required = {true}
                   value={ticketDetail.priority}
                   onChange={handleInputChange}
                   placeholder="Priority"
@@ -124,6 +129,7 @@ const TicketDetailHeader = ({ onFilterChange, filter, addTickets }) => {
                   onChange={handleInputChange}
                   placeholder="Ticket details"
                   autoComplete="off"
+                  required = {true}
                   id="ticket-input"
                 />
               </div>

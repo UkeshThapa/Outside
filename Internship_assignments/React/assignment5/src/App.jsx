@@ -9,6 +9,10 @@ import Overview from "./Dashboard/overview/Overview";
 import SingleTicket from "./Dashboard/Ticket/SingleTicket/SingleTicket";
 import TicketDetails from "./Dashboard/Ticket/TicketDetails";
 import useTickets from "./hooks/useTickets";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/ReactToastify.min.css";
+
+
 
 export const searchContext = createContext();
 export const ticketData = createContext();
@@ -50,6 +54,13 @@ function App() {
             </Routes>
           </BrowserRouter>
         </div>
+        <ToastContainer
+        autoClose ={1000}
+        hideProgressBar = {false}
+        newestOnTop = {false}
+        closeOnClick
+        theme="light"
+        />
       </searchContext.Provider>
     </ticketData.Provider>
   );

@@ -5,6 +5,7 @@ import { FaEyeSlash, FaEye } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import useUsers from "../../hooks/useUser";
 import axios from "axios";
+import {toast} from "react-toastify" 
 
 const LogIn = () => {
   const navigateToDashboard = useNavigate();
@@ -35,12 +36,10 @@ const LogIn = () => {
     );
 
     if (userData.data.length > 0) {
+      toast.success("Log in successful")
       navigateToDashboard("/dashboard");
     } else {
-      setLoginFail(true);
-      setTimeout(() => {
-        setLoginFail(false);
-      }, 1000);
+      toast.error("LogIn error")
     }
   };
 
