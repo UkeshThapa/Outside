@@ -1,17 +1,20 @@
 import React from 'react'
 import "./TicketBody.scss"
 import {FaTrash} from "react-icons/fa";
-
+import { useNavigate } from 'react-router-dom';
 
 const TicketBody = ({user,deleteTicket}) => {
   
+  const navigate = useNavigate()
+
+
   const handelIdOfTicket = (id) =>{
     deleteTicket(id)
   }
   
   return (
     <tr className='ticket-containt'>
-        <td className='ticket-details'>
+        <td className='ticket-details' onClick={()=>navigate(`${user.id}`)}>
           <div className='ticket-wrapper'>
             <div className='user-image'>
                 <img src={user.logo} alt="user-image" />

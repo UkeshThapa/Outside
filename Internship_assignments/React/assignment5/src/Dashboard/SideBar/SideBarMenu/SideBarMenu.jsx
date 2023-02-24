@@ -8,7 +8,7 @@ const SideBarMenu = ({ item, icon,path }) => {
 
 
   return (
-    <NavLink to={path} className="sidebar-menu">
+    <NavLink to={path} className={({isActive})=>isActive?"sidebar-menu-active":"sidebar-menu"}>
       <div className="menu-icon">
         <i className={icon}></i>
       </div>

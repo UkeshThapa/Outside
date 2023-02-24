@@ -34,7 +34,7 @@ const useTickets = () =>{
         let color = checkPriorityForColor(data);
 
         const request = {
-            "logo": "customer2",
+            "logo": `/customer-2.png`,
             "detailsMessage": data.ticketdetails,
             "updateMessageTime": "update 1 day ago",
             "customerName": data.fullname,
@@ -45,8 +45,9 @@ const useTickets = () =>{
             "priority": data.priority
 
         }
-        const res = await axios.post("http://localhost:3006/tickets",request)
-        setTickets([request,...tickets])
+        const res = await axios.post("http://localhost:3006/tickets",request).then((response)=>
+        setTickets([response.data,...tickets])
+        )
     }
 
     const deleteTicket = async (id) => {

@@ -2,7 +2,7 @@ const menuItems = [
     {
         item : "Overview",
         icon : "icon-overview",
-        path : 'Overview'
+        path : 'overview'
     },
     {
         item : "Tickets",
@@ -11,27 +11,34 @@ const menuItems = [
     },
     {
         item : "ideas",
-        icon : "icon-idea"
+        icon : "icon-idea",
+        path : 'ideas'
     },
     {
         item : "Contacts",
-        icon : "icon-contact"
+        icon : "icon-contact",
+        path : 'contact'
+
     },
     {
         item : "Agents",
-        icon : "icon-agent"
+        icon : "icon-agent",
+        path : "agent"
     },
     {
         item : "Articles",
-        icon : "icon-article"
+        icon : "icon-article",
+        path : "article"
     },
     {
         item : "Settings",
-        icon : "icon-settings"
+        icon : "icon-settings",
+        path : "setting"
     },
     {
         item : "Subscription",
-        icon : "icon-subscription"
+        icon : "icon-subscription",
+        path : "subscriptions"
     },
 
 ]

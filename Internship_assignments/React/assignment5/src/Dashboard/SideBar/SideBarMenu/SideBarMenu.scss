@@ -16,12 +16,27 @@
 
   }
 
-  &:active{
-    background-color: rgba(159, 162, 180, 0.08);
-    color: #DDE2FF;
-    border-color:#DDE2FF;
-    border-left: 3px solid;
-    
-  }
+  
+}
+.sidebar-menu-active{
+  font-family: "Mulish", sans-serif;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0.2px;
+  display: flex;
+  background-color: rgba(159, 162, 180, 0.08);
+  color: #DDE2FF;
+  border-color:#DDE2FF;
+  border-left: 3px solid;
+  padding-top: 18px;
+  padding-bottom: 18px;
+  padding-left: 32px;
+  padding-right: 24px;
+  cursor: pointer;
+  text-decoration: none;
+  .menu-icon {
+    margin-right: 24px;
 
+  }
+  
 }

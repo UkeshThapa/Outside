@@ -2,7 +2,7 @@
   "tickets": [
     {
       "id": 1,
-      "logo": "customer1",
+      "logo": "/customer-1.png",
       "detailsMessage": "Contact Email not Linked",
       "updateMessageTime": "update 1 day ago",
       "customerName": "Tom Cruise",
@@ -14,7 +14,7 @@
     },
     {
       "id": 2,
-      "logo": "customer2",
+      "logo": "/customer-2.png",
       "detailsMessage": "Contact Email not Linked",
       "updateMessageTime": "update 1 day ago",
       "customerName": "Matt Damon",
@@ -26,7 +26,7 @@
     },
     {
       "id": 3,
-      "logo": "customer3",
+      "logo": "/customer-3.png",
       "detailsMessage": "When will I be charged this month?",
       "updateMessageTime": "update 1 day ago",
       "customerName": "Robert Downy",
@@ -38,7 +38,7 @@
     },
     {
       "id": 4,
-      "logo": "customer4",
+      "logo": "/customer-4.png",
       "detailsMessage": "Payment not going through",
       "updateMessageTime": "update 2 day ago",
       "customerName": "Christian Bale",
@@ -50,7 +50,7 @@
     },
     {
       "id": 5,
-      "logo": "customer5",
+      "logo": "/customer-5.png",
       "detailsMessage": "Unable to add replies",
       "updateMessageTime": "update 2 day ago",
       "customerName": "Henry Cavil",
@@ -62,7 +62,7 @@
     },
     {
       "id": 6,
-      "logo": "customer6",
+      "logo": "/customer-6.png",
       "detailsMessage": "Downtime since last week",
       "updateMessageTime": "update 3 day ago",
       "customerName": "Chris Evans",
@@ -74,7 +74,7 @@
     },
     {
       "id": 7,
-      "logo": "customer7",
+      "logo": "/customer-7.png",
       "detailsMessage": "Referral Bonus",
       "updateMessageTime": "update 4 day ago",
       "customerName": "Sam Smith",

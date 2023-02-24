@@ -4,41 +4,52 @@ import './App.scss'
 import LogIn from "./authentication/login/LogIn"
 import SignUp from './authentication/signup/SignUp';
 import Dashboard from './Dashboard/Dashboard';
+import ErrorPage from './Dashboard/errorPage/ErrorPage';
 import Overview from './Dashboard/overview/Overview';
+import SingleTicket from './Dashboard/Ticket/SingleTicket/SingleTicket';
 import TicketDetails from './Dashboard/Ticket/TicketDetails';
-
+import useTickets from './hooks/useTickets';
 
 export const searchContext = createContext()
+export const ticketData = createContext()
 
 
 function App() {
   const [searchKey,setSearchKey] = useState("") 
-  
+
+  const {tickets} = useTickets();
+
+
   return (
-    <searchContext.Provider value={[searchKey,setSearchKey]}>
-      <div className="App">
-      <BrowserRouter>
-        <Routes>
-          <Route path='/' element={
-            <div className='signUp-auth-container'>
-                <LogIn/>
-            </div>    
-            }>  
-          </Route>
-          <Route path='/signup' element={
-            <div className='signUp-auth-container'>
-                <SignUp/>
-            </div>    
-            }>  
-          </Route>
-          <Route path='dashboard' element={<Dashboard/>}>
-            <Route path='Ticket' element={<TicketDetails/>}></Route>
-            <Route path='Overview' element={<Overview/>}></Route>
-          </Route>
-        </Routes>
-      </BrowserRouter>
-      </div>
-    </searchContext.Provider>
+    <ticketData.Provider value={[tickets]}>
+      <searchContext.Provider value={[searchKey,setSearchKey]}>
+        <div className="App">
+        <BrowserRouter>
+          <Routes>
+            <Route path='/' element={
+              <div className='signUp-auth-container'>
+                  <LogIn/>
+              </div>    
+              }>  
+            </Route>
+            <Route path='/signup' element={
+              <div className='signUp-auth-container'>
+                  <SignUp/>
+              </div>    
+              }>  
+            </Route>
+            <Route path='dashboard' element={<Dashboard/>}>
+              <Route index element={<Overview/>}></Route>
+              <Route path='Ticket' element={<TicketDetails/>}></Route>
+              <Route path='Ticket/:id' element={<SingleTicket/>}></Route>
+              <Route path='Overview' element={<Overview/>}></Route>
+            </Route>
+            <Route path='*' element={<ErrorPage/>}></Route>
+          </Routes>
+        </BrowserRouter>
+        </div>
+      </searchContext.Provider>
+    </ticketData.Provider>
   )
 }
 
