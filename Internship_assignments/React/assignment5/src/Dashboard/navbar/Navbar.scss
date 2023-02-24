@@ -1,9 +1,14 @@
-.ticket-navbar{
+.navbar{
     display: flex;
+
+    padding-left: 289px;
+    padding-top: 36px;
+    padding-right: 33px;
+
     justify-content: space-between;
     align-items: center;
     font-family:"Mulish", sans-serif;
-    .ticket-navbar-header{
+    .navbar-header{
         font-size: 24px;
     }
     .profile{

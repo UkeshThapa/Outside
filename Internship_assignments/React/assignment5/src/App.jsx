@@ -1,16 +1,21 @@
-import React,{ useEffect, useState } from 'react'
+import React,{useState,createContext } from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.scss'
 import LogIn from "./authentication/login/LogIn"
 import SignUp from './authentication/signup/SignUp';
 import Dashboard from './Dashboard/Dashboard';
 import Overview from './Dashboard/overview/Overview';
-import TicketContainer from './Dashboard/Ticket/TicketContainer';
+import TicketDetails from './Dashboard/Ticket/TicketDetails';
+
+
+export const searchContext = createContext()
+
 
 function App() {
-
-
+  const [searchKey,setSearchKey] = useState("") 
+  
   return (
+    <searchContext.Provider value={[searchKey,setSearchKey]}>
       <div className="App">
       <BrowserRouter>
         <Routes>
@@ -27,12 +32,13 @@ function App() {
             }>  
           </Route>
           <Route path='dashboard' element={<Dashboard/>}>
-            <Route path='ticket' element={<TicketContainer/>}></Route>
-            <Route path='overview' element={<Overview/>}></Route>
+            <Route path='Ticket' element={<TicketDetails/>}></Route>
+            <Route path='Overview' element={<Overview/>}></Route>
           </Route>
         </Routes>
       </BrowserRouter>
       </div>
+    </searchContext.Provider>
   )
 }
 

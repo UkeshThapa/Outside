@@ -1,13 +1,15 @@
 import React from 'react'
-
-import './Dashboard.scss'
 import SideBarContainer from './SideBar/SideBarContainer';
-import TicketContainer from './Ticket/TicketContainer';
+import Navbar from './navbar/Navbar';
+import {Outlet} from "react-router-dom";
+import './Dashboard.scss'
+
 const Dashboard = () => {
   return (
     <div className='dashboard-container'>
       <SideBarContainer/>
-      {/* <TicketContainer/> */}
+      <Navbar/>
+      <Outlet/>
     </div>
   )
 }

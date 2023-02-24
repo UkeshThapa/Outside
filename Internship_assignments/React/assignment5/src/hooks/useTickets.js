@@ -33,7 +33,6 @@ const useTickets = () =>{
 
         let color = checkPriorityForColor(data);
 
-
         const request = {
             "logo": "customer2",
             "detailsMessage": data.ticketdetails,

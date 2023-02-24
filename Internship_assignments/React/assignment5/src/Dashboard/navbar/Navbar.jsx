@@ -1,21 +1,31 @@
-import React, { useState } from "react";
-import "./TicketNavbar.scss";
-import profileImage from "../../../assets/profile_pic.png";
+import React, { useState,useContext } from "react";
+import "./Navbar.scss";
+import profileImage from "../../assets/profile_pic.png";
 import {FaUser,FaSignOutAlt,FaQuestionCircle} from "react-icons/fa";
-import { NavLink } from "react-router-dom";
-const TicketNavbar = ({ onQueryChange, query,searchValue }) => {
+import { NavLink,useParams,useLocation } from "react-router-dom";
+import { searchContext } from "../../App";
+
+const Navbar = () => {
+  const {name} = useParams()
   const [showInput, setShowInput] = useState(false);
   const [showNotificationDropdown, setShowNotificationDropdown] = useState(false);
   const [showProfileDropdown, setShowProfileDropdown] = useState(false);
 
+  const location = useLocation();
+
   const handleClick = () => {
+    setShowNotificationDropdown(false);
+    setShowProfileDropdown(false);
     setShowInput(!showInput);
   };
 
+
   const handleNotificationDropDown = () => {
+    setShowInput(false)
     setShowProfileDropdown(false)
     setShowNotificationDropdown(!showNotificationDropdown);
   };
+
 
   const handleProfileDropDown = () =>{
     setShowNotificationDropdown(false)
@@ -24,24 +34,31 @@ const TicketNavbar = ({ onQueryChange, query,searchValue }) => {
   }
 
 
+  const [searchKey,setSearchKey] = useContext(searchContext)
+
+
+  const onQueryChange = (e) =>{
+    setSearchKey(e.target.value)
+  }
+
 
   return (
-    <div className="ticket-navbar">
-      <div className="ticket-navbar-header">
-        <h1>Ticket</h1>
+    <div className="navbar">
+      <div className="navbar-header">
+        <h1>{location.pathname.slice(11)}</h1>
       </div>
       <div className="profile">
         <div id="nav-search">
           {showInput && (
             <input
-              ref={searchValue}
+              value={searchKey}
               type="search"
               onChange={onQueryChange}
               placeholder="search"
               id="search-input"
             />
           )}
-          <button id="search">
+          <button type="button" id="search">
             <i className="icon-search" onClick={handleClick}></i>
           </button>
         </div>
@@ -89,13 +106,9 @@ const TicketNavbar = ({ onQueryChange, query,searchValue }) => {
             </div>
           </div>
         ) }
-
-
-
-
       </div>
     </div>
   );
 };
 
-export default TicketNavbar;
+export default Navbar;

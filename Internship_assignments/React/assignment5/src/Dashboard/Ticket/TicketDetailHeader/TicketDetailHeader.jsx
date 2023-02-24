@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./TicketDetailHeader.scss";
 import { FaPlus } from "react-icons/fa";
-import useTickets from "../../../../hooks/useTickets";
+import useTickets from "../../../hooks/useTickets";
 
 const priority = ["All", "High", "Normal", "Low"];
 

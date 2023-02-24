@@ -1,16 +1,19 @@
 import React from "react";
 import "./SideBarMenu.scss";
+import { NavLink} from "react-router-dom";
 
 
-const SideBarMenu = ({ item, icon }) => {
+const SideBarMenu = ({ item, icon,path }) => {
+
+
+
   return (
-    <div className="sidebar-menu">
+    <NavLink to={path} className="sidebar-menu">
       <div className="menu-icon">
-        
         <i className={icon}></i>
       </div>
       <div className="menu-items">{item}</div>
-    </div>
+    </NavLink>
   );
 };
 

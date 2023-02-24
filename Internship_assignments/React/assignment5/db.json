@@ -83,18 +83,6 @@
       "time": "11:30 PM",
       "color": "orange",
       "priority": "Low"
-    },
-    {
-      "id": 8,
-      "logo": "customer8",
-      "detailsMessage": "How do I change my password?",
-      "updateMessageTime": "update 6 day ago",
-      "customerName": "Steve Rogers",
-      "updateTime": "on 24.05.2019",
-      "date": "May 21, 2019",
-      "time": "1:00 PM",
-      "color": "green",
-      "priority": "Normal"
     }
   ],
   "users": [

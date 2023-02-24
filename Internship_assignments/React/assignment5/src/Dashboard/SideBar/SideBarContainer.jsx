@@ -12,7 +12,7 @@ const SideBarContainer = () => {
     <div className='sidebar-container'>
         <SideBarLogo/>
         {menuItems.map((menu, index)=>{
-              return <SideBarMenu key={index} item ={menu.item} icon={menu.icon} />
+              return <SideBarMenu key={index} item ={menu.item} icon={menu.icon} path={menu.path}/>
         })}
     </div>
   )
