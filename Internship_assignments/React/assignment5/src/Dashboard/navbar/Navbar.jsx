@@ -40,8 +40,6 @@ const Navbar = () => {
     setSearchKey(e.target.value)
   }
 
-  console.log(location.pathname.slice(11))
-
 
   return (
     <div className="navbar">
