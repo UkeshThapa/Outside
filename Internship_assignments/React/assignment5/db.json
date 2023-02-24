@@ -1,18 +1,6 @@
 {
   "tickets": [
     {
-      "id": 1,
-      "logo": "/customer-1.png",
-      "detailsMessage": "Contact Email not Linked",
-      "updateMessageTime": "update 1 day ago",
-      "customerName": "Tom Cruise",
-      "updateTime": "on 24.05.2019",
-      "date": "May 26, 2019",
-      "time": "6:30 PM",
-      "color": "#F12B2C",
-      "priority": "High"
-    },
-    {
       "id": 2,
       "logo": "/customer-2.png",
       "detailsMessage": "Contact Email not Linked",
