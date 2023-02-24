@@ -1,9 +1,9 @@
-import React from 'react';
-import './Overview.scss';
+import React from "react";
+import "./Overview.scss";
 
 const Overview = () => {
   return (
-    <div className='overview-container'>
+    <div className="overview-container">
       <div className="card-container">
         <div className="container">
           <h1>unsolved</h1>
@@ -28,10 +28,8 @@ const Overview = () => {
           <h2>64</h2>
         </div>
       </div>
-
-
     </div>
-  )
-}
+  );
+};
 
-export default Overview
+export default Overview;

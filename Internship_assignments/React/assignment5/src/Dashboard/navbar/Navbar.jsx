@@ -1,13 +1,14 @@
-import React, { useState,useContext } from "react";
+import React, { useState, useContext } from "react";
 import "./Navbar.scss";
 import profileImage from "../../assets/profile_pic.png";
-import {FaUser,FaSignOutAlt,FaQuestionCircle} from "react-icons/fa";
-import { NavLink,useLocation } from "react-router-dom";
+import { FaUser, FaSignOutAlt, FaQuestionCircle } from "react-icons/fa";
+import { NavLink, useLocation } from "react-router-dom";
 import { searchContext } from "../../App";
 
 const Navbar = () => {
   const [showInput, setShowInput] = useState(false);
-  const [showNotificationDropdown, setShowNotificationDropdown] = useState(false);
+  const [showNotificationDropdown, setShowNotificationDropdown] =
+    useState(false);
   const [showProfileDropdown, setShowProfileDropdown] = useState(false);
 
   const location = useLocation();
@@ -18,33 +19,27 @@ const Navbar = () => {
     setShowInput(!showInput);
   };
 
-
   const handleNotificationDropDown = () => {
-    setShowInput(false)
-    setShowProfileDropdown(false)
+    setShowInput(false);
+    setShowProfileDropdown(false);
     setShowNotificationDropdown(!showNotificationDropdown);
   };
 
+  const handleProfileDropDown = () => {
+    setShowNotificationDropdown(false);
+    setShowProfileDropdown(!showProfileDropdown);
+  };
 
-  const handleProfileDropDown = () =>{
-    setShowNotificationDropdown(false)
-    setShowProfileDropdown(!showProfileDropdown)
+  const [searchKey, setSearchKey] = useContext(searchContext);
 
-  }
-
-
-  const [searchKey,setSearchKey] = useContext(searchContext)
-
-
-  const onQueryChange = (e) =>{
-    setSearchKey(e.target.value)
-  }
-
+  const onQueryChange = (e) => {
+    setSearchKey(e.target.value);
+  };
 
   return (
     <div className="navbar">
       <div className="navbar-header">
-        <h1>{location.pathname.slice(11) == ""?"Overview": 'Ticket'}</h1>
+        <h1>{location.pathname.slice(11) == "" ? "Overview" : "Ticket"}</h1>
       </div>
       <div className="profile">
         <div id="nav-search">
@@ -76,11 +71,12 @@ const Navbar = () => {
           </div>
         )}
 
-
-
         <div className="profile-section">
           <h3>Jones Ferdinand</h3>
-          <div className="profile-image-wrapper" onClick={handleProfileDropDown}>
+          <div
+            className="profile-image-wrapper"
+            onClick={handleProfileDropDown}
+          >
             <div className="profile-image">
               <img src={profileImage} alt="profile image" />
             </div>
@@ -90,21 +86,21 @@ const Navbar = () => {
         {showProfileDropdown && (
           <div className="profile-dropdown">
             <div className="profile-logo">
-              <FaUser/>
+              <FaUser />
               <h3>Profile</h3>
             </div>
             <div className="help-section">
-              <FaQuestionCircle/>
+              <FaQuestionCircle />
               <h3>Help Center</h3>
             </div>
-            <div >
-              <NavLink to={'/'} className="logout-section">
-                <FaSignOutAlt/>
+            <div>
+              <NavLink to={"/"} className="logout-section">
+                <FaSignOutAlt />
                 <h3>Log out</h3>
               </NavLink>
             </div>
           </div>
-        ) }
+        )}
       </div>
     </div>
   );

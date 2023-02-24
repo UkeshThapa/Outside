@@ -1,127 +1,122 @@
-.ticket-detail-header{
+.ticket-detail-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Mulish", sans-serif;
+  padding-top: 32px;
+  padding-left: 32px;
+  padding-right: 32px;
+  padding-bottom: 48px;
+  h3 {
+    color: #252733;
+    font-size: 19px;
+    line-height: 23.85px;
+  }
+  .ticket-detail-features {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-family:"Mulish", sans-serif;
-    padding-top: 32px;
-    padding-left: 32px;
-    padding-right: 32px;
-    padding-bottom: 48px;
-    h3{
-        color:#252733;
-        font-size: 19px;
-        line-height: 23.85px;
+    .sort {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      h3 {
+        padding-left: 8px;
+        font-size: 14px;
+      }
     }
-    .ticket-detail-features{
-        display: flex;
-        .sort{
-            display: flex;
-            align-items: center;
-            cursor: pointer;
-            h3{
-                padding-left: 8px;
-                font-size: 14px;
-            }
-        }
-        .filter{
-            display: flex;
-            align-items: center;
-            padding-left: 32px;
-            cursor: pointer;
-            h3{
-                padding-left: 8px;
-                font-size: 14px;
-            }
-        }
-        .add-tickets{
-            display: flex;
-            color: #c5c7cd;
-            align-items: center;
-            padding-left: 32px;
-            cursor: pointer;
-            h3{
-                padding-left: 8px;
-                font-size: 14px;
-            }
-        }
-
+    .filter {
+      display: flex;
+      align-items: center;
+      padding-left: 32px;
+      cursor: pointer;
+      h3 {
+        padding-left: 8px;
+        font-size: 14px;
+      }
     }
-
-    .ticket-form{
-        position: fixed;
-        background-color: #363740;
-        top: 80px;
-        left: 0px;
-
-        padding: 30px;
-        h1{
-            color: #dadcec;
-            padding-bottom: 18px;
-        }
-        #button-ticket{
-            width: 100%;
-            padding: 12px;
-            font-size: 15px;
-            background-color: #3751FF;
-            color: #fff;
-            border: none;
-            margin-bottom: 10px;
-        }
-        #button-cancel{
-            width: 100%;
-            padding: 12px;
-            font-size: 15px;
-            background-color: #3751FF;
-            color: #fff;
-            border: none;
-        }
-        .form-container{
-
-            display: flex;
-            flex-direction: column;
-            color: #dadcec;
-            padding-bottom: 24px;
-            #label{
-                padding-bottom: 8px;
-            }
-            #ticket-input{
-                padding: 12px;
-                &:focus{
-                    outline: none;
-                }
-            }
-        }
+    .add-tickets {
+      display: flex;
+      color: #c5c7cd;
+      align-items: center;
+      padding-left: 32px;
+      cursor: pointer;
+      h3 {
+        padding-left: 8px;
+        font-size: 14px;
+      }
     }
+  }
 
-    .dropdown-filter-container{
-        position: relative;
-        .filter-dropdown{
-            position: absolute;
-            padding: 10px;
-            border: 1px solid #c5c7cd;
-            border-radius: 4px;
-            top: 30px;
-            left:-120px;
-            width: 120px;
-            background-color: rgb(253, 253, 253);
-            ul{
-                list-style-type: none;
-                li{
-                    display: flex;
-                    align-items: center;
-                    padding: 10px;
-                    input[type="checkbox"]{
-                        width: 15px;
-                        height: 15px;
-                    }
-                    #filter-label{
-                        padding-left: 10px;
-                    }
-                }
-            }
-        }
+  .ticket-form {
+    position: fixed;
+    background-color: #363740;
+    top: 80px;
+    left: 0px;
+
+    padding: 30px;
+    h1 {
+      color: #dadcec;
+      padding-bottom: 18px;
     }
+    #button-ticket {
+      width: 100%;
+      padding: 12px;
+      font-size: 15px;
+      background-color: #3751ff;
+      color: #fff;
+      border: none;
+      margin-bottom: 10px;
+    }
+    #button-cancel {
+      width: 100%;
+      padding: 12px;
+      font-size: 15px;
+      background-color: #3751ff;
+      color: #fff;
+      border: none;
+    }
+    .form-container {
+      display: flex;
+      flex-direction: column;
+      color: #dadcec;
+      padding-bottom: 24px;
+      #label {
+        padding-bottom: 8px;
+      }
+      #ticket-input {
+        padding: 12px;
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+  }
 
-
-
+  .dropdown-filter-container {
+    position: relative;
+    .filter-dropdown {
+      position: absolute;
+      padding: 10px;
+      border: 1px solid #c5c7cd;
+      border-radius: 4px;
+      top: 30px;
+      left: -120px;
+      width: 120px;
+      background-color: rgb(253, 253, 253);
+      ul {
+        list-style-type: none;
+        li {
+          display: flex;
+          align-items: center;
+          padding: 10px;
+          input[type="checkbox"] {
+            width: 15px;
+            height: 15px;
+          }
+          #filter-label {
+            padding-left: 10px;
+          }
+        }
+      }
+    }
+  }
 }

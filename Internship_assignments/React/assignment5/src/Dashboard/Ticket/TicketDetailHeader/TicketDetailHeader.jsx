@@ -5,7 +5,7 @@ import useTickets from "../../../hooks/useTickets";
 
 const priority = ["All", "High", "Normal", "Low"];
 
-const TicketDetailHeader = ({ onFilterChange, filter,addTickets }) => {
+const TicketDetailHeader = ({ onFilterChange, filter, addTickets }) => {
   // const {tickets,errorMessage,addTickets} = useTickets()
 
   const [openDropDown, setOpenDropDown] = useState(false);

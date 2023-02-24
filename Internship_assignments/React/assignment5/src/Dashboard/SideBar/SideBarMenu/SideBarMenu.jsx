@@ -1,14 +1,15 @@
 import React from "react";
 import "./SideBarMenu.scss";
-import { NavLink} from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
-
-const SideBarMenu = ({ item, icon,path }) => {
-
-
-
+const SideBarMenu = ({ item, icon, path }) => {
   return (
-    <NavLink to={path} className={({isActive})=>isActive?"sidebar-menu-active":"sidebar-menu"}>
+    <NavLink
+      to={path}
+      className={({ isActive }) =>
+        isActive ? "sidebar-menu-active" : "sidebar-menu"
+      }
+    >
       <div className="menu-icon">
         <i className={icon}></i>
       </div>
