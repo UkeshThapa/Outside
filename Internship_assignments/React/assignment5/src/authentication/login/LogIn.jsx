@@ -37,7 +37,8 @@ const LogIn = () => {
 
     if (userData.data.length > 0) {
       toast.success("Log in successful")
-      navigateToDashboard("/dashboard");
+      localStorage.setItem("loggedState",true)
+      navigateToDashboard("/");
     } else {
       toast.error("LogIn error")
     }

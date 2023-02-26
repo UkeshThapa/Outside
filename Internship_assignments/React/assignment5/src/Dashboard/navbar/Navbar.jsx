@@ -2,10 +2,11 @@ import React, { useState, useContext } from "react";
 import "./Navbar.scss";
 import profileImage from "../../assets/profile_pic.png";
 import { FaUser, FaSignOutAlt, FaQuestionCircle } from "react-icons/fa";
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink, useLocation,useNavigate } from "react-router-dom";
 import { searchContext } from "../../App";
 
 const Navbar = () => {
+  const navigateToLogInPage = useNavigate()
   const [showInput, setShowInput] = useState(false);
   const [showNotificationDropdown, setShowNotificationDropdown] =
     useState(false);
@@ -36,10 +37,15 @@ const Navbar = () => {
     setSearchKey(e.target.value);
   };
 
+  const handleLogOut = () =>{
+    localStorage.removeItem("loggedState")
+    navigateToLogInPage("/login")
+  }
+
   return (
     <div className="navbar">
       <div className="navbar-header">
-        <h1>{location.pathname.slice(11) == "" ? "Overview" : "Ticket"}</h1>
+        <h1>{location.pathname.slice(1)}</h1>
       </div>
       <div className="profile">
         <div id="nav-search">
@@ -94,7 +100,7 @@ const Navbar = () => {
               <h3>Help Center</h3>
             </div>
             <div>
-              <NavLink to={"/"} className="logout-section">
+              <NavLink to={"/"} className="logout-section" onClick={handleLogOut}>
                 <FaSignOutAlt />
                 <h3>Log out</h3>
               </NavLink>

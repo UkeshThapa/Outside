@@ -2,9 +2,10 @@ const menuItems = [
   {
     item: "Overview",
     icon: "icon-overview",
-    path: "overview",
+    path: "Overview",
   },
   {
+    
     item: "Tickets",
     icon: "icon-ticket",
     path: "Ticket",

@@ -29,7 +29,7 @@ function App() {
           <BrowserRouter>
             <Routes>
               <Route
-                path="/"
+                path="/login"
                 element={
                   <div className="signUp-auth-container">
                     <LogIn />
@@ -44,7 +44,7 @@ function App() {
                   </div>
                 }
               ></Route>
-              <Route path="dashboard" element={<Dashboard />}>
+              <Route path="/" element={<Dashboard />}>
                 <Route index element={<Overview />}></Route>
                 <Route path="Ticket" element={<TicketDetails />}></Route>
                 <Route path="Ticket/:id" element={<SingleTicket />}></Route>
