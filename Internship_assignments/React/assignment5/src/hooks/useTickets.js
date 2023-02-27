@@ -7,8 +7,10 @@ const useTickets = () => {
 
   const getTickets = async () => {
     try {
-      const res = await axios.get("http://localhost:3006/tickets");
-      setTickets(res.data);
+      const res = await axios.get("https://dashboard-55807-default-rtdb.firebaseio.com/tickets.json");
+      const jsonString = JSON.stringify(Object.values(res.data));
+      const tickets = JSON.parse(jsonString);
+      setTickets(tickets);
     } catch (error) {
       setErrorMessage(error.message);
     }
@@ -28,7 +30,7 @@ const useTickets = () => {
     let color = checkPriorityForColor(data);
 
     const request = {
-      logo: `/customer-2.png`,
+      logo: `https://i.ibb.co/552TscB/customer-1.png`,
       detailsMessage: data.ticketdetails,
       updateMessageTime: "update 1 day ago",
       customerName: data.fullname,
@@ -39,13 +41,13 @@ const useTickets = () => {
       priority: data.priority,
     };
     const res = await axios
-      .post("http://localhost:3006/tickets", request)
+      .post("https://dashboard-55807-default-rtdb.firebaseio.com/tickets.json", request)
       .then((response) => setTickets([response.data, ...tickets]));
   };
 
   const deleteTicket = async (id) => {
     try {
-      await axios.delete(`http://localhost:3006/tickets/${id}`);
+      await axios.delete(`https://dashboard-55807-default-rtdb.firebaseio.com/tickets/${id}/.json`);
       setTickets(tickets.filter((ticket) => ticket.id !== id));
     } catch (error) {
       console.log(error.message);

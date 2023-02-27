@@ -31,11 +31,13 @@ const LogIn = () => {
   };
 
   const getUsers = async () => {
+    console.log('hello',logInDetail)
     const userData = await axios.get(
-      `http://localhost:3006/users?email=${logInDetail.email}&password=${logInDetail.password}`
+      `https://dashboard-55807-default-rtdb.firebaseio.com/users.json?email=${logInDetail.email}&password=${logInDetail.password}`
     );
-
-    if (userData.data.length > 0) {
+    const jsonString = JSON.stringify(Object.values(userData.data));
+    const us = JSON.parse(jsonString);
+    if (us.length > 0) {
       toast.success("Log in successful")
       localStorage.setItem("loggedState",true)
       navigateToDashboard("/");

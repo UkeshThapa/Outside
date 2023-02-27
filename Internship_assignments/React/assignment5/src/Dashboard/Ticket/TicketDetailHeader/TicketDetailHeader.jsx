@@ -28,7 +28,6 @@ const TicketDetailHeader = ({ onFilterChange, filter, addTickets }) => {
 
   const handleSubmitForm = (event) => {
     event.preventDefault();
-    handleEmptyForm()
     addTickets(ticketDetail);
   };
 

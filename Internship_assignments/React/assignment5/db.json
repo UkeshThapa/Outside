@@ -2,7 +2,7 @@
   "tickets": [
     {
       "id": 2,
-      "logo": "/customer-2.png",
+      "logo": "https://i.ibb.co/552TscB/customer-1.png",
       "detailsMessage": "Contact Email not Linked",
       "updateMessageTime": "update 1 day ago",
       "customerName": "Matt Damon",
@@ -14,7 +14,7 @@
     },
     {
       "id": 3,
-      "logo": "/customer-3.png",
+      "logo": "https://i.ibb.co/552TscB/customer-2.png",
       "detailsMessage": "When will I be charged this month?",
       "updateMessageTime": "update 1 day ago",
       "customerName": "Robert Downy",
@@ -71,28 +71,6 @@
       "time": "11:30 PM",
       "color": "orange",
       "priority": "Low"
-    },
-    {
-      "logo": "/customer-2.png",
-      "detailsMessage": "",
-      "updateMessageTime": "update 1 day ago",
-      "customerName": "",
-      "updateTime": "on 24.05.2019",
-      "date": "",
-      "time": "",
-      "priority": "",
-      "id": 8
-    },
-    {
-      "logo": "/customer-2.png",
-      "detailsMessage": "",
-      "updateMessageTime": "update 1 day ago",
-      "customerName": "",
-      "updateTime": "on 24.05.2019",
-      "date": "",
-      "time": "",
-      "priority": "",
-      "id": 9
     }
   ],
   "users": [

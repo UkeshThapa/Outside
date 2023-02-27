@@ -9,18 +9,16 @@ const TicketTable = ({ query, filter, tickets, deleteTicket }) => {
       filter = null;
     }
   }
-
+  console.log(typeof(tickets))
   return (
     <table className="ticket-table">
       <thead>
         <TicketHeader />
       </thead>
       <tbody>
-        {tickets
-          .filter((user) =>
+        {tickets.filter((user) =>
             query ? user.detailsMessage.includes(query) : true
-          )
-          .filter((user) => (filter ? user.priority.includes(filter) : true))
+          ).filter((user) => (filter ? user.priority.includes(filter) : true))
           .map((users, index) => {
             return (
               <TicketBody
