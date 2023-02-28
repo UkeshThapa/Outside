@@ -14,6 +14,7 @@ const Navbar = () => {
 
   const location = useLocation();
 
+
   const handleClick = () => {
     setShowNotificationDropdown(false);
     setShowProfileDropdown(false);
@@ -33,13 +34,14 @@ const Navbar = () => {
 
   const [searchKey, setSearchKey] = useContext(searchContext);
 
+  
   const onQueryChange = (e) => {
     setSearchKey(e.target.value);
   };
 
   const handleLogOut = () =>{
-    localStorage.removeItem("loggedState")
-    navigateToLogInPage("/login")
+    localStorage.removeItem("loggedState");
+    navigateToLogInPage('/login');
   }
 
   return (

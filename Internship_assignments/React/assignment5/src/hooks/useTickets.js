@@ -40,9 +40,8 @@ const useTickets = () => {
       color: color,
       priority: data.priority,
     };
-    const res = await axios
-      .post("https://dashboard-55807-default-rtdb.firebaseio.com/tickets.json", request)
-      .then((response) => setTickets([response.data, ...tickets]));
+    const res = await axios.post("https://dashboard-55807-default-rtdb.firebaseio.com/tickets.json", request)
+      .then((response) => setTickets([{id:response.data,...request}, ...tickets]));
   };
 
   const deleteTicket = async (id) => {

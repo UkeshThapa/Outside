@@ -1,7 +1,4 @@
 -- Active: 1677131876061@@127.0.0.1@5432@postgres
-
-
-
 CREATE TYPE user_role AS ENUM('author', 'admin', 'moderator');
 
 CREATE TABLE users(
@@ -15,7 +12,6 @@ CREATE TABLE users(
     update_at TIMESTAMP DEFAULT NOW(),
     delete_at TIMESTAMP
 );
-
 
 -- posts and meta posts
 CREATE TYPE post_status AS ENUM('draft', 'post');
@@ -35,7 +31,6 @@ CREATE TABLE postMetaData(
     is_feature BOOLEAN DEFAULT false
 );
 
-
 -- Table for comments and reply
 CREATE TABLE comments(
     id SERIAL NOT NULL PRIMARY key,
@@ -45,7 +40,6 @@ CREATE TABLE comments(
     created_at TIMESTAMP DEFAULT NOW()
 );
 
-
 CREATE TABLE reply(
     id SERIAL NOT NULL PRIMARY key,
     reply_text TEXT,
@@ -54,14 +48,12 @@ CREATE TABLE reply(
     created_at TIMESTAMP DEFAULT NOW()
 );
 
-
-
 -- post tag TABLE many to many relation
-    CREATE Table tag(
-        id SERIAL NOT NULL PRIMARY key,
-        name VARCHAR(200) NOT NULL UNIQUE,
-        description Text
-    );
+CREATE Table tag(
+    id SERIAL NOT NULL PRIMARY key,
+    name VARCHAR(200) NOT NULL UNIQUE,
+    description Text
+);
 
 CREATE TABLE post_tags (
     post_id INTEGER REFERENCES posts(id),
@@ -80,8 +72,6 @@ CREATE Table post_categories(
     post_id INTEGER REFERENCES posts(id),
     category_id INTEGER REFERENCES categories(id) PRIMARY KEY (post_id, category_id)
 );
-
-
 
 -- 1. insert the users
 INSERT INTO
@@ -119,39 +109,52 @@ VALUES
         'admin'
     );
 
-
-
 -- 2. creating new post with draft
-
 INSERT INTO
     posts(content, status, user_id)
 VALUES
     ('hello its new post', 'draft', 1);
 
-
 -- 3. publich new post 
-
 INSERT INTO
     posts(content, status, user_id)
 VALUES
     ('hello its second post', 'post', 2);
 
-
 -- 4 add comment
-
 INSERT INTO
     comments(comment_text, user_id, post_id)
 VALUES
-('it is the comment on first post', 1, 1);  
-
+    ('it is the comment on first post', 1, 1);
 
 -- 4. add reply
-
 INSERT INTO
     reply(reply_text, user_id, comment_id)
 VALUES
-('comment reply on first post', 1, 1);
+    ('comment reply on first post', 1, 1);
 
 -- 5. retriving post by  categories
-SELECT posts.content,categories.name,categories.description
-FROM posts INNER JOIN categories ON posts.id = categories.post_id;
+SELECT
+    posts.content,
+    categories.name,
+    categories.description
+FROM
+    posts
+    INNER JOIN categories ON posts.id = categories.post_id;
+
+-- trending posts
+SELECT
+    posts.content,
+    posts.status,
+    postMetaData.views,
+    postMetaData.is_feature
+FROM
+    posts
+    INNER JOIN postmetadata ON posts.id = postMetaData.post_id
+WHERE
+    postMetaData.views = (
+        SELECT
+            MAX(postMetaData.views)
+        FROM
+            postmetadata
+    );
