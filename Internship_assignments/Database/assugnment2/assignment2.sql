@@ -46,7 +46,18 @@ CREATE TABLE followers (
 INSERT INTO followers(follower_user_id,following_user_id)
 VALUES(1,2);
 
+CREATE TABLE followings(
+    user_id INT NOT NULL,
+    following_id INT NOT NULL,
+    Foreign Key (user_id) REFERENCES users(id) ON DELETE NO ACTION,
+    Foreign Key (following_id) REFERENCES users(id) ON DELETE NO ACTION
+);
 
+-- followed by the user
+INSERT INTO
+    followings(user_id, following_id)
+VALUES
+    (1, 2);
 
 
 CREATE TABLE comments (
@@ -58,6 +69,12 @@ CREATE TABLE comments (
     num_likes INTEGER DEFAULT 0
 );
 
+
+-- comment in a tweet
+INSERT INTO
+    comments(tweet_id, user_id, content,num_likes)
+VALUES
+    (1, 2, 'this is commented by user 2',5);
 
 
 
