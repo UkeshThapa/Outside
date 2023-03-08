@@ -1,0 +1,23 @@
+*{
+    margin: 0px;
+}
+.main{
+  height: 100vh;
+  display: grid;
+  place-content: center;
+  background-color: #363740;
+  font-family: sans-serif;
+}
+
+.container{
+    background-color: #fff;
+    border-radius: 24px;
+    padding: 32px;;
+}
+
+header{
+    display: flex;
+    color: #2a3de3;
+    justify-content: center;
+    padding-bottom: 24px;
+}

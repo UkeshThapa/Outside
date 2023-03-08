@@ -1,0 +1,47 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+.main{
+    font-family: sans-serif;
+    margin: 30px;
+}
+
+header{
+    font-size: 60px;
+    font-weight: 600;
+    padding-bottom: 90px;
+}
+
+.table_detail_header{
+    border: 2px solid rgb(227, 216, 216);
+    padding: 20px;
+    text-align: right;
+}
+
+.table{
+    width: 100%;
+    text-align: right;
+    border-collapse: collapse;
+}
+
+th{
+    border: 2px solid #575757;
+    padding: 10px;
+}
+
+
+
+td{
+    border: 2px solid #575757;
+
+    padding: 18px;
+}
+button{
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 12px;
+    padding-right: 12px;
+}
