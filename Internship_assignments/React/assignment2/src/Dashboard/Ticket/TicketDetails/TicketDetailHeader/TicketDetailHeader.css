@@ -1,0 +1,37 @@
+.ticket-detail-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Mulish", sans-serif;
+  padding-top: 32px;
+  padding-left: 32px;
+  padding-right: 32px;
+  padding-bottom: 48px;
+}
+.ticket-detail-header h3 {
+  color: #252733;
+  font-size: 19px;
+  line-height: 23.85px;
+}
+.ticket-detail-header .ticket-detail-features {
+  display: flex;
+}
+.ticket-detail-header .ticket-detail-features .sort {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.ticket-detail-header .ticket-detail-features .sort h3 {
+  padding-left: 8px;
+  font-size: 14px;
+}
+.ticket-detail-header .ticket-detail-features .filter {
+  display: flex;
+  align-items: center;
+  padding-left: 32px;
+  cursor: pointer;
+}
+.ticket-detail-header .ticket-detail-features .filter h3 {
+  padding-left: 8px;
+  font-size: 14px;
+}/*# sourceMappingURL=TicketDetailHeader.css.map */

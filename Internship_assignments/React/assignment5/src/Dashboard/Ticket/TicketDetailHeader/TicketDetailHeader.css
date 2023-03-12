@@ -1,0 +1,119 @@
+.ticket-detail-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Mulish", sans-serif;
+  padding-top: 32px;
+  padding-left: 32px;
+  padding-right: 32px;
+  padding-bottom: 48px;
+}
+.ticket-detail-header h3 {
+  color: #252733;
+  font-size: 19px;
+  line-height: 23.85px;
+}
+.ticket-detail-header .ticket-detail-features {
+  display: flex;
+}
+.ticket-detail-header .ticket-detail-features .sort {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.ticket-detail-header .ticket-detail-features .sort h3 {
+  padding-left: 8px;
+  font-size: 14px;
+}
+.ticket-detail-header .ticket-detail-features .filter {
+  display: flex;
+  align-items: center;
+  padding-left: 32px;
+  cursor: pointer;
+}
+.ticket-detail-header .ticket-detail-features .filter h3 {
+  padding-left: 8px;
+  font-size: 14px;
+}
+.ticket-detail-header .ticket-detail-features .add-tickets {
+  display: flex;
+  color: #c5c7cd;
+  align-items: center;
+  padding-left: 32px;
+  cursor: pointer;
+}
+.ticket-detail-header .ticket-detail-features .add-tickets h3 {
+  padding-left: 8px;
+  font-size: 14px;
+}
+.ticket-detail-header .ticket-form {
+  position: fixed;
+  background-color: #363740;
+  top: 80px;
+  left: 0px;
+  padding: 30px;
+}
+.ticket-detail-header .ticket-form h1 {
+  color: #dadcec;
+  padding-bottom: 18px;
+}
+.ticket-detail-header .ticket-form #button-ticket {
+  width: 100%;
+  padding: 12px;
+  font-size: 15px;
+  background-color: #3751ff;
+  color: #fff;
+  border: none;
+  margin-bottom: 10px;
+}
+.ticket-detail-header .ticket-form #button-cancel {
+  width: 100%;
+  padding: 12px;
+  font-size: 15px;
+  background-color: #3751ff;
+  color: #fff;
+  border: none;
+}
+.ticket-detail-header .ticket-form .form-container {
+  display: flex;
+  flex-direction: column;
+  color: #dadcec;
+  padding-bottom: 24px;
+}
+.ticket-detail-header .ticket-form .form-container #label {
+  padding-bottom: 8px;
+}
+.ticket-detail-header .ticket-form .form-container #ticket-input {
+  padding: 12px;
+}
+.ticket-detail-header .ticket-form .form-container #ticket-input:focus {
+  outline: none;
+}
+.ticket-detail-header .dropdown-filter-container {
+  position: relative;
+}
+.ticket-detail-header .dropdown-filter-container .filter-dropdown {
+  position: absolute;
+  padding: 10px;
+  border: 1px solid #c5c7cd;
+  border-radius: 4px;
+  top: 30px;
+  left: -120px;
+  width: 120px;
+  background-color: rgb(253, 253, 253);
+}
+.ticket-detail-header .dropdown-filter-container .filter-dropdown ul {
+  list-style-type: none;
+}
+.ticket-detail-header .dropdown-filter-container .filter-dropdown ul li {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+.ticket-detail-header .dropdown-filter-container .filter-dropdown ul li input[type=checkbox] {
+  width: 15px;
+  height: 15px;
+}
+.ticket-detail-header .dropdown-filter-container .filter-dropdown ul li #filter-label {
+  padding-left: 10px;
+}/*# sourceMappingURL=TicketDetailHeader.css.map */

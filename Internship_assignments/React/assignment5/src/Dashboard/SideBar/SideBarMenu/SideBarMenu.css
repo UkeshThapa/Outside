@@ -1,0 +1,38 @@
+.sidebar-menu {
+  font-family: "Mulish", sans-serif;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0.2px;
+  display: flex;
+  color: #a4a6b3;
+  padding-top: 18px;
+  padding-bottom: 18px;
+  padding-left: 32px;
+  padding-right: 24px;
+  cursor: pointer;
+  text-decoration: none;
+}
+.sidebar-menu .menu-icon {
+  margin-right: 24px;
+}
+
+.sidebar-menu-active {
+  font-family: "Mulish", sans-serif;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0.2px;
+  display: flex;
+  background-color: rgba(159, 162, 180, 0.08);
+  color: #dde2ff;
+  border-color: #dde2ff;
+  border-left: 3px solid;
+  padding-top: 18px;
+  padding-bottom: 18px;
+  padding-left: 32px;
+  padding-right: 24px;
+  cursor: pointer;
+  text-decoration: none;
+}
+.sidebar-menu-active .menu-icon {
+  margin-right: 24px;
+}/*# sourceMappingURL=SideBarMenu.css.map */

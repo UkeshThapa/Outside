@@ -1,0 +1,142 @@
+.login-container {
+  border-radius: 8px;
+  width: 380px;
+  overflow: hidden;
+  background-color: #FFFFFF;
+  font-family: "Mulish", sans-serif;
+}
+.login-container .logo-container {
+  text-align: center;
+  padding-top: 40px;
+}
+.login-container .logo-container h2 {
+  color: #A4A6B3;
+  font-size: 19px;
+  padding-top: 12px;
+}
+.login-container .logo-container h3 {
+  color: #252733;
+  line-height: 30px;
+  letter-spacing: 0.3px;
+  font-size: 24px;
+  padding-top: 24px;
+  padding-left: 32px;
+  padding-right: 32px;
+}
+.login-container .logo-container p {
+  padding-top: 12px;
+  padding-bottom: 24px;
+  color: #9FA2B4;
+  font-size: 14px;
+  line-height: 20px;
+}
+.login-container .form-container {
+  padding-left: 32px;
+  padding-right: 32px;
+  padding-bottom: 24px;
+}
+.login-container .form-container .email-container {
+  display: flex;
+  flex-direction: column;
+}
+.login-container .form-container .email-container #email-label {
+  font-style: 12px;
+  color: #9FA2B4;
+  padding-bottom: 6px;
+}
+.login-container .form-container .email-container #email-input {
+  border-radius: 8px;
+  padding: 11px 8px;
+  background: #FCFDFE;
+  border: 1px solid #F0F1F7;
+}
+.login-container .form-container .email-container #email-input:focus {
+  outline: none;
+}
+.login-container .form-container .password-container {
+  padding-top: 24px;
+  display: flex;
+  flex-direction: column;
+}
+.login-container .form-container .password-container .label-container {
+  padding-bottom: 6px;
+  display: flex;
+  justify-content: space-between;
+}
+.login-container .form-container .password-container .label-container #password-label {
+  font-style: 12px;
+  color: #9FA2B4;
+}
+.login-container .form-container .password-container .label-container #forget-password {
+  font-style: 10px;
+  color: #9FA2B4;
+  cursor: pointer;
+}
+.login-container .form-container .password-container .password-input-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 8px;
+  border: 1px solid #F0F1F7;
+  overflow: hidden;
+}
+.login-container .form-container .password-container .password-input-container #password-input {
+  width: 100%;
+  background: #FCFDFE;
+  padding-top: 11px;
+  padding-bottom: 11px;
+  padding-left: 16px;
+  border: none;
+}
+.login-container .form-container .password-container .password-input-container #password-input:focus {
+  outline: none;
+}
+.login-container .form-container .password-container .password-input-container #display-password {
+  text-align: left;
+  padding-right: 11px;
+  color: #9FA2B4;
+  cursor: pointer;
+}
+.login-container .rememberMe-container {
+  padding-top: 26px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.login-container .rememberMe-container #rememberMe-input {
+  width: 16px;
+  height: 16px;
+  background: #FCFDFE;
+  border: 1px solid #F0F1F7;
+  cursor: pointer;
+}
+.login-container .rememberMe-container #rememberMe-label {
+  font-size: 14px;
+  line-height: 20px;
+  color: #9FA2B4;
+}
+.login-container #login-button {
+  margin-top: 24px;
+  width: 100%;
+  padding: 15px 24px;
+  box-shadow: 0px 4px 12px rgba(55, 81, 255, 0.24);
+  border-radius: 8px;
+  border: none;
+  color: #FFFFFF;
+  background: #3751FF;
+  cursor: pointer;
+}
+.login-container .signup-page-container {
+  padding-top: 24px;
+  padding-bottom: 16px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  color: #9FA2B4;
+}
+.login-container .signup-page-container #signup-page-redirect {
+  text-decoration: none;
+  font-weight: 600;
+  color: #3751FF;
+}/*# sourceMappingURL=LogIn.css.map */

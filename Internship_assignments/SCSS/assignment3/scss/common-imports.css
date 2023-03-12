@@ -1,0 +1,187 @@
+.topography {
+  margin-bottom: 100px;
+}
+.topography--heading {
+  font-size: 25px;
+}
+.topography-h1 {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+.topography-h1--title {
+  margin: 0;
+  font-size: 20px;
+  margin-block: 4px;
+}
+.topography-h1--font {
+  font-size: 14px;
+  margin-block: 4px;
+  color: #7E7E7E;
+}
+.topography-h1--demo p {
+  margin-block: 0;
+  width: 804px;
+  font-size: 27.65px;
+  font-weight: 800;
+}
+
+.topography--heading {
+  font-size: 25px;
+}
+.topography-h2 {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+.topography-h2--title {
+  margin: 0;
+  font-size: 20px;
+  margin-block: 4px;
+}
+.topography-h2--font {
+  font-size: 14px;
+  margin-block: 4px;
+  color: #7E7E7E;
+}
+.topography-h2--demo p {
+  margin-block: 0;
+  width: 804px;
+  font-size: 19.2px;
+  font-weight: 800;
+}
+
+.topography--heading {
+  font-size: 25px;
+}
+.topography-body01 {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+.topography-body01--title {
+  margin: 0;
+  font-size: 20px;
+  margin-block: 4px;
+}
+.topography-body01--font {
+  font-size: 14px;
+  margin-block: 4px;
+  color: #7E7E7E;
+}
+.topography-body01--demo p {
+  margin-block: 0;
+  width: 804px;
+  font-size: 16px;
+}
+
+.topography--heading {
+  font-size: 25px;
+}
+.topography-body02 {
+  display: flex;
+  justify-content: space-between;
+}
+.topography-body02--title {
+  margin: 0;
+  font-size: 20px;
+  margin-block: 4px;
+}
+.topography-body02--font {
+  font-size: 14px;
+  margin-block: 4px;
+  color: #7E7E7E;
+}
+.topography-body02--demo p {
+  margin-block: 0;
+  width: 804px;
+  font-size: 14px;
+}
+
+.color--container {
+  margin-top: 100px;
+}
+
+.color--heading {
+  font-size: 50px;
+  margin-bottom: 60px;
+}
+
+.color {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 100px;
+}
+.color--white {
+  width: 150px;
+  height: 80px;
+  border: 2px solid;
+  border-radius: 80px;
+}
+.color--name {
+  font-size: 22px;
+  margin: 8px;
+}
+.color--code {
+  font-size: 14px;
+  margin: 8px;
+  color: #7E7E7E;
+}
+
+.color--Black {
+  width: 150px;
+  height: 80px;
+  border: none;
+  border-radius: 80px;
+  background-color: #3D3E48;
+}
+
+.color--Army-green {
+  width: 150px;
+  height: 80px;
+  border: none;
+  border-radius: 80px;
+  background-color: #295943;
+}
+
+.color--Light-green {
+  width: 150px;
+  height: 80px;
+  border: none;
+  border-radius: 80px;
+  background-color: #43B97F;
+}
+
+.icon-heading {
+  margin-top: 100px;
+  font-size: 50px;
+}
+
+.icon-item {
+  margin-right: 40px;
+  margin-bottom: 100px;
+}
+
+.effect-container {
+  margin-top: 100px;
+}
+
+.effect--heading {
+  font-size: 50px;
+}
+
+.effect--box {
+  width: 150px;
+  height: 80px;
+  border-radius: 80px;
+  box-shadow: 1px 2px 12px 1px rgba(0, 0, 0, 0.25);
+}
+.effect--title {
+  font-size: 20px;
+  margin: 8px;
+}
+.effect--feature {
+  font-size: 14px;
+  margin: 8px;
+  color: #7E7E7E;
+}/*# sourceMappingURL=common-imports.css.map */

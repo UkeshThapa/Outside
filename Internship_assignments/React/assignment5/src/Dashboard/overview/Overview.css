@@ -1,0 +1,33 @@
+.overview-container {
+  padding-left: 289px;
+  margin-top: 54px;
+  display: flex;
+  gap: 30px;
+  font-family: "Mulish", sans-serif;
+}
+.overview-container .card-container {
+  border: 1px solid #dfe0eb;
+  border-radius: 8px;
+}
+.overview-container .card-container .container {
+  padding: 24px 32px;
+  text-align: center;
+}
+.overview-container .card-container .container h1 {
+  font-weight: 700;
+  color: #9fa2b4;
+  font-size: 19px;
+  padding-bottom: 12px;
+}
+.overview-container .card-container .container h2 {
+  font-size: 40px;
+  padding-left: 86px;
+  padding-right: 86px;
+}
+.overview-container .card-container:active {
+  border: 1px solid #3751ff;
+  color: #3751ff;
+}
+.overview-container .card-container:active h1 {
+  color: #3751ff;
+}/*# sourceMappingURL=Overview.css.map */

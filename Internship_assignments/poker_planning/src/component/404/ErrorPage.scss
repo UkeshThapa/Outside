@@ -1,0 +1,48 @@
+.error-page-container{
+    font-family: 'Inter', sans-serif;
+    .error-page-logo{
+        width: 626px;
+        height: 362px;
+        padding-top: 10px;
+        padding-left: 185px;
+    }
+    .pageDetails{
+        padding-top: 72px;
+        padding-left: 185px;
+        h1{
+            width: 699px;
+            font-weight: 800;
+            font-size: 42px;
+            line-height: 52px;
+            color: #28464D;
+
+        }
+        p{
+            width: 100%;
+            padding-top: 32px;
+            padding-bottom: 72px;
+            color: #436972;
+        }
+    }
+    .button-error-page{
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        font-family: 'Inter', sans-serif;
+        margin-left: 185px;
+        padding-top: 22px;
+        padding-bottom: 22px;
+        padding-left: 61px;
+        padding-right: 61px;
+        background: #28464D;
+        color: #ffffff;
+        font-size: 18px;
+        line-height: 28px;
+        &:focus{
+            border: none;
+        }
+        .arrow-icon{
+            padding-right: 10px;
+        }
+    }
+}

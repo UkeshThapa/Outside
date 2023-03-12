@@ -21,7 +21,8 @@
 .card_img--design img {
   width: 100%;
   border-radius: 10px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .card--title {
   margin: 0;
@@ -91,20 +92,18 @@
   line-height: 20px;
 }
 
-/*# sourceMappingURL=main.scss.map */
-/*# sourceMappingURL=main.scss.map */
-/*# sourceMappingURL=main.scss.map */
-/*# sourceMappingURL=main.scss.map */
-/*# sourceMappingURL=main.scss.map */
-/*# sourceMappingURL=main.scss.map */
-/*# sourceMappingURL=main.scss.map */
-/*# sourceMappingURL=main.scss.map */
-/*# sourceMappingURL=main.scss.map */
-/*# sourceMappingURL=main.scss.map */
-/*# sourceMappingURL=main.scss.map */
-/*# sourceMappingURL=main.scss.map */
-/*# sourceMappingURL=main.scss.map */
-/*# sourceMappingURL=main.css.map */
-/*# sourceMappingURL=main.scss.map */
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*# sourceMappingURL=main.css.map */

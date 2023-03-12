@@ -1,0 +1,139 @@
+.ticket-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Mulish", sans-serif;
+}
+.ticket-navbar .ticket-navbar-header {
+  font-size: 24px;
+}
+.ticket-navbar .profile {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.ticket-navbar .profile #nav-search {
+  display: flex;
+  gap: 8px;
+}
+.ticket-navbar .profile #search-input {
+  padding: 8px;
+  width: 200px;
+  border: 2px solid #999;
+  border-radius: 10px;
+}
+.ticket-navbar .profile #search-input:focus {
+  outline: none;
+}
+.ticket-navbar .profile #search {
+  padding-right: 26px;
+  cursor: pointer;
+  border: none;
+  background-color: white;
+}
+.ticket-navbar .profile #notification {
+  padding-right: 33px;
+  cursor: pointer;
+  border: none;
+  background-color: white;
+}
+.ticket-navbar .profile .notification-dropdown {
+  position: absolute;
+  text-align: center;
+  border-radius: 10px;
+  padding: 10px;
+  width: 200px;
+  background-color: rgba(234, 232, 232, 0.9490196078);
+  top: 90%;
+  height: 50vh;
+}
+.ticket-navbar .profile .notification-dropdown ul {
+  list-style: none;
+}
+.ticket-navbar .profile .notification-dropdown ul li {
+  padding: 10px;
+}
+.ticket-navbar .profile .profile-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-left: 1px solid #DFE0EB;
+  padding-left: 32px;
+}
+.ticket-navbar .profile .profile-section h3 {
+  font-weight: 600;
+  font-size: 14px;
+}
+.ticket-navbar .profile .profile-section .profile-image-wrapper {
+  padding: 1.5px;
+  margin-left: 14px;
+  border: 1.5px solid #DFE0EB;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.ticket-navbar .profile .profile-section .profile-image-wrapper .profile-image {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.ticket-navbar .profile .profile-section .profile-image-wrapper .profile-image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.ticket-navbar .profile .profile-dropdown {
+  position: absolute;
+  background-color: #ffffff;
+  border: 2px solid #cccaca;
+  top: 60px;
+  left: 30%;
+  border-radius: 4px;
+  width: 200px;
+}
+.ticket-navbar .profile .profile-dropdown .profile-logo {
+  display: flex;
+  padding: 20px;
+  gap: 20px;
+  align-items: center;
+  cursor: pointer;
+  border-bottom: 1px solid #cccaca;
+  color: #a6a6a6;
+  font-size: 20px;
+}
+.ticket-navbar .profile .profile-dropdown .profile-logo h3 {
+  font-size: 18px;
+  color: #0d0c22;
+}
+.ticket-navbar .profile .profile-dropdown .help-section {
+  display: flex;
+  padding: 20px;
+  gap: 20px;
+  align-items: center;
+  cursor: pointer;
+  border-bottom: 1px solid #cccaca;
+  color: #a6a6a6;
+  font-size: 20px;
+}
+.ticket-navbar .profile .profile-dropdown .help-section h3 {
+  font-size: 18px;
+  color: #0d0c22;
+}
+.ticket-navbar .profile .profile-dropdown .logout-section {
+  display: flex;
+  padding: 20px;
+  gap: 20px;
+  align-items: center;
+  cursor: pointer;
+  color: #a6a6a6;
+  font-size: 20px;
+  text-decoration: none;
+}
+.ticket-navbar .profile .profile-dropdown .logout-section h3 {
+  font-size: 18px;
+  color: #0d0c22;
+}/*# sourceMappingURL=TicketNavbar.css.map */
