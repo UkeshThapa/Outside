@@ -6,6 +6,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import LogIn  from './component/authentication/LogIn'
 import ErrorPage from './component/404/ErrorPage';
 import SignUp from './component/authentication/SignUp';
+import Dashboard from './component/dashboard/Dashboard';
 
 
 function App() {
@@ -14,6 +15,11 @@ function App() {
     <>
     <BrowserRouter>
     <Routes>
+      <Route
+        path='/'
+        element ={<Dashboard/>}
+      >
+      </Route>
       <Route
         path='/login'
         element = {

@@ -10,7 +10,7 @@ import {toast} from "react-toastify"
 const LogIn = () => {
   const navigateToDashboard = useNavigate();
   const [loginFail, setLoginFail] = useState(false);
-  const { users, errorMessage, userStatus, addUser } = useUsers();
+  const { users } = useUsers();
   const [logInDetail, setLogInDetail] = useState({
     email: "",
     password: "",

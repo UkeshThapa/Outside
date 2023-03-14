@@ -1,18 +1,35 @@
 import React, { useState } from "react";
 import logo from '../../assets/logo.jpg';
 import { FaEyeSlash, FaEye } from "react-icons/fa";
+import useUsers from "../../hook/useUser";
 import "./SignUp.scss";
 
 import { Link} from "react-router-dom";
 
-const SignUp = () => {
-  const [signUpDetails, setSignUpDetails] = useState({
-    fullName: "",
-    email: "",
-    password: "",
-    confirmPassword: "",
-  });
 
+const SignUp = () => {
+  
+  
+  const {users,postAction} = useUsers();
+
+  // signup detail store in variable
+
+    const [signUpDetails, setSignUpDetails] = useState({
+      fullName: "",
+      email: "",
+      password: "",
+      confirmPassword: "",
+    });
+
+
+    const handleInputChange = (e) => {
+      setSignUpDetails((prev) => ({
+        ...prev,
+        [e.target.name]: e.target.value,
+      }));
+    };
+
+  // display text change 
   const [passwordDisplay, setPasswordDisplay] = useState({
     icon: <FaEyeSlash />,
     passwordType: "password",
@@ -23,20 +40,10 @@ const SignUp = () => {
     passwordType: "password",
   });
 
-  const handleInputChange = (e) => {
-    setSignUpDetails((prev) => ({
-      ...prev,
-      [e.target.name]: e.target.value,
-    }));
-  };
 
-  const handleSubmitChange = (e) => {
-    e.preventDefault();
-    console.log(signUpDetails);
-    if (signUpDetails.password === signUpDetails.confirmPassword) {
-      addUser(signUpDetails);
-    }
-  };
+
+
+
 
   const handlePasswordDisplayType = (event) => {
     setPasswordDisplay((prev) => ({
@@ -66,6 +73,14 @@ const SignUp = () => {
           ? "text"
           : "password",
     }));
+  };
+
+  const handleSubmitChange = (e) => {
+    e.preventDefault();
+    if (signUpDetails.password === signUpDetails.confirmPassword) {
+      
+      postAction({action:'signUp',...signUpDetails});
+    }
   };
 
   return (

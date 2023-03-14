@@ -1,51 +1,60 @@
 import React,{useState} from 'react'
 import './Login.scss'
 import logo from '../../assets/logo.jpg';
+import useUsers from '../../hook/useUser';
 import { FaEyeSlash, FaEye } from "react-icons/fa";
 import { Link} from "react-router-dom";
 
 
 
 const LogIn = () => {
+  const {postAction,logInStatus,setLogInStatus} = useUsers();
   // password display on text and encoded
     const [passwordDisplay, setPasswordDisplay] = useState({
       icon: <FaEyeSlash />,
       passwordType: "password",
     });
 
-  // store the login details
-  const [logInDetail, setLogInDetail] = useState({
-    email: "",
-    password: "",
-    rememberMe: false,
-  });
-
-  const handlePasswordDisplayType = (event) => {
-    setPasswordDisplay((prev) => ({
+    
+    // store the login details
+    const [logInDetail, setLogInDetail] = useState({
+      email: "",
+      password: "",
+      rememberMe: false,
+    });
+    
+    
+    const handlePasswordDisplayType = (event) => {
+      setPasswordDisplay((prev) => ({
       ...prev,
       icon:
-        passwordDisplay.passwordType === "password" ? (
-          <FaEye />
+      passwordDisplay.passwordType === "password" ? (
+        <FaEye />
         ) : (
           <FaEyeSlash />
-        ),
-      passwordType:
-        passwordDisplay.passwordType === "password" ? "text" : "password",
-    }));
-  };
+          ),
+          passwordType:
+          passwordDisplay.passwordType === "password" ? "text" : "password",
+        }));
+      };
+      
+      const handleInputChange = (e) => {
+        setLogInDetail((prev) => ({
+          ...prev,
+          [e.target.name]:
+          e.target.name === "rememberMe" ? !prev.rememberMe : e.target.value,
+        }));
+        
+      };
+      
+      const handleSubmitForm = (event) => {
+        event.preventDefault();
+        postAction({action:'logIn',...logInDetail});
+        console.log(logInStatus);
+        if(logInStatus){
 
-  const handleInputChange = (e) => {
-    setLogInDetail((prev) => ({
-      ...prev,
-      [e.target.name]:
-        e.target.name === "rememberMe" ? !prev.rememberMe : e.target.value,
-    }));
-
-  };
-
-  const handleSubmitForm = (event) => {
-    event.preventDefault();
-    console.log(logInDetail);
+          setLogInStatus(false);
+        }
   };
 
   return (
