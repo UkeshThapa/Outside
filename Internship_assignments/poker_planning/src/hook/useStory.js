@@ -1,10 +1,7 @@
-import { useEffect, useState } from "react";
+import {useState } from "react";
 import axios from "axios";
-import {useParams,useNavigate } from "react-router-dom";
-
 
 const useStory = () => {
-  const {id} = useParams();
 
   const [story, setStory] = useState([]);
 
@@ -17,9 +14,6 @@ const useStory = () => {
       console.log(error.message);
     }
   };
-
-  
-
 
 
   const deleteStory = async (data) =>{
@@ -41,6 +35,8 @@ const useStory = () => {
       console.log(error.message);
     }
   };
+
+
   return {story,addStory,getStory,deleteStory,setStory};
 };
 
