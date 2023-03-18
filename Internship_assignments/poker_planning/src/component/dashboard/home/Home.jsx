@@ -20,10 +20,9 @@ const Home = () => {
     useEffect(()=>{
       if(!error){
         addParticipants({session_id:id,action:'addParticipants',user_id:Number(sessionStorage.getItem('user_id'))})
-
-        // console.log(participants)
       }
     },[error]) 
+    
 
     return (
     <div className='home-section'>

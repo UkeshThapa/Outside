@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import Modal from "../../../../Model/Model";
 import "./Story.scss";
 import useStory from "../../../../../hook/useStory";
@@ -7,16 +7,21 @@ import StoryDetail from "./StoryDetail";
 
 const Story = () => {
 
-  const {addStory} = useStory();
+  const {story,addStory,getStory,deleteStory} = useStory();
   const session_id = useParams();
 
   const [showModel, setShowModel] = useState(false);
   function handleModel() {
     document.body.style.overflow = "unset";
     setShowModel(!showModel);
+    
   }
 
-  
+  useEffect(()=>{
+    getStory({action:'getStory',session_id:`${session_id.id}`})
+  }
+  ,[])
+
         // store the story details
     const [storyDetail, setStoryDetail] = useState({
         title: "",
@@ -34,14 +39,16 @@ const Story = () => {
         const handleSubmitForm = (event) => {
             event.preventDefault();
             addStory({action:'addStory',session_id:`${session_id.id}`,...storyDetail});
-            // console.log(storyDetail)
+            setTimeout(() => {
+              getStory({action:'getStory',session_id:`${session_id.id}`})
+            }, 500);
       };
 
 
   return (
     <div className="story-container">
       <table className="story-table">
-        <thead>
+        <thead className="tableHeader">
           <tr>
             <th>
               <div className="header">
@@ -54,7 +61,7 @@ const Story = () => {
                             <h2>Add Story</h2>
                         </div>
                         <form className="form-container" onSubmit={handleSubmitForm}>
-                            <div className="story-title">
+                            <div className="story-titleForm">
                                 <label htmlFor="" className="title">Story Title:</label>
                                 <input type="text" id="story-title-input" name="title" value={storyDetail.title} onChange={handleInputChange} required={true} />
                             </div>
@@ -85,16 +92,21 @@ const Story = () => {
             </th>
           </tr>
         </thead>
-        <tbody className="body">
-            <StoryDetail/>
-            <StoryDetail/>
-            <StoryDetail/>
-            <StoryDetail/>
-            <StoryDetail/>
-            <StoryDetail/>
-            <StoryDetail/>
+        <tbody>
+          {
+            story.map((story,index)=>{
+              return(
+                <StoryDetail
+                  key={index}
+                  index = {index+1}
+                  stories={story} 
+                  deleteStory= {deleteStory}
+                
+                />
 
-
+              )
+            })
+          }
         </tbody>
       </table>
     </div>
