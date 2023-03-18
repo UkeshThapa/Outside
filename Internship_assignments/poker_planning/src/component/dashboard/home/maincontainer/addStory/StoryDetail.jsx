@@ -1,28 +1,27 @@
-import React from 'react'
+import React,{useState} from 'react'
 import "./StoryDetail.scss";
 import useStory from '../../../../../hook/useStory';
 import { useParams } from 'react-router-dom';
-const StoryDetail = ({index,stories,deleteStory}) => {
-    const session_id = useParams();
 
-    const{story} = useStory();
+
+
+
+const StoryDetail = ({index,stories,deleteStory,checkActive,handleChange}) => {
 
     function handleDelete(id){
-
-        console.log(story)
         deleteStory({story_id:id,action:'deleteStoryById'})
-        console.log(story)
-
-
     }
+
+
 
   return (
     <tr className='body-story'>
         <td>
             <div className="index">
-                <p>
-                    {index}
-                </p>
+                <input type="radio" name='active_story' checked={checkActive===stories.story_id }  id='story_status' value={stories.story_id}
+                
+                onChange={()=>handleChange(stories.story_id)}
+                />
 
             </div>
         </td>
@@ -35,7 +34,7 @@ const StoryDetail = ({index,stories,deleteStory}) => {
                     }
                 </p>
                 <div className="story-btn">
-                <button id='vote-btn'>vote</button>
+                <button className='vote-btn'>{checkActive==stories.story_id?"voting":"vote"}</button>
             </div>
             </div>
         </td>

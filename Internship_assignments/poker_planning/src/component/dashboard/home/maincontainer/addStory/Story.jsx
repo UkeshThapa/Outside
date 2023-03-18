@@ -7,7 +7,7 @@ import StoryDetail from "./StoryDetail";
 
 const Story = () => {
 
-  const {story,addStory,getStory,deleteStory} = useStory();
+  const {story,addStory,getStory,deleteStory,updateStoryStatus} = useStory();
   const session_id = useParams();
 
   const [showModel, setShowModel] = useState(false);
@@ -42,7 +42,19 @@ const Story = () => {
             setTimeout(() => {
               getStory({action:'getStory',session_id:`${session_id.id}`})
             }, 500);
-      };
+          };
+          
+
+      const [checkActive,setCheckActive] = useState(null);
+
+      function handleChange(id){
+        setCheckActive(id)
+        updateStoryStatus({action:'updateStoryStatus',story_id:id})
+        setTimeout(() => {
+          getStory({action:'getStory',session_id:`${session_id.id}`})
+        }, 500);
+      }
+
 
 
   return (
@@ -101,7 +113,8 @@ const Story = () => {
                   index = {index+1}
                   stories={story} 
                   deleteStory= {deleteStory}
-                
+                  checkActive = {checkActive}
+                  handleChange = {handleChange}
                 />
 
               )
