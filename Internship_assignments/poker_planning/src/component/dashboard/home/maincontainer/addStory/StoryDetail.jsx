@@ -4,8 +4,12 @@ const StoryDetail = () => {
   return (
     <tr>
         <td>
-            <div className="story-btn">
-                <button id='vote-btn'>vote</button>
+            <div className="index">
+                <p>
+                    1
+
+                </p>
+
             </div>
         </td>
         <td>
@@ -13,6 +17,9 @@ const StoryDetail = () => {
                 <p>
                     story
                 </p>
+                <div className="story-btn">
+                <button id='vote-btn'>vote</button>
+            </div>
             </div>
         </td>
         <td>
