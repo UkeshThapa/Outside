@@ -1,13 +1,23 @@
-import React,{useState} from 'react'
+import React,{useEffect, useState} from 'react'
 import './Login.scss'
 import logo from '../../assets/logo.jpg';
 import useUsers from '../../hook/useUser';
 import { FaEyeSlash, FaEye } from "react-icons/fa";
 import { Link} from "react-router-dom";
+import {useParams,useNavigate } from "react-router-dom";
 
 
 
 const LogIn = () => {
+
+  const navigateToDashboard = useNavigate()
+
+  useEffect(()=>{
+    if(window.localStorage.getItem("loggedState")){
+      navigateToDashboard("/session")
+    }
+  },[])
+
   const {postAction,logInStatus,setLogInStatus} = useUsers();
   // password display on text and encoded
     const [passwordDisplay, setPasswordDisplay] = useState({
@@ -47,14 +57,20 @@ const LogIn = () => {
         
       };
       
+
+      
+
       const handleSubmitForm = (event) => {
         event.preventDefault();
         postAction({action:'logIn',...logInDetail});
-        console.log(logInStatus);
-        if(logInStatus){
-
-          setLogInStatus(false);
-        }
+        // console.log(logInStatus);
+        // if(logInStatus){
+        //   //l
+        //   localStorage.setItem("loggedState",true)
+        //   navigateToDashboard('/')
+        //   setLogInStatus(false);
+          
+        // }
   };
 
   return (

@@ -1,0 +1,56 @@
+.menu-container{
+    .menu-button{
+        padding: 21px;
+        font-family: sans-serif;
+        border: 2px solid #DDDDDD;
+        .sharelink{
+            padding-bottom: 20px;
+            .sharelink-btn{
+                width: 100%;
+                cursor: pointer;
+                font-size: 20px;
+                font-weight: 700;
+                color: #ffff;
+                background-color: rgba(9, 177, 96, 0.98);
+                padding: 10px 26px;
+                border-radius: 4px;
+                border: none;
+                &:focus{
+                    border: none;
+                }
+            }
+        }
+        .complete{
+            padding-bottom: 20px;
+            .complete-btn{
+                width: 100%;
+                cursor: pointer;
+                font-size: 20px;
+                font-weight: 700;
+                color: #ffff;
+                background-color: #4F98DB;;
+                padding: 10px 26px;
+                border-radius: 4px;
+                border: none;
+                &:focus{
+                    border: none;
+                }
+            }
+        }
+        .end{
+            .end-btn{
+                cursor: pointer;
+                font-size: 20px;
+                font-weight: 700;
+                color: #ffff;
+                background-color: rgba(207, 21, 21, 0.76);
+                padding: 10px 26px;
+                border-radius: 4px;
+                border: none;
+                &:focus{
+                    border: none;
+                }
+            }
+        }
+    }
+}

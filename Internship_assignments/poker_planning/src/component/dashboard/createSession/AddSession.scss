@@ -1,0 +1,103 @@
+    .session-container{
+        margin-top: 31px;
+        margin-left: 168px;
+        margin-right: 128px;
+        // margin-bottom: 100px;
+        border: 2px solid #DDDDDD;
+        overflow: hidden;
+        border-radius: 8px ;
+        padding-bottom: 58px; 
+        font-family: sans-serif;
+        .session-header{
+            padding-top: 20px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #DDDDDD;
+            padding-left: 18px;
+            background: #F5F5F5;
+            h2{
+                font-size: 20px;
+                color: rgba(51, 51, 51, 0.89);
+                
+            }
+        }
+        
+        .sessionName-container{
+            display: flex;
+            flex-direction: column;
+            padding-left: 36px;
+            padding-top: 48px;
+            #sessionNameLabel{
+                padding-bottom: 12px;
+                font-size: 20px;
+                sup{
+                    color: #ea3535;
+                }
+            }
+            #sessionNameInput{
+                border: 2px solid #DDDDDD;
+                border-radius: 4px;
+                width: 450px;
+                padding: 8px;
+                font-size: 20px;
+                &:focus{
+
+                    outline: none;
+                    border: 2px solid #DDDDDD;
+                }
+            }
+        }
+        .sessionDescription-container{
+            display: flex;
+            flex-direction: column;
+            padding-left: 36px;
+            padding-top: 48px;
+            #sessionDescriptionLabel{
+                padding-bottom: 12px;
+                font-size: 20px;
+                sup{
+                    color: #ea3535;
+                }
+            }
+            #sessionDescriptionInput{
+                border: 2px solid #DDDDDD;
+                border-radius: 4px;
+                width: 450px;
+                height: 114px;
+                padding: 8px;
+                font-size: 20px;
+                &:focus{
+                    
+                    outline: none;
+                    border: 2px solid #DDDDDD;
+                }
+            }
+        }
+        .button-container{
+            padding-left: 36px;
+            padding-top: 48px;
+            display: flex;
+            gap: 15px;
+            .cancel{
+                padding: 14px 18px ;
+                background-color: #4F98DB;
+                font-size: 20px;
+                font-weight: 700;
+                color: #ffffff;
+                border-radius: 4px;
+                cursor: pointer;
+                border: none;
+                outline: none;
+            }
+            .submit{
+                padding: 14px 18px ;
+                background-color: #4F98DB;
+                font-size: 20px;
+                font-weight: 700;
+                color: #ffffff;
+                border-radius: 4px;
+                cursor: pointer;
+                border: none;
+                outline: none;
+            }
+        }
+    }

@@ -1,0 +1,138 @@
+/* Hide scrollbar but still allow scrolling */
+::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
+  
+  /* Hide scrollbar track */
+  ::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+  
+  /* Hide scrollbar handle */
+  ::-webkit-scrollbar-thumb {
+    background-color: transparent;
+  }
+
+.story-container{
+    padding: 30px 25px;
+    border: 1px solid #DDDDDD;
+    border-radius: 8px;
+
+    thead{
+        position: sticky;
+        top: 0;
+        z-index: 1;
+    }
+      
+    .story-table{
+        width: 100%;
+        border-collapse: collapse;
+        text-align: left;
+        max-height: 346px;
+        display: block;
+        overflow-y: scroll;
+        th{
+            background-color:#F9F9F9;
+            
+        }
+        
+
+
+        .header{
+            padding: 18px 22px;
+            font-weight: 400;
+            font-family: sans-serif;
+            font-size: 20px;
+            #add{
+                font-size: 24px;
+                color: #4F98DB;
+                
+            }
+            #trash{
+                font-size: 24px;
+                color: #4F98DB;
+            }
+
+            .model-container{
+                font-size: 20px;
+                background-color: #ffff;
+                border-radius: 8px;
+                padding: 30px;
+                width: 392px;
+                .header-title{
+                    
+                    text-align: center;
+                }
+                .form-container{
+                    padding: 30px;
+                    .story-title{
+                        display: flex;
+                        flex-direction: column;
+                        padding-bottom: 10px;
+                        
+                        .title{
+                            font-size: 20px;
+                            padding-bottom: 14px;
+                            color: #1f1e1e;
+                        }
+                        #story-title-input{
+                            padding: 8px;
+                            border-radius: 4px;
+                            border:1px solid #bbb9b9;
+                            
+                            &:focus{
+                                outline: none;
+                            }
+                            
+                        }
+                    }
+                    .story-description{
+                        display: flex;
+                        flex-direction: column;
+                        
+                        .description{
+                            font-size: 20px;
+                            padding-bottom: 14px;
+                            color: #1f1e1e;
+                        }
+                        #story-description-input{
+                            padding: 8px;
+                            border-radius: 4px;
+                            border:1px solid #bbb9b9;
+                            resize: none;
+
+                            
+                            &:focus{
+                                outline: none;
+                            }
+                            
+                        }
+                    }
+
+                    .submit-button{
+                        padding-top: 10px;
+                        #submit{
+                            padding: 10px;
+                            cursor: pointer;
+                            width: 100%;
+                            background-color: #4F98DB;
+                            border: none;
+                            border-radius: 8px;
+                            font-size: 20px;
+                            color: #ffff;
+                            &:focus{
+                                border: none;
+                            }
+                            
+                        }
+                    }
+                }
+            }
+
+
+        }
+
+
+    }
+}

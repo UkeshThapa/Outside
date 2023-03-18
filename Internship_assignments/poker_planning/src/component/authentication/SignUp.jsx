@@ -1,15 +1,17 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import logo from '../../assets/logo.jpg';
 import { FaEyeSlash, FaEye } from "react-icons/fa";
 import useUsers from "../../hook/useUser";
 import "./SignUp.scss";
+import {useParams,useNavigate } from "react-router-dom";
 
 import { Link} from "react-router-dom";
 
 
 const SignUp = () => {
   
-  
+  const navigateToDashboard = useNavigate()
+
   const {users,postAction} = useUsers();
 
   // signup detail store in variable
@@ -42,6 +44,11 @@ const SignUp = () => {
 
 
 
+  useEffect(()=>{
+    if(window.localStorage.getItem("loggedState")){
+      navigateToDashboard("/session")
+    }
+  },[])
 
 
 

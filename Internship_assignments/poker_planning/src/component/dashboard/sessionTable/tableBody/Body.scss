@@ -1,0 +1,50 @@
+tr{
+    cursor: pointer;
+    border-bottom: 2px solid #DDDDDD;
+}
+
+.session-name{
+    font-family: sans-serif;
+    font-weight: 400;
+    padding-left: 22px;
+    padding-top: 38px;
+    padding-bottom: 38px;
+    font-size: 20px;
+}
+
+.session-member{
+    font-family: sans-serif;
+    font-weight: 400;
+    padding-left: 22px;
+    padding-top: 38px;
+    padding-bottom: 38px;
+    font-size: 20px;   
+}
+
+.session-status{
+    padding-left: 22px;
+    padding-top: 38px;
+    padding-bottom: 38px;
+    .btn{        
+        font-family: sans-serif;
+        font-weight: 700;
+        font-size: 20px; 
+        color: #ffff;
+        padding: 9px 6px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        &:focus{
+            border: none;
+        }
+    } 
+}
+
+.session-icon{
+    padding-left: 22px;
+    padding-top: 38px;
+    padding-bottom: 38px;
+    #icon{
+        font-size: 25px;
+    }
+}
