@@ -35,6 +35,17 @@ const useStory = () => {
     }
   };
   
+  const addStoryPoints = async (data) => {
+    try {
+      await axios.post("http://localhost/php/pokerplanning/", data)
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
+  
+
+
+
   
   const updateStoryStatus = async (data) =>{
       try {
@@ -46,7 +57,7 @@ const useStory = () => {
 
 
 
-  return {story,addStory,getStory,deleteStory,updateStoryStatus};
+  return {story,addStory,getStory,deleteStory,updateStoryStatus,addStoryPoints};
 };
 
 export default useStory;

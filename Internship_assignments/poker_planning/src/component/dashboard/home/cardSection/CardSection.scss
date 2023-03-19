@@ -1,0 +1,58 @@
+.footer-container{
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+    padding-top: 60px;
+    &__card{
+        display: flex;
+        gap: 45px;
+        align-items: center;
+    }
+    &__button{
+        display: flex;
+        align-items: center;
+        gap: 62px;
+        
+        .submit-btn{
+            cursor: pointer;
+            padding: 20px 25px;
+            font-family: sans-serif;
+            font-size: 25px;
+            font-weight: 700;
+            color: #ffffff;
+            background-color: #3f87ca ;
+            border: none;
+            border-radius: 8px;
+            &:focus{
+                border: none;
+            }
+            &:active{
+                border: none;
+                background-color: #0066c6 ;
+            }
+        }
+        .reveal-btn-hidden{
+            display: none;
+        }
+
+        .reveal-btn{
+
+            cursor: pointer;
+            padding: 20px 25px;
+            font-family: sans-serif;
+            font-size: 25px;
+            font-weight: 700;
+            color: #ffffff;
+            background-color: #3f87ca ;
+            border: none;
+            border-radius: 8px;
+            &:focus{
+                border: none;
+            }
+            &:active{
+                border: none;
+                background-color: #0066c6 ;
+            }
+        }
+    }
+}

@@ -18,7 +18,7 @@ const StoryDetail = ({index,stories,deleteStory,checkActive,handleChange}) => {
     <tr className='body-story'>
         <td>
             <div className="index">
-                <input type="radio" name='active_story' checked={checkActive===stories.story_id }  id='story_status' value={stories.story_id}
+                <input type="radio" name='active_story' checked={stories.storyStatus=='active' }  id='story_status' value={stories.story_id}
                 
                 onChange={()=>handleChange(stories.story_id)}
                 />
@@ -34,7 +34,7 @@ const StoryDetail = ({index,stories,deleteStory,checkActive,handleChange}) => {
                     }
                 </p>
                 <div className="story-btn">
-                <button className='vote-btn'>{checkActive==stories.story_id?"voting":"vote"}</button>
+                <button className='vote-btn'>{stories.storyStatus=='active'?"voting":"vote"}</button>
             </div>
             </div>
         </td>

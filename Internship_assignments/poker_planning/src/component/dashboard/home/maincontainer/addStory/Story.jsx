@@ -1,9 +1,11 @@
-import React, { useState,useEffect } from "react";
+import React, { useState,useEffect,useContext } from "react";
 import Modal from "../../../../Model/Model";
 import "./Story.scss";
 import useStory from "../../../../../hook/useStory";
 import { useParams } from "react-router-dom";
 import StoryDetail from "./StoryDetail";
+import { storyContext } from "../../../../../App";
+
 
 const Story = () => {
 
@@ -45,14 +47,15 @@ const Story = () => {
           };
           
 
-      const [checkActive,setCheckActive] = useState(null);
+
+      const [storyId,setStoryId] = useContext(storyContext);
 
       function handleChange(id){
-        setCheckActive(id)
+        setStoryId(id)
         updateStoryStatus({action:'updateStoryStatus',story_id:id})
         setTimeout(() => {
           getStory({action:'getStory',session_id:`${session_id.id}`})
-        }, 500);
+        }, 50);
       }
 
 
@@ -113,7 +116,7 @@ const Story = () => {
                   index = {index+1}
                   stories={story} 
                   deleteStory= {deleteStory}
-                  checkActive = {checkActive}
+                  checkActive = {storyId}
                   handleChange = {handleChange}
                 />
 

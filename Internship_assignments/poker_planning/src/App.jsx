@@ -1,4 +1,4 @@
-import React, { createContext } from "react";
+import React, { createContext,useState } from "react";
 import "./App.scss";
 import { ToastContainer } from "react-toastify";
 
@@ -15,13 +15,17 @@ import {useParams,useNavigate } from "react-router-dom";
 import TableContainer from "./component/dashboard/sessionTable/TableContainer";
 
 
+export const storyContext  = createContext();
+
 function App() {
+  
+  const [storyId,setStoryId] = useState(null)
 
 
 
   
   return (
-    <>
+    <storyContext.Provider value={[storyId,setStoryId]}>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Dashboard/>}>
@@ -49,7 +53,7 @@ function App() {
           <Route path="*" element={<ErrorPage />}></Route>
         </Routes>
       </BrowserRouter>
-    </>
+    </storyContext.Provider>
   );
 }
 
