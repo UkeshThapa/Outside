@@ -5,9 +5,7 @@ import useUsers from '../../hook/useUser';
 import { FaEyeSlash, FaEye } from "react-icons/fa";
 import { Link} from "react-router-dom";
 import {useParams,useNavigate } from "react-router-dom";
-
-
-
+import { ToastContainer, toast } from 'react-toastify';
 const LogIn = () => {
 
   const navigateToDashboard = useNavigate()
@@ -113,7 +111,6 @@ const LogIn = () => {
               placeholder="Password"
               value={logInDetail.password}
               onChange={handleInputChange}
-              
             />
             <span id="display-password" onClick={handlePasswordDisplayType}>
               {passwordDisplay.icon}

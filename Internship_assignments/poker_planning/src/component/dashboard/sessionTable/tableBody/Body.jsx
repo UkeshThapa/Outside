@@ -2,7 +2,7 @@ import React from 'react'
 import "./Body.scss"
 import { useNavigate } from "react-router-dom";
 
-const Body = ({session}) => {
+const Body = ({session,handleSessionId}) => {
   const navigate = useNavigate();
   let color
   if(session.status=='running'){
@@ -31,7 +31,7 @@ const Body = ({session}) => {
         </td>
         <td>
             <div className="session-icon">
-              <i className='icon-trash' id='icon'></i>
+              <i className='icon-trash' id='icon' onClick={()=>handleSessionId(session.session_id)}></i>
             </div>
             
         </td>

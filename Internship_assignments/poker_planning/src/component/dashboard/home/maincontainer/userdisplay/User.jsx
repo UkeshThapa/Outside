@@ -2,12 +2,14 @@ import React,{useContext} from 'react'
 import Member from './member/member'
 import "./User.scss"
 import useParticipants from '../../../../../hook/useParticipants'
-import { toggleContext } from '../../../../../App'
+import { storyContext } from '../../../../../App'
 import useStory from '../../../../../hook/useStory'
+
 const User = () => {
   const {status} = useStory();
   const {participants} = useParticipants()
-  const [toggle,setToggle] = useContext(toggleContext);
+  const [activeStoryPoint, setActiveStoryPoint] = useContext(storyContext)
+
 
 
   return (
@@ -20,9 +22,18 @@ const User = () => {
               <Member
               key = {index}
               user = {user}
+              status = {status}
               />
             )
-          }):'false'
+          }):          activeStoryPoint.map((user,index)=>{
+            return(
+              <Member
+              key = {index}
+              user = {user}
+              status = {status}
+              />
+            )
+          })
           
       }
 

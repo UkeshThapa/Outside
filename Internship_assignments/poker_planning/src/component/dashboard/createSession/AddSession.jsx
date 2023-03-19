@@ -62,7 +62,7 @@ const AddSession = () => {
           <label htmlFor="sessionDescription" id="sessionDescriptionLabel">
             Description
           </label>
-          <input
+          <textarea
             type="text"
             id="sessionDescriptionInput"
             name="sessionDescription"

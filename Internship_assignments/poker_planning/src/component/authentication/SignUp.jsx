@@ -4,6 +4,7 @@ import { FaEyeSlash, FaEye } from "react-icons/fa";
 import useUsers from "../../hook/useUser";
 import "./SignUp.scss";
 import {useParams,useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
 
 import { Link} from "react-router-dom";
 
@@ -84,10 +85,17 @@ const SignUp = () => {
 
   const handleSubmitChange = (e) => {
     e.preventDefault();
-    if (signUpDetails.password === signUpDetails.confirmPassword) {
-      
-      postAction({action:'signUp',...signUpDetails});
+    
+    if(signUpDetails.password.length > 8){      
+      if (signUpDetails.password === signUpDetails.confirmPassword) {
+        
+        postAction({action:'signUp',...signUpDetails});
+      }
+    }else{
+      // toast('hello')
+      toast.error("password less than 8 character")
     }
+
   };
 
   return (

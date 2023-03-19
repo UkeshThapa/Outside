@@ -1,23 +1,30 @@
-import React, { useState,useEffect,useContext } from "react";
+import React, { useState,useEffect } from "react";
 import Modal from "../../../../Model/Model";
 import "./Story.scss";
 import useStory from "../../../../../hook/useStory";
 import { useParams } from "react-router-dom";
 import StoryDetail from "./StoryDetail";
-import { storyContext } from "../../../../../App";
+import useParticipants from "../../../../../hook/useParticipants";
 
 
 const Story = () => {
 
-  const {story,addStory,getStory,deleteStory,updateStoryStatus} = useStory();
-  const session_id = useParams();
+  const {participants} = useParticipants()
 
+
+  const {story,storyId,addStory,getStory,deleteStory,updateStoryStatus,getSingleStoryDetail} = useStory();
+  const session_id = useParams();
   const [showModel, setShowModel] = useState(false);
+
   function handleModel() {
     document.body.style.overflow = "unset";
     setShowModel(!showModel);
     
   }
+
+
+
+
 
   useEffect(()=>{
     getStory({action:'getStory',session_id:`${session_id.id}`})
@@ -46,19 +53,20 @@ const Story = () => {
             }, 500);
           };
           
+      function handelSingleStory(story_id,id){
+        console.log(story_id)
+        getSingleStoryDetail({action:'getSingleStoryDetail',story_id:Number(story_id),session_id:`${id}`})
 
-
-      const [storyId,setStoryId] = useContext(storyContext);
+      }
 
       function handleChange(id){
-        setStoryId(id)
         updateStoryStatus({action:'updateStoryStatus',story_id:id})
         setTimeout(() => {
           getStory({action:'getStory',session_id:`${session_id.id}`})
         }, 50);
       }
 
-
+      const roleStatus = participants.filter(participant=>participant.user_id==sessionStorage.getItem('user_id')).map(participant=>participant.role)
 
   return (
     <div className="story-container">
@@ -67,7 +75,7 @@ const Story = () => {
           <tr>
             <th>
               <div className="header">
-                <i className="icon-add" id="add" onClick={handleModel} ></i>
+                <i className={roleStatus[0]=='moderator'?'icon-add':''} id="add" onClick={handleModel} ></i>
                 {showModel && (
                   <Modal handleClose={handleModel} show={showModel}>
                     <div className="model-container">
@@ -116,8 +124,10 @@ const Story = () => {
                   index = {index+1}
                   stories={story} 
                   deleteStory= {deleteStory}
-                  checkActive = {storyId}
+                  // checkActive = {storyId}
                   handleChange = {handleChange}
+                  participants = {participants}
+                  handelSingleStory ={handelSingleStory}
                 />
 
               )

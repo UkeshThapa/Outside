@@ -19,17 +19,13 @@
     border: 1px solid #DDDDDD;
     border-radius: 8px;
 
-    // .tableHeader{
-    //     position: sticky;
-    //     top: 0;
-    //     z-index: 1;
-    // }
-      
+    
     .story-table{
         width: 100%;
         border-collapse: collapse;
         text-align: left;
         max-height: 346px;
+        height: 346px;
         display: block;
         overflow-y: scroll;
         th{

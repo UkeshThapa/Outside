@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import {useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
 
 const useSession = () => {
   
@@ -27,6 +28,8 @@ const useSession = () => {
   // console.log("hello session")
 
 
+
+
   const checkSession = async(data)=>{
     try {
       const res = await axios.get("http://localhost/php/pokerplanning/",{ params: { ...data} });
@@ -47,18 +50,38 @@ const useSession = () => {
       await axios.post("http://localhost/php/pokerplanning/", data).then((res)=>{
         setSessionId(res.data.session_id)
         setLoading(false)
+        toast.success('successfully session added')
       }
       ) 
     } catch (error) {
       console.log(error.message);
+      toast.error('error adding session')
     }
   };
+
+  const deleteSession = async (data) => {
+    try {
+      const res = await axios.delete("http://localhost/php/pokerplanning/", {
+        params: { ...data },
+      });
+      const newSessions = sessions.filter(
+        (session) => session.session_id !== data.session_id
+      );
+      setSessions(newSessions);
+      toast.success('successfully session deleted')
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
+  
+
+
 
   useEffect(() => {
     getSessions();
   }, []);
 
-  return {loading, sessions,addSession,sessionId,getSessions,checkSession,error};
+  return {loading, sessions,addSession,sessionId,getSessions,checkSession,error,deleteSession};
 };
 
 export default useSession;

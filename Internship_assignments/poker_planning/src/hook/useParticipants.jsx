@@ -24,7 +24,7 @@ const useParticipants = () => {
     const fetchData = async () => {
       const result = await axios.get('http://localhost/php/pokerplanning/',{ params: {session_id:id,action:'allParticipants'} });
       setParticipants(result.data);
-      console.log('hello')
+
     };
     
 
