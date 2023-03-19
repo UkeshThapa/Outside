@@ -16,44 +16,48 @@ import TableContainer from "./component/dashboard/sessionTable/TableContainer";
 
 
 export const storyContext  = createContext();
+export const toggleContext  = createContext();
 
 function App() {
   
   const [storyId,setStoryId] = useState(null)
+  const [toggle,setToggle] = useState(false)
 
-
+  console.log(toggle)
 
   
   return (
-    <storyContext.Provider value={[storyId,setStoryId]}>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Dashboard/>}>
-            <Route path="createsession" element={<AddSession />}></Route>
-            <Route path="session" element={<TableContainer/>}></Route>
-            <Route path="session/:id" element={<Home/>}></Route>
-          </Route>
-          <Route
-            path="/login"
-            element={
-              <div className="authentication">
-                <LogIn />
-              </div>
-            } 
-          ></Route>
-          <Route
-            path="/signup"
-            element={
-              <div className="authentication">
-                <SignUp />
-              </div>
-            }
-          ></Route>
+    <toggleContext.Provider value={[toggle,setToggle]}>
+      <storyContext.Provider value={[storyId,setStoryId]}>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Dashboard/>}>
+              <Route path="createsession" element={<AddSession />}></Route>
+              <Route path="session" element={<TableContainer/>}></Route>
+              <Route path="session/:id" element={<Home/>}></Route>
+            </Route>
+            <Route
+              path="/login"
+              element={
+                <div className="authentication">
+                  <LogIn />
+                </div>
+              } 
+            ></Route>
+            <Route
+              path="/signup"
+              element={
+                <div className="authentication">
+                  <SignUp />
+                </div>
+              }
+            ></Route>
 
-          <Route path="*" element={<ErrorPage />}></Route>
-        </Routes>
-      </BrowserRouter>
-    </storyContext.Provider>
+            <Route path="*" element={<ErrorPage />}></Route>
+          </Routes>
+        </BrowserRouter>
+      </storyContext.Provider>
+    </toggleContext.Provider>
   );
 }
 

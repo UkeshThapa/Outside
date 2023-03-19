@@ -2,14 +2,13 @@ import React, { useState,useContext } from 'react'
 import Card from './card/card'
 import "./CardSection.scss"
 import useStory from '../../../../hook/useStory'
-import { storyContext } from '../../../../App'
-
+import { storyContext} from '../../../../App'
+import { useParams } from 'react-router-dom'
 const CardSection = () => {
 
-
+  const session_id = useParams();
   const [storyId,setStoryId] = useContext(storyContext);
-
-  const {addStoryPoints} = useStory();
+  const {addStoryPoints,updateHiddenStatus} = useStory();
 
   const [storyPoint,setStoryPoint] = useState(null);
 
@@ -17,15 +16,17 @@ const CardSection = () => {
 
   function handleValueOfCard(value){
     setStoryPoint(value)
+    addStoryPoints({action:'addStoryPoints',session_id:`${session_id.id}`,story_id:storyId,story_points:storyPoint,user_id:Number(sessionStorage.getItem('user_id'))})
   }
 
-  function handleStoryPoint (){
-    console.log(storyPoint)
-    addStoryPoints({action:'addStoryPoints',story_id:storyId,story_points:storyPoint,user_id:Number(sessionStorage.getItem('user_id'))})
-  }
+ 
   
   function handleStoryStatus(){
-    console.log(storyPoint)
+    updateHiddenStatus({action:'updateHiddenStatus',storyStatus:'show',session_id:`${session_id.id}`});    
+  }
+  
+  function handleResetStatus(){
+    updateHiddenStatus({action:'updateHiddenStatus',storyStatus:'hidden',session_id:`${session_id.id}`});    
   }
 
   return (
@@ -45,13 +46,13 @@ const CardSection = () => {
             )
           })
         }
-          {/* <Card/>
-          <Card/> */}
+
+
         </div>
         <div className="footer-container__button">
 
-            <button className="submit-btn" onClick={handleStoryPoint}>submit</button>
-            <button className="reveal-btn" onClick={handleStoryStatus}>reveal</button>
+            <button className="submit-btn" onClick={handleResetStatus}>Reset</button>
+            <button className="reveal-btn" onClick={handleStoryStatus}>Reveal</button>
 
 
         </div>
